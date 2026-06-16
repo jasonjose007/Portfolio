@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative AI Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #0B0B0C;
+        }
+        .gradient-btn {
+            background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="text-white font-sans antialiased selection:bg-purple-500 selection:text-white">
+
+    <!-- NAVBAR -->
+    <nav class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center tracking-widest text-xs font-semibold uppercase text-gray-400">
+        <a href="#" class="hover:text-white transition">ABOUT</a>
+        <a href="#services" class="hover:text-white transition">SKILLS</a>
+        <a href="#projects" class="hover:text-white transition">PROJECTS</a>
+        <a href="#contact" class="hover:text-white transition">CONTACT</a>
+    </nav>
+
+    <!-- HERO SECTION (Inspired by 1000064009.jpg) -->
+    <section class="max-w-6xl mx-auto px-6 py-20 min-h-[80vh] flex flex-col justify-center relative">
+        <div class="z-10 max-w-4xl">
+            <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-gray-300 leading-none uppercase mb-6">
+                HI, I'M <span class="text-white">[Jason J]</span>
+            </h1>
+            <p class="text-gray-400 tracking-wider text-sm md:text-base max-w-md uppercase mb-8 leading-relaxed">
+                A Generative AI Engineer driven by fine-tuning neural architectures, large language models, and computer vision systems.
+            </p>
+            <a href="#contact" class="gradient-btn px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest inline-block hover:opacity-90 transition shadow-lg shadow-purple-500/20">
+                Contact Me
+            </a>
+        </div>
+        <!-- Decorative subtle background glow mimicking a network grid -->
+        <div class="absolute right-10 top-20 w-72 h-72 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    </section>
+
+    <!-- ABOUT ME SECTION (Inspired by 1000064011.jpg) -->
+    <section class="bg-[#0f0f11] border-y border-zinc-900 py-24">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-xs font-bold tracking-[0.3em] uppercase text-purple-500 mb-6">ABOUT ME</h2>
+            <p class="text-xl md:text-2xl font-light text-zinc-300 leading-relaxed">
+                Generative AI Engineer passionate about training, fine-tuning, and deploying intelligent models. Experienced in everything from classical probabilistic text generation to cutting-edge deep learning frameworks, transformer architectures, and Generative Adversarial Networks (GANs).
+            </p>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION (Inspired by 1000064013.jpg) -->
+    <section id="services" class="max-w-4xl mx-auto px-6 py-24">
+        <h2 class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">EXPERTISE</h2>
+        
+        <div class="space-y-12 split-rows">
+            <!-- Service 1 -->
+            <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
+                <span class="text-2xl font-black text-purple-500">01</span>
+                <div>
+                    <h3 class="text-lg font-bold uppercase tracking-wider mb-2">Natural Language Processing</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Fine-tuning Large Language Models (LLMs) and building custom text-generation pipelines tailored to specific corpora.</p>
+                </div>
+            </div>
+            <!-- Service 2 -->
+            <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
+                <span class="text-2xl font-black text-purple-500">02</span>
+                <div>
+                    <h3 class="text-lg font-bold uppercase tracking-wider mb-2">Computer Vision & GANs</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Crafting generative visual architectures, image synthesis pipelines, and complex conditional image-to-image translation models.</p>
+                </div>
+            </div>
+            <!-- Service 3 -->
+            <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
+                <span class="text-2xl font-black text-purple-500">03</span>
+                <div>
+                    <h3 class="text-lg font-bold uppercase tracking-wider mb-2">Model Optimization</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Leveraging GPU-accelerated environments to efficiently train, hyperparameter-tune, and evaluate deep neural networks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION (Inspired by 1000064015.jpg) -->
+    <section id="projects" class="max-w-5xl mx-auto px-6 py-24 border-t border-zinc-900">
+        <h2 class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">PROJECTS</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            
+            <!-- Project 1 -->
+            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-bold text-purple-400 tracking-widest uppercase">01 / LLM</span>
+                        <span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Prodigy InfoTech</span>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-wide mb-3">GPT-2 Custom Fine-Tuning</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed mb-6">
+                        Fine-tuned OpenAI's GPT-2 architecture on a custom text dataset to generate contextually aware prose. Managed loss convergence and tokenization parameters.
+                    </p>
+                </div>
+                <!-- Interactive Action Links requested near individual tasks -->
+                <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
+                    <a href="https://github.com/jasonjose007/PRODIGY_GA_01" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
+                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_generativeai-deeplearning-transformers-activity-7464615366997221377-sR-q?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-bold text-purple-400 tracking-widest uppercase">02 / Computer Vision</span>
+                        <span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Prodigy InfoTech</span>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-wide mb-3">Pix2Pix cGAN Translation</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed mb-6">
+                        Implemented a Conditional Generative Adversarial Network for paired image-to-image translation, optimizing adversarial loss dynamics between generator and discriminator.
+                    </p>
+                </div>
+                <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
+                    <a href="https://github.com/jasonjose007/PRODIGY_GA_02" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
+                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_generativeai-computervision-stablediffusion-activity-7466881908686131200-qvZq?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-bold text-purple-400 tracking-widest uppercase">03 / Deep Learning</span>
+                        <span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Prodigy InfoTech</span>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-wide mb-3">Deep Image Generation</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed mb-6">
+                        Developed an image synthesis pipeline navigating deep latent spaces to visually render high-fidelity, completely novel synthesized images from learned weights.
+                    </p>
+                </div>
+                <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
+                    <a href="https://github.com/jasonjose007/PRODIGY_GA_03" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
+                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_prodigyinfotech-generativeai-machinelearning-activity-7463948238614597633-pLEb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-bold text-purple-400 tracking-widest uppercase">04 / Probabilistic NLP</span>
+                        <span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Prodigy InfoTech</span>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-wide mb-3">Markov Chain Synthesis</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed mb-6">
+                        Built a linguistic probability matrix model mapping word sequence state-transitions to generate sentences based on custom text corpus frequencies.
+                    </p>
+                </div>
+                <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
+                    <a href="https://github.com/jasonjose007/PRODIGY_GA_04" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
+                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_generativeai-computervision-gans-activity-7470180474737348608-nQL0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT SECTION (Inspired by 1000064017.jpg) -->
+    <section id="contact" class="max-w-4xl mx-auto px-6 py-32 text-center border-t border-zinc-900">
+        <h2 class="text-5xl font-black tracking-tight uppercase mb-4 text-zinc-200">LET'S WORK</h2>
+        <p class="text-zinc-500 text-xs tracking-widest uppercase max-w-sm mx-auto mb-10 leading-relaxed">
+            Looking to implement generative models, fine-tune LLMs, or collaborate on next-gen AI systems? Let's build something incredible.
+        </p>
+        <a href="mailto:jasonjose006@gmail.com" class="border border-zinc-800 hover:border-purple-500 text-xs font-semibold tracking-widest uppercase px-8 py-4 rounded-full inline-block text-zinc-400 hover:text-white transition">
+            jasonjose006@gmail.com
+        </a>
+        <p class="text-[10px] text-zinc-700 uppercase tracking-widest mt-20">© 2026 All Rights Reserved.</p>
+    </section>
+
+</body>
+</html>
