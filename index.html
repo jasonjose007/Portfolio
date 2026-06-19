@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Developer Portfolio</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- CUSTOM BACKGROUND & GRADIENT STYLES -->
     <style>
         body {
             background-color: #0B0B0C;
@@ -24,9 +22,6 @@
 </head>
 <body class="text-white font-sans antialiased selection:bg-purple-500 selection:text-white">
 
-    <!-- ========================================== -->
-    <!-- NAVIGATION BAR (TOP MENU)                  -->
-    <!-- ========================================== -->
     <nav class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center tracking-widest text-xs font-semibold uppercase text-gray-400">
         <a href="#" class="hover:text-white transition">ABOUT</a>
         <a href="#services" class="hover:text-white transition">SKILLS</a>
@@ -34,31 +29,21 @@
         <a href="#contact" class="hover:text-white transition">CONTACT</a>
     </nav>
 
-    <!-- ========================================== -->
-    <!-- HERO SECTION (WELCOME / INTRO HEADER)      -->
-    <!-- ========================================== -->
     <section class="max-w-6xl mx-auto px-6 py-20 min-h-[80vh] flex flex-col justify-center relative">
         <div class="z-10 max-w-4xl">
-            <!-- Main Title Banner -->
             <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-gray-300 leading-none uppercase mb-6">
                 HI, I'M <span class="text-white">Jason J</span>
             </h1>
-            <!-- Small Biography Blurb -->
             <p class="text-gray-400 tracking-wider text-sm md:text-base max-w-md uppercase mb-8 leading-relaxed">
                 A Software Engineer driven by architecture design, database optimization, and end-to-end full stack execution.
             </p>
-            <!-- Call-To-Action Contact Button -->
             <a href="#contact" class="gradient-btn px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest inline-block hover:opacity-90 transition shadow-lg shadow-purple-500/20">
                 Contact Me
             </a>
         </div>
-        <!-- Background Decorative Glow Light -->
         <div class="absolute right-10 top-20 w-72 h-72 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- ABOUT ME SECTION (SUMMARY STATEMENT)       -->
-    <!-- ========================================== -->
     <section class="bg-[#0f0f11] border-y border-zinc-900 py-24">
         <div class="max-w-3xl mx-auto px-6 text-center">
             <h2 class="text-xs font-bold tracking-[0.3em] uppercase text-purple-500 mb-6">ABOUT ME</h2>
@@ -68,9 +53,6 @@
         </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- RESUME SECTION (LINK TO FILE)              -->
-    <!-- ========================================== -->
     <section id="resume" class="max-w-4xl mx-auto px-6 py-16 text-center">
         <div class="border border-zinc-900 bg-[#121214]/40 rounded-2xl p-8 max-w-2xl mx-auto">
             <h3 class="text-xs font-bold tracking-widest uppercase text-zinc-500 mb-3">Professional Credentials</h3>
@@ -78,21 +60,16 @@
             <p class="text-zinc-400 text-xs md:text-sm leading-relaxed max-w-md mx-auto mb-6">
                 A comprehensive overview detailing technical proficiencies, engineering work history, architectural project milestones, and formal certifications. 
             </p>
-            <!-- [BUTTON LINK] Replace 'PASTE_YOUR_ONLINE_RESUME_LINK_HERE' with your link -->
             <a href="https://rxresu.me/jasonjose006/my-resume" target="_blank" class="text-xs font-bold tracking-widest uppercase border border-zinc-800 hover:border-purple-500 text-zinc-400 hover:text-white bg-[#0B0B0C] px-6 py-3.5 rounded-full inline-block transition">
                 → View Online Resume
             </a>
         </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- EXPERTISE SECTION (SERVICES & CAPABILITIES) -->
-    <!-- ========================================== -->
     <section id="services" class="max-w-4xl mx-auto px-6 py-24">
         <h2 class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">EXPERTISE</h2>
         
         <div class="space-y-12 split-rows">
-            <!-- Capability 1 -->
             <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
                 <span class="text-2xl font-black text-purple-500">01</span>
                 <div>
@@ -100,7 +77,6 @@
                     <p class="text-zinc-400 text-sm leading-relaxed">Configuring structural pipelines, advanced processing models, and deep architecture workflows.</p>
                 </div>
             </div>
-            <!-- Capability 2 -->
             <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
                 <span class="text-2xl font-black text-purple-500">02</span>
                 <div>
@@ -108,7 +84,6 @@
                     <p class="text-zinc-400 text-sm leading-relaxed">Designing optimized web servers, secure routing logic, and streamlined query structures.</p>
                 </div>
             </div>
-            <!-- Capability 3 -->
             <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
                 <span class="text-2xl font-black text-purple-500">03</span>
                 <div>
@@ -119,16 +94,11 @@
         </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- PORTFOLIO PROJECTS DISPLAY                 -->
-    <!-- ========================================== -->
     <section id="projects" class="max-w-5xl mx-auto px-6 py-24 border-t border-zinc-900">
         <h2 class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">PROJECTS</h2>
         
-        <!-- [GRID CONTROL] This row wrapper keeps project cards aligned side-by-side -->
         <div class="grid md:grid-cols-2 gap-8">
             
-            <!-- // PROJECT CARD 1 -->
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -140,14 +110,12 @@
                         Fine-tuned OpenAI's GPT-2 architecture on a custom text dataset to generate contextually aware prose. Managed loss convergence and tokenization parameters.
                     </p>
                 </div>
-                <!-- Interactive links -->
                 <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
                     <a href="https://github.com/jasonjose007/PRODIGY_GA_01" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
                     <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_generativeai-deeplearning-transformers-activity-7464615366997221377-sR-q?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
                 </div>
             </div>
 
-            <!-- // PROJECT CARD 2 -->
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -159,14 +127,12 @@
                         Implemented a Conditional Generative Adversarial Network for paired image-to-image translation, optimizing adversarial loss dynamics between generator and discriminator.
                     </p>
                 </div>
-                <!-- Interactive links -->
                 <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
                     <a href="https://github.com/jasonjose007/PRODIGY_GA_02" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
                     <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_generativeai-computervision-stablediffusion-activity-7466881908686131200-qvZq?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
                 </div>
             </div>
 
-            <!-- // PROJECT CARD 3 -->
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -178,14 +144,12 @@
                         Developed an image synthesis pipeline navigating deep latent spaces to visually render high-fidelity, completely novel synthesized images from learned weights.
                     </p>
                 </div>
-                <!-- Interactive links -->
                 <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
                     <a href="https://github.com/jasonjose007/PRODIGY_GA_03" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
                     <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_prodigyinfotech-generativeai-machinelearning-activity-7463948238614597633-pLEb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
                 </div>
             </div>
 
-            <!-- // PROJECT CARD 4 -->
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -197,14 +161,12 @@
                         Built a linguistic probability matrix model mapping word sequence state-transitions to generate sentences based on custom text corpus frequencies.
                     </p>
                 </div>
-                <!-- Interactive links -->
                 <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
                     <a href="https://github.com/jasonjose007/PRODIGY_GA_04" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
                     <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_generativeai-computervision-gans-activity-7470180474737348608-nQL0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
                 </div>
             </div>
 
-            <!-- // PROJECT CARD 5 -->
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between min-h-[320px]">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -216,14 +178,12 @@
                         Designed and implemented a back-end structure for a social media dashboard. Engineered dynamic data management pipelines to handle content distribution, statistics tracking, and streamlined dashboard metrics.
                     </p>
                 </div>
-                <!-- Interactive links -->
-                <div class="flex gap-4 border-t border-zinc-900/50 pt-4 mt-auto">
+                <div class="flex gap-4 border-t border-zinc-800/50 pt-4 mt-auto">
                     <a href="https://github.com/jasonjose007/CodeAlpha_Simple_E-commerce_Store" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
                     <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_webdevelopment-python-django-ugcPost-7472773852788310016-_TEI/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
                 </div>
             </div>
 
-            <!-- // PROJECT CARD 6 -->
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between min-h-[320px]">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -235,34 +195,42 @@
                         Architected optimized database models using Node.js and Express to securely read and manipulate JSON/relational datasets. Focused on minimizing query latencies and establishing scalable table structures.
                     </p>
                 </div>
-                <!-- Interactive links -->
-                <div class="flex gap-4 border-t border-zinc-900/50 pt-4 mt-auto">
+                <div class="flex gap-4 border-t border-zinc-800/50 pt-4 mt-auto">
                     <a href="https://github.com/jasonjose007/CodeAlpha_SocialMediaApp" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
                     <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_codealpha-fullstackdevelopment-webdevelopment-ugcPost-7472954046476099585-Lryu/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-500 hover:text-white transition uppercase">→ LinkedIn</a>
                 </div>
             </div>
 
-        </div> <!-- END OF GRID DISPLAY CONTAINER -->
-    </section>
+            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between min-h-[320px]">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-bold text-purple-400 tracking-widest uppercase">07 / Real-Time Collaboration</span>
+                        <span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">CodeAlpha</span>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-wide mb-3">Project Management Tool</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed mb-6">
+                        Architected a Trello/Asana-style collaborative platform with task assignments, group projects, and threads. Built real-time notification streams leveraging Socket.io alongside an optimized JSON database file architecture.
+                    </p>
+                </div>
+                <div class="flex gap-4 border-t border-zinc-800/50 pt-4 mt-auto">
+                    <a href="https://github.com/jasonjose007/CodeAlpha_Project-Management-Tool" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
+                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_codealpha-fullstackdevelopment-webdevelopment-ugcPost-7473861292953456640-c1Dk/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
+                </div>
+            </div>
 
-    <!-- ========================================== -->
-    <!-- LEETCODE ARCHIVE BANNER MODULE             -->
-    <!-- ========================================== -->
+        </div> </section>
+
     <section id="leetcode" class="max-w-5xl mx-auto px-6 py-24 border-t border-zinc-900">
         <div class="bg-[#121214] border border-zinc-900 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
             <div class="max-w-xl z-10">
-                <!-- Mini Tag Header -->
                 <div class="flex items-center gap-3 mb-4">
                     <span class="text-xs font-bold text-amber-500 tracking-widest uppercase">Algorithms & Data Structures</span>
                     <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
                 </div>
-                <!-- Big Subsection Title -->
                 <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4 text-zinc-200">LeetCode Repository Archive</h2>
-                <!-- Project Description text -->
                 <p class="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6">
                     Consistently tackling algorithmic challenges to optimize runtime execution and memory efficiency. This dedicated code repository indexes thoroughly tested solutions mapping out optimal spatial and temporal complexity solutions.
                 </p>
-                <!-- Visual Category Pill Tags -->
                 <div class="flex flex-wrap gap-3 text-[10px] tracking-wider uppercase font-semibold text-zinc-500">
                     <span class="bg-[#0b0b0c] border border-zinc-800 px-3 py-1.5 rounded-md">Arrays & Hashing</span>
                     <span class="bg-[#0b0b0c] border border-zinc-800 px-3 py-1.5 rounded-md">Two Pointers</span>
@@ -271,31 +239,23 @@
                 </div>
             </div>
             
-            <!-- Repository CTA Action Button -->
             <div class="w-full md:w-auto shrink-0 z-10 text-center md:text-right">
-                <!-- [BUTTON LINK] Replace 'PASTE_YOUR_LEETCODE_REPO_LINK_HERE' with your real GitHub LeetCode Repo URL -->
                 <a href="https://github.com/jasonjose007/Leetcode" target="_blank" class="border border-amber-500/30 hover:border-amber-500 text-amber-500 hover:bg-amber-500/5 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest inline-block transition text-center shadow-lg shadow-amber-500/5 w-full md:w-auto">
                     → Explore Solutions Code
                 </a>
             </div>
-            <!-- Glow aesthetic graphic element -->
             <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-amber-600/5 rounded-full blur-3xl pointer-events-none"></div>
         </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- FOOTER SECTION & CALL TO WORK              -->
-    <!-- ========================================== -->
     <section id="contact" class="max-w-4xl mx-auto px-6 py-32 text-center border-t border-zinc-900">
         <h2 class="text-5xl font-black tracking-tight uppercase mb-4 text-zinc-200">LET'S WORK</h2>
         <p class="text-zinc-500 text-xs tracking-widest uppercase max-w-sm mx-auto mb-10 leading-relaxed">
             Looking to implement scalable backend architectures, database infrastructures, or collaborate on end-to-end applications? Let's build something incredible.
         </p>
-        <!-- Dynamic Mailto Action link -->
         <a href="mailto:jasonjose006@gmail.com" class="border border-zinc-800 hover:border-purple-500 text-xs font-semibold tracking-widest uppercase px-8 py-4 rounded-full inline-block text-zinc-400 hover:text-white transition">
             jasonjose006@gmail.com
         </a>
-        <!-- Copyright Subtext notice -->
         <p class="text-[10px] text-zinc-700 uppercase tracking-widest mt-20">© 2026 All Rights Reserved.</p>
     </section>
 
