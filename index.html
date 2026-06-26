@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Developer Portfolio</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
@@ -22,13 +23,15 @@
 </head>
 <body class="text-white font-sans antialiased selection:bg-purple-500 selection:text-white">
 
-    <nav class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center tracking-widest text-xs font-semibold uppercase text-gray-400">
-        <a href="#" class="hover:text-white transition">ABOUT</a>
-        <a href="#services" class="hover:text-white transition">SKILLS</a>
-        <a href="#projects" class="hover:text-white transition">PROJECTS</a>
+    <nav class="max-w-6xl mx-auto px-6 py-6 flex flex-wrap gap-4 justify-between items-center tracking-widest text-xs font-semibold uppercase text-gray-400">
+        <div class="flex gap-6">
+            <a href="#" class="hover:text-white transition">ABOUT</a>
+            <a href="#services" class="hover:text-white transition">SKILLS</a>
+            <a href="#projects" class="hover:text-white transition">PROJECTS</a>
+            <a href="#certifications" class="hover:text-white transition text-purple-400">CERTIFICATIONS</a>
+        </div>
         <a href="#contact" class="hover:text-white transition">CONTACT</a>
     </nav>
-
     <section class="max-w-6xl mx-auto px-6 py-20 min-h-[80vh] flex flex-col justify-center relative">
         <div class="z-10 max-w-4xl">
             <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-gray-300 leading-none uppercase mb-6">
@@ -43,7 +46,6 @@
         </div>
         <div class="absolute right-10 top-20 w-72 h-72 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
     </section>
-
     <section class="bg-[#0f0f11] border-y border-zinc-900 py-24">
         <div class="max-w-3xl mx-auto px-6 text-center">
             <h2 class="text-xs font-bold tracking-[0.3em] uppercase text-purple-500 mb-6">ABOUT ME</h2>
@@ -52,7 +54,6 @@
             </p>
         </div>
     </section>
-
     <section id="resume" class="max-w-4xl mx-auto px-6 py-16 text-center">
         <div class="border border-zinc-900 bg-[#121214]/40 rounded-2xl p-8 max-w-2xl mx-auto">
             <h3 class="text-xs font-bold tracking-widest uppercase text-zinc-500 mb-3">Professional Credentials</h3>
@@ -65,11 +66,10 @@
             </a>
         </div>
     </section>
-
     <section id="services" class="max-w-4xl mx-auto px-6 py-24">
         <h2 class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">EXPERTISE</h2>
         
-        <div class="space-y-12 split-rows">
+        <div class="space-y-12">
             <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
                 <span class="text-2xl font-black text-purple-500">01</span>
                 <div>
@@ -77,6 +77,7 @@
                     <p class="text-zinc-400 text-sm leading-relaxed">Configuring structural pipelines, advanced processing models, and deep architecture workflows.</p>
                 </div>
             </div>
+            
             <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
                 <span class="text-2xl font-black text-purple-500">02</span>
                 <div>
@@ -84,6 +85,7 @@
                     <p class="text-zinc-400 text-sm leading-relaxed">Designing optimized web servers, secure routing logic, and streamlined query structures.</p>
                 </div>
             </div>
+            
             <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
                 <span class="text-2xl font-black text-purple-500">03</span>
                 <div>
@@ -93,7 +95,6 @@
             </div>
         </div>
     </section>
-
     <section id="projects" class="max-w-5xl mx-auto px-6 py-24 border-t border-zinc-900">
         <h2 class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">PROJECTS</h2>
         
@@ -167,7 +168,7 @@
                 </div>
             </div>
 
-            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between min-h-[320px]">
+            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
                         <span class="text-xs font-bold text-purple-400 tracking-widest uppercase">05 / Back-End Architecture</span>
@@ -178,13 +179,13 @@
                         Designed and implemented a back-end structure for a social media dashboard. Engineered dynamic data management pipelines to handle content distribution, statistics tracking, and streamlined dashboard metrics.
                     </p>
                 </div>
-                <div class="flex gap-4 border-t border-zinc-800/50 pt-4 mt-auto">
+                <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
                     <a href="https://github.com/jasonjose007/CodeAlpha_Simple_E-commerce_Store" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
                     <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_webdevelopment-python-django-ugcPost-7472773852788310016-_TEI/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
                 </div>
             </div>
 
-            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between min-h-[320px]">
+            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
                         <span class="text-xs font-bold text-purple-400 tracking-widest uppercase">06 / Database Management</span>
@@ -195,13 +196,13 @@
                         Architected optimized database models using Node.js and Express to securely read and manipulate JSON/relational datasets. Focused on minimizing query latencies and establishing scalable table structures.
                     </p>
                 </div>
-                <div class="flex gap-4 border-t border-zinc-800/50 pt-4 mt-auto">
+                <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
                     <a href="https://github.com/jasonjose007/CodeAlpha_SocialMediaApp" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_codealpha-fullstackdevelopment-webdevelopment-ugcPost-7472954046476099585-Lryu/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-500 hover:text-white transition uppercase">→ LinkedIn</a>
+                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_codealpha-fullstackdevelopment-webdevelopment-ugcPost-7472954046476099585-Lryu/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
                 </div>
             </div>
 
-            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between min-h-[320px]">
+            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
                         <span class="text-xs font-bold text-purple-400 tracking-widest uppercase">07 / Real-Time Collaboration</span>
@@ -212,14 +213,174 @@
                         Architected a Trello/Asana-style collaborative platform with task assignments, group projects, and threads. Built real-time notification streams leveraging Socket.io alongside an optimized JSON database file architecture.
                     </p>
                 </div>
-                <div class="flex gap-4 border-t border-zinc-800/50 pt-4 mt-auto">
+                <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
                     <a href="https://github.com/jasonjose007/CodeAlpha_Project-Management-Tool" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
                     <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_codealpha-fullstackdevelopment-webdevelopment-ugcPost-7473861292953456640-c1Dk/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
                 </div>
             </div>
 
-        </div> </section>
+        </div>
+    </section>
+    <section id="certifications" class="max-w-6xl mx-auto px-6 py-24 border-t border-zinc-900">
+        <h2 class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">CERTIFICATIONS</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
+            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img class="w-12 h-12 object-contain bg-zinc-900 border border-zinc-800 rounded-xl p-2" src="https://cdn.brandfetch.io/idocvEn876/w/400/h/400/theme/dark/icon" alt="Cisco Logo">
+                        <div>
+                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Cisco Academy & NDG</span>
+                            <span class="text-[10px] text-zinc-500 block">June 26, 2026</span>
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">Linux Unhatched</h3>
+                </div>
+                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
+                    <span class="text-[11px] text-zinc-500">Statement of Achievement</span>
+                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400">Linux</span>
+                </div>
+            </div>
+
+            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img class="w-12 h-12 object-contain bg-zinc-900 border border-zinc-800 rounded-xl p-1" src="https://prodigyinfotech.dev/assets/img/logo.png" alt="Prodigy Logo">
+                        <div>
+                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Prodigy InfoTech</span>
+                            <span class="text-[10px] text-zinc-500 block">May - June 2026</span>
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">Generative AI Internship</h3>
+                </div>
+                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
+                    <span class="text-[11px] text-zinc-500">CIN: PIT/MAY26/11342</span>
+                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">Internship</span>
+                </div>
+            </div>
+
+            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img class="w-12 h-12 object-contain bg-zinc-900 border border-zinc-800 rounded-xl p-2" src="https://cdn.brandfetch.io/id9M9788S6/w/400/h/400/theme/dark/icon" alt="Oracle Logo">
+                        <div>
+                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Oracle University</span>
+                            <span class="text-[10px] text-zinc-500 block">April 06, 2026</span>
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">OCI AI Foundations Associate</h3>
+                </div>
+                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
+                    <span class="text-[11px] text-zinc-500">ID: 103443281OCI25AICFA</span>
+                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400">AI</span>
+                </div>
+            </div>
+
+            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img class="w-12 h-12 object-contain bg-zinc-900 border border-zinc-800 rounded-xl p-1" src="https://www.infosys.com/content/dam/infosys-web/en/global-resource/media-resources/infosys-logo-jpeg.jpg" alt="Infosys Logo">
+                        <div>
+                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Infosys Springboard</span>
+                            <span class="text-[10px] text-zinc-500 block">Feb 22, 2026</span>
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">DSA using Python - Part 1</h3>
+                </div>
+                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
+                    <span class="text-[11px] text-zinc-500">Course Completion</span>
+                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400">DSA</span>
+                </div>
+            </div>
+
+            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img class="w-12 h-12 object-contain bg-zinc-900 border border-zinc-800 rounded-xl p-2" src="https://cdn.brandfetch.io/idx74Esk9_/w/400/h/400/theme/dark/icon" alt="NPTEL Logo">
+                        <div>
+                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">NPTEL / IIT Madras</span>
+                            <span class="text-[10px] text-zinc-500 block">Jan - Feb 2026</span>
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">Python for Data Science</h3>
+                </div>
+                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
+                    <span class="text-[11px] text-zinc-500">Score: 60% • Roll: ...4817</span>
+                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-amber-500/10 text-amber-400">Elite</span>
+                </div>
+            </div>
+
+            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img class="w-12 h-12 object-contain bg-zinc-900 border border-zinc-800 rounded-xl p-1" src="https://www.infosys.com/content/dam/infosys-web/en/global-resource/media-resources/infosys-logo-jpeg.jpg" alt="Infosys Logo">
+                        <div>
+                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Infosys Springboard</span>
+                            <span class="text-[10px] text-zinc-500 block">Nov 17, 2025</span>
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">Programming Fundamentals</h3>
+                </div>
+                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
+                    <span class="text-[11px] text-zinc-500">Python - Part 1</span>
+                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400">Python</span>
+                </div>
+            </div>
+
+            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img class="w-12 h-12 object-contain bg-zinc-900 border border-zinc-800 rounded-xl p-2" src="https://cdn.brandfetch.io/id8m8e6gqI/w/400/h/400/theme/dark/icon" alt="SWAYAM Logo">
+                        <div>
+                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">SWAYAM / BHU</span>
+                            <span class="text-[10px] text-zinc-500 block">Aug - Oct 2025</span>
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">Fundamentals of Computing</h3>
+                </div>
+                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
+                    <span class="text-[11px] text-zinc-500">Score: 83% • Roll: ...1029</span>
+                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400">Core CS</span>
+                </div>
+            </div>
+
+            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img class="w-12 h-12 object-contain bg-zinc-900 border border-zinc-800 rounded-xl p-2" src="https://cdn.brandfetch.io/idA88p6g8F/w/400/h/400/theme/dark/icon" alt="Simplilearn Logo">
+                        <div>
+                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Simplilearn SkillUp</span>
+                            <span class="text-[10px] text-zinc-500 block">Sept 06, 2025</span>
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">DSA in Python</h3>
+                </div>
+                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
+                    <span class="text-[11px] text-zinc-500">Code: 8922817</span>
+                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400">DSA</span>
+                </div>
+            </div>
+
+            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img class="w-12 h-12 object-contain bg-zinc-900 border border-zinc-800 rounded-xl p-2" src="https://cdn.brandfetch.io/idA88p6g8F/w/400/h/400/theme/dark/icon" alt="Simplilearn Logo">
+                        <div>
+                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Simplilearn SkillUp</span>
+                            <span class="text-[10px] text-zinc-500 block">Sept 05, 2025</span>
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">Introduction to HTML</h3>
+                </div>
+                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
+                    <span class="text-[11px] text-zinc-500">Code: 8917592</span>
+                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400">Web</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
     <section id="leetcode" class="max-w-5xl mx-auto px-6 py-24 border-t border-zinc-900">
         <div class="bg-[#121214] border border-zinc-900 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
             <div class="max-w-xl z-10">
@@ -238,7 +399,6 @@
                     <span class="bg-[#0b0b0c] border border-zinc-800 px-3 py-1.5 rounded-md">Trees & Graphs</span>
                 </div>
             </div>
-            
             <div class="w-full md:w-auto shrink-0 z-10 text-center md:text-right">
                 <a href="https://github.com/jasonjose007/Leetcode" target="_blank" class="border border-amber-500/30 hover:border-amber-500 text-amber-500 hover:bg-amber-500/5 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest inline-block transition text-center shadow-lg shadow-amber-500/5 w-full md:w-auto">
                     → Explore Solutions Code
@@ -247,7 +407,6 @@
             <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-amber-600/5 rounded-full blur-3xl pointer-events-none"></div>
         </div>
     </section>
-
     <section id="contact" class="max-w-4xl mx-auto px-6 py-32 text-center border-t border-zinc-900">
         <h2 class="text-5xl font-black tracking-tight uppercase mb-4 text-zinc-200">LET'S WORK</h2>
         <p class="text-zinc-500 text-xs tracking-widest uppercase max-w-sm mx-auto mb-10 leading-relaxed">
@@ -258,6 +417,5 @@
         </a>
         <p class="text-[10px] text-zinc-700 uppercase tracking-widest mt-20">© 2026 All Rights Reserved.</p>
     </section>
-
-</body>
+    </body>
 </html>
