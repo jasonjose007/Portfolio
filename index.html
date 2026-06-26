@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    ==== GLOBAL SETTINGS AND TAILWIND STYLES ====
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Developer Portfolio</title>
-    
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <style>
-        body {
-            background-color: #0B0B0C;
-        }
-        .gradient-btn {
-            background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        body { background-color: #0B0B0C; }
+        .gradient-btn { background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); }
     </style>
 </head>
 <body class="text-white font-sans antialiased selection:bg-purple-500 selection:text-white">
 
+    ==== HEADER NAVIGATION LINKS ====
     <nav class="max-w-6xl mx-auto px-6 py-6 flex flex-wrap gap-4 justify-between items-center tracking-widest text-xs font-semibold uppercase text-gray-400">
         <div class="flex gap-6">
             <a href="#" class="hover:text-white transition">ABOUT</a>
@@ -32,6 +23,9 @@
         </div>
         <a href="#contact" class="hover:text-white transition">CONTACT</a>
     </nav>
+
+
+    ==== HERO INTRO BANNER ====
     <section class="max-w-6xl mx-auto px-6 py-20 min-h-[80vh] flex flex-col justify-center relative">
         <div class="z-10 max-w-4xl">
             <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-gray-300 leading-none uppercase mb-6">
@@ -46,6 +40,9 @@
         </div>
         <div class="absolute right-10 top-20 w-72 h-72 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
     </section>
+
+
+    ==== BIOGRAPHY TEXT SECTION ====
     <section class="bg-[#0f0f11] border-y border-zinc-900 py-24">
         <div class="max-w-3xl mx-auto px-6 text-center">
             <h2 class="text-xs font-bold tracking-[0.3em] uppercase text-purple-500 mb-6">ABOUT ME</h2>
@@ -54,6 +51,9 @@
             </p>
         </div>
     </section>
+
+
+    ==== ONLINE RESUME BOX ====
     <section id="resume" class="max-w-4xl mx-auto px-6 py-16 text-center">
         <div class="border border-zinc-900 bg-[#121214]/40 rounded-2xl p-8 max-w-2xl mx-auto">
             <h3 class="text-xs font-bold tracking-widest uppercase text-zinc-500 mb-3">Professional Credentials</h3>
@@ -66,9 +66,11 @@
             </a>
         </div>
     </section>
+
+
+    ==== SERVICES AND SKILLS ROW ====
     <section id="services" class="max-w-4xl mx-auto px-6 py-24">
         <h2 class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">EXPERTISE</h2>
-        
         <div class="space-y-12">
             <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
                 <span class="text-2xl font-black text-purple-500">01</span>
@@ -77,7 +79,6 @@
                     <p class="text-zinc-400 text-sm leading-relaxed">Configuring structural pipelines, advanced processing models, and deep architecture workflows.</p>
                 </div>
             </div>
-            
             <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
                 <span class="text-2xl font-black text-purple-500">02</span>
                 <div>
@@ -85,7 +86,6 @@
                     <p class="text-zinc-400 text-sm leading-relaxed">Designing optimized web servers, secure routing logic, and streamlined query structures.</p>
                 </div>
             </div>
-            
             <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
                 <span class="text-2xl font-black text-purple-500">03</span>
                 <div>
@@ -95,11 +95,14 @@
             </div>
         </div>
     </section>
+
+
+    ==== DEVELOPMENT PROJECTS CONTAINER ====
     <section id="projects" class="max-w-5xl mx-auto px-6 py-24 border-t border-zinc-900">
         <h2 class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">PROJECTS</h2>
-        
         <div class="grid md:grid-cols-2 gap-8">
             
+            ==== PROJECT 1: GPT-2 TUNING ====
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -113,10 +116,10 @@
                 </div>
                 <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
                     <a href="https://github.com/jasonjose007/PRODIGY_GA_01" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_generativeai-deeplearning-transformers-activity-7464615366997221377-sR-q?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
                 </div>
             </div>
 
+            ==== PROJECT 2: PIX2PIX CGAN ====
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -130,10 +133,10 @@
                 </div>
                 <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
                     <a href="https://github.com/jasonjose007/PRODIGY_GA_02" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_generativeai-computervision-stablediffusion-activity-7466881908686131200-qvZq?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
                 </div>
             </div>
 
+            ==== PROJECT 3: DEEP IMAGE GENERATION ====
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -147,10 +150,10 @@
                 </div>
                 <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
                     <a href="https://github.com/jasonjose007/PRODIGY_GA_03" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_prodigyinfotech-generativeai-machinelearning-activity-7463948238614597633-pLEb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
                 </div>
             </div>
 
+            ==== PROJECT 4: MARKOV CHAIN ====
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -164,10 +167,10 @@
                 </div>
                 <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
                     <a href="https://github.com/jasonjose007/PRODIGY_GA_04" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_generativeai-computervision-gans-activity-7470180474737348608-nQL0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
                 </div>
             </div>
 
+            ==== PROJECT 5: SOCIAL MEDIA DASHBOARD ====
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -181,10 +184,10 @@
                 </div>
                 <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
                     <a href="https://github.com/jasonjose007/CodeAlpha_Simple_E-commerce_Store" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_webdevelopment-python-django-ugcPost-7472773852788310016-_TEI/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
                 </div>
             </div>
 
+            ==== PROJECT 6: RELATIONAL DATA MODELS ====
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -198,10 +201,10 @@
                 </div>
                 <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
                     <a href="https://github.com/jasonjose007/CodeAlpha_SocialMediaApp" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_codealpha-fullstackdevelopment-webdevelopment-ugcPost-7472954046476099585-Lryu/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
                 </div>
             </div>
 
+            ==== PROJECT 7: PROJECT MANAGEMENT TOOL ====
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -215,17 +218,19 @@
                 </div>
                 <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
                     <a href="https://github.com/jasonjose007/CodeAlpha_Project-Management-Tool" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_codealpha-fullstackdevelopment-webdevelopment-ugcPost-7473861292953456640-c1Dk/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-white transition uppercase">→ LinkedIn</a>
                 </div>
             </div>
 
         </div>
     </section>
+
+
+    ==== ALL CERTIFICATIONS SECTION ====
     <section id="certifications" class="max-w-6xl mx-auto px-6 py-24 border-t border-zinc-900">
         <h2 class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">CERTIFICATIONS</h2>
-        
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
+            ==== CERTIFICATE 1: CISCO LINUX UNHATCHED ====
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -243,6 +248,7 @@
                 </div>
             </div>
 
+            ==== CERTIFICATE 2: PRODIGY GENERATIVE AI INTERNSHIP ====
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -260,6 +266,7 @@
                 </div>
             </div>
 
+            ==== CERTIFICATE 3: ORACLE OCI CLOUD AI FOUNDATIONS ====
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -277,6 +284,7 @@
                 </div>
             </div>
 
+            ==== CERTIFICATE 4: INFOSYS SPRINGBOARD DSA PART 1 ====
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -294,6 +302,7 @@
                 </div>
             </div>
 
+            ==== CERTIFICATE 5: NPTEL PYTHON FOR DATA SCIENCE ====
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -306,11 +315,12 @@
                     <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">Python for Data Science</h3>
                 </div>
                 <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
-                    <span class="text-[11px] text-zinc-500">Score: 60% • Roll: ...4817</span>
+                    <span class="text-[11px] text-zinc-500">Score: 60%</span>
                     <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-amber-500/10 text-amber-400">Elite</span>
                 </div>
             </div>
 
+            ==== CERTIFICATE 6: INFOSYS PROGRAMMING FUNDAMENTALS ====
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -328,6 +338,7 @@
                 </div>
             </div>
 
+            ==== CERTIFICATE 7: SWAYAM BHU COMPUTING FUNDAMENTALS ====
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -340,11 +351,12 @@
                     <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">Fundamentals of Computing</h3>
                 </div>
                 <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
-                    <span class="text-[11px] text-zinc-500">Score: 83% • Roll: ...1029</span>
+                    <span class="text-[11px] text-zinc-500">Score: 83%</span>
                     <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400">Core CS</span>
                 </div>
             </div>
 
+            ==== CERTIFICATE 8: Simplilearn SkillUp (DSA) ====
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -362,6 +374,7 @@
                 </div>
             </div>
 
+            ==== CERTIFICATE 9: Simplilearn SkillUp (HTML) ====
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -381,6 +394,9 @@
 
         </div>
     </section>
+
+
+    ==== LEETCODE LINKS BANNER ====
     <section id="leetcode" class="max-w-5xl mx-auto px-6 py-24 border-t border-zinc-900">
         <div class="bg-[#121214] border border-zinc-900 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
             <div class="max-w-xl z-10">
@@ -392,21 +408,17 @@
                 <p class="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6">
                     Consistently tackling algorithmic challenges to optimize runtime execution and memory efficiency. This dedicated code repository indexes thoroughly tested solutions mapping out optimal spatial and temporal complexity solutions.
                 </p>
-                <div class="flex flex-wrap gap-3 text-[10px] tracking-wider uppercase font-semibold text-zinc-500">
-                    <span class="bg-[#0b0b0c] border border-zinc-800 px-3 py-1.5 rounded-md">Arrays & Hashing</span>
-                    <span class="bg-[#0b0b0c] border border-zinc-800 px-3 py-1.5 rounded-md">Two Pointers</span>
-                    <span class="bg-[#0b0b0c] border border-zinc-800 px-3 py-1.5 rounded-md">Sliding Window</span>
-                    <span class="bg-[#0b0b0c] border border-zinc-800 px-3 py-1.5 rounded-md">Trees & Graphs</span>
-                </div>
             </div>
             <div class="w-full md:w-auto shrink-0 z-10 text-center md:text-right">
                 <a href="https://github.com/jasonjose007/Leetcode" target="_blank" class="border border-amber-500/30 hover:border-amber-500 text-amber-500 hover:bg-amber-500/5 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest inline-block transition text-center shadow-lg shadow-amber-500/5 w-full md:w-auto">
                     → Explore Solutions Code
                 </a>
             </div>
-            <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-amber-600/5 rounded-full blur-3xl pointer-events-none"></div>
         </div>
     </section>
+
+
+    ==== CONTACT INFORMATION FOOTER ====
     <section id="contact" class="max-w-4xl mx-auto px-6 py-32 text-center border-t border-zinc-900">
         <h2 class="text-5xl font-black tracking-tight uppercase mb-4 text-zinc-200">LET'S WORK</h2>
         <p class="text-zinc-500 text-xs tracking-widest uppercase max-w-sm mx-auto mb-10 leading-relaxed">
@@ -417,5 +429,6 @@
         </a>
         <p class="text-[10px] text-zinc-700 uppercase tracking-widest mt-20">© 2026 All Rights Reserved.</p>
     </section>
-    </body>
+
+</body>
 </html>
