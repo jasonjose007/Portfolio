@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ==== GLOBAL SETTINGS AND TAILWIND STYLES ==== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Developer Portfolio</title>
@@ -12,6 +13,7 @@
 </head>
 <body class="text-white font-sans antialiased selection:bg-purple-500 selection:text-white">
 
+    <!-- ==== HEADER NAVIGATION LINKS ==== -->
     <nav class="max-w-6xl mx-auto px-6 py-6 flex flex-wrap gap-4 justify-between items-center tracking-widest text-xs font-semibold uppercase text-gray-400">
         <div class="flex gap-6">
             <a href="#" class="hover:text-white transition">ABOUT</a>
@@ -23,6 +25,7 @@
     </nav>
 
 
+    <!-- ==== HERO INTRO BANNER ==== -->
     <section class="max-w-6xl mx-auto px-6 py-20 min-h-[80vh] flex flex-col justify-center relative">
         <div class="z-10 max-w-4xl">
             <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-gray-300 leading-none uppercase mb-6">
@@ -39,6 +42,7 @@
     </section>
 
 
+    <!-- ==== BIOGRAPHY TEXT SECTION ==== -->
     <section class="bg-[#0f0f11] border-y border-zinc-900 py-24">
         <div class="max-w-3xl mx-auto px-6 text-center">
             <h2 class="text-xs font-bold tracking-[0.3em] uppercase text-purple-500 mb-6">ABOUT ME</h2>
@@ -49,6 +53,7 @@
     </section>
 
 
+    <!-- ==== ONLINE RESUME BOX ==== -->
     <section id="resume" class="max-w-4xl mx-auto px-6 py-16 text-center">
         <div class="border border-zinc-900 bg-[#121214]/40 rounded-2xl p-8 max-w-2xl mx-auto">
             <h3 class="text-xs font-bold tracking-widest uppercase text-zinc-500 mb-3">Professional Credentials</h3>
@@ -63,6 +68,7 @@
     </section>
 
 
+    <!-- ==== SERVICES AND SKILLS ROW ==== -->
     <section id="services" class="max-w-4xl mx-auto px-6 py-24">
         <h2 class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">EXPERTISE</h2>
         <div class="space-y-12">
@@ -91,10 +97,12 @@
     </section>
 
 
+    <!-- ==== DEVELOPMENT PROJECTS CONTAINER ==== -->
     <section id="projects" class="max-w-5xl mx-auto px-6 py-24 border-t border-zinc-900">
         <h2 class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">PROJECTS</h2>
         <div class="grid md:grid-cols-2 gap-8">
             
+            <!-- ==== PROJECT 1: GPT-2 TUNING ==== -->
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -111,6 +119,7 @@
                 </div>
             </div>
 
+            <!-- ==== PROJECT 2: PIX2PIX CGAN ==== -->
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -127,6 +136,7 @@
                 </div>
             </div>
 
+            <!-- ==== PROJECT 3: DEEP IMAGE GENERATION ==== -->
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -143,6 +153,7 @@
                 </div>
             </div>
 
+            <!-- ==== PROJECT 4: MARKOV CHAIN ==== -->
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -159,6 +170,7 @@
                 </div>
             </div>
 
+            <!-- ==== PROJECT 5: SOCIAL MEDIA DASHBOARD ==== -->
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -175,10 +187,11 @@
                 </div>
             </div>
 
+            <!-- ==== PROJECT 6: RELATIONAL DATA MODELS ==== -->
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-bold text-purple-400 tracking-widest uppercase">06 / Database Management</span>
+                        <span class="text-xs font-bold text-purple-400 tracking-wider uppercase text-purple-400">06 / Database Management</span>
                         <span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">CodeAlpha</span>
                     </div>
                     <h3 class="text-xl font-bold uppercase tracking-wide mb-3">Relational Database & Data Models</h3>
@@ -191,6 +204,7 @@
                 </div>
             </div>
 
+            <!-- ==== PROJECT 7: PROJECT MANAGEMENT TOOL ==== -->
             <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-start mb-4">
@@ -211,10 +225,31 @@
     </section>
 
 
+    <!-- ==== ALL CERTIFICATIONS SECTION ==== -->
     <section id="certifications" class="max-w-6xl mx-auto px-6 py-24 border-t border-zinc-900">
         <h2 class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">CERTIFICATIONS</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
+            <!-- ==== CERTIFICATE 1: AWS ACADEMY NATURAL LANGUAGE PROCESSING ==== -->
+            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-xs text-amber-500">AWS</div>
+                        <div>
+                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">AWS Academy</span>
+                            <span class="text-[10px] text-zinc-500 block">June 27, 2026</span>
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Machine Learning for Natural Language Processing</h3>
+                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-orange-500/10 text-orange-400 inline-block">NLP</span>
+                </div>
+                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]">
+                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_aws-academy-graduate-machine-learning-for-share-7476713033981943809-xM47/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ LinkedIn</a>
+                    <a href="https://drive.google.com/file/d/1KxjRfv55y7HCYcAOt0mVfChkMKrVFqg4/view?usp=drive_link" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ Drive Document</a>
+                </div>
+            </div>
+
+            <!-- ==== CERTIFICATE 2: CISCO LINUX UNHATCHED ==== -->
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -224,14 +259,16 @@
                             <span class="text-[10px] text-zinc-500 block">June 26, 2026</span>
                         </div>
                     </div>
-                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">Linux Unhatched</h3>
+                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Linux Unhatched</h3>
+                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">Linux</span>
                 </div>
-                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
-                    <span class="text-[11px] text-zinc-500">Statement of Achievement</span>
-                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400">Linux</span>
+                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]">
+                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_linux-unhatched-was-issued-by-cisco-to-jason-share-7476288501869617153-2_lY/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ LinkedIn</a>
+                    <a href="https://drive.google.com/file/d/1T3swuI1S48Clla0CJwe6RMRyyGij8_n_/view?usp=drive_link" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ Drive Document</a>
                 </div>
             </div>
 
+            <!-- ==== CERTIFICATE 3: PRODIGY GENERATIVE AI INTERNSHIP ==== -->
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -241,14 +278,16 @@
                             <span class="text-[10px] text-zinc-500 block">May - June 2026</span>
                         </div>
                     </div>
-                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">Generative AI Internship</h3>
+                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Generative AI Internship</h3>
+                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 inline-block">Internship</span>
                 </div>
-                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
-                    <span class="text-[11px] text-zinc-500">CIN: PIT/MAY26/11342</span>
-                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">Internship</span>
+                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]">
+                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_certificate-of-completion-and-letter-of-recommendation-ugcPost-7472418619264708608-QsNM/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ LinkedIn</a>
+                    <a href="https://drive.google.com/file/d/1eD1BDrHP3frw-2vU5ewv0Q5vw1DO3Zkz/view?usp=drive_link" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ Drive Document</a>
                 </div>
             </div>
 
+            <!-- ==== CERTIFICATE 4: ORACLE OCI CLOUD AI FOUNDATIONS ==== -->
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -258,14 +297,16 @@
                             <span class="text-[10px] text-zinc-500 block">April 06, 2026</span>
                         </div>
                     </div>
-                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">OCI AI Foundations Associate</h3>
+                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">OCI AI Foundations Associate</h3>
+                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">AI</span>
                 </div>
-                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
-                    <span class="text-[11px] text-zinc-500">ID: 103443281OCI25AICFA</span>
-                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400">AI</span>
+                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]">
+                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_oracle-cloud-infrastructure-2025-certified-activity-7446999160043610112-ix-m?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ LinkedIn</a>
+                    <a href="https://drive.google.com/file/d/1ED9WEk_JhPO15bQbcwxJpa3x4Fkwc2bg/view?usp=drive_link" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ Drive Document</a>
                 </div>
             </div>
 
+            <!-- ==== CERTIFICATE 5: INFOSYS SPRINGBOARD DSA PART 1 ==== -->
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -277,12 +318,13 @@
                     </div>
                     <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">DSA using Python - Part 1</h3>
                 </div>
-                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
-                    <span class="text-[11px] text-zinc-500">Course Completion</span>
+                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex flex-wrap justify-between items-center gap-2">
                     <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400">DSA</span>
+                    <a href="#" target="_blank" class="text-[11px] text-zinc-400 hover:text-purple-400 font-medium transition">→ Verify Credential</a>
                 </div>
             </div>
 
+            <!-- ==== CERTIFICATE 6: NPTEL PYTHON FOR DATA SCIENCE ==== -->
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -294,12 +336,13 @@
                     </div>
                     <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">Python for Data Science</h3>
                 </div>
-                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
-                    <span class="text-[11px] text-zinc-500">Score: 60%</span>
+                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex flex-wrap justify-between items-center gap-2">
                     <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-amber-500/10 text-amber-400">Elite</span>
+                    <a href="#" target="_blank" class="text-[11px] text-zinc-400 hover:text-purple-400 font-medium transition">→ Verify Credential</a>
                 </div>
             </div>
 
+            <!-- ==== CERTIFICATE 7: INFOSYS PROGRAMMING FUNDAMENTALS ==== -->
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -311,12 +354,13 @@
                     </div>
                     <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">Programming Fundamentals</h3>
                 </div>
-                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
-                    <span class="text-[11px] text-zinc-500">Python - Part 1</span>
+                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex flex-wrap justify-between items-center gap-2">
                     <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400">Python</span>
+                    <a href="#" target="_blank" class="text-[11px] text-zinc-400 hover:text-purple-400 font-medium transition">→ Verify Credential</a>
                 </div>
             </div>
 
+            <!-- ==== CERTIFICATE 8: SWAYAM BHU COMPUTING FUNDAMENTALS ==== -->
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -328,12 +372,13 @@
                     </div>
                     <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">Fundamentals of Computing</h3>
                 </div>
-                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
-                    <span class="text-[11px] text-zinc-500">Score: 83%</span>
+                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex flex-wrap justify-between items-center gap-2">
                     <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400">Core CS</span>
+                    <a href="#" target="_blank" class="text-[11px] text-zinc-400 hover:text-purple-400 font-medium transition">→ Verify Credential</a>
                 </div>
             </div>
 
+            <!-- ==== CERTIFICATE 9: SIMPLILEARN SKILLUP DSA ==== -->
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -345,12 +390,13 @@
                     </div>
                     <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">DSA in Python</h3>
                 </div>
-                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
-                    <span class="text-[11px] text-zinc-500">Code: 8922817</span>
+                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex flex-wrap justify-between items-center gap-2">
                     <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400">DSA</span>
+                    <a href="#" target="_blank" class="text-[11px] text-zinc-400 hover:text-purple-400 font-medium transition">→ Verify Credential</a>
                 </div>
             </div>
 
+            <!-- ==== CERTIFICATE 10: SIMPLILEARN SKILLUP HTML ==== -->
             <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
@@ -362,9 +408,9 @@
                     </div>
                     <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug">Introduction to HTML</h3>
                 </div>
-                <div class="mt-4 pt-4 border-t border-zinc-800/50 flex justify-between items-center">
-                    <span class="text-[11px] text-zinc-500">Code: 8917592</span>
+                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex flex-wrap justify-between items-center gap-2">
                     <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400">Web</span>
+                    <a href="#" target="_blank" class="text-[11px] text-zinc-400 hover:text-purple-400 font-medium transition">→ Verify Credential</a>
                 </div>
             </div>
 
@@ -372,6 +418,7 @@
     </section>
 
 
+    <!-- ==== LEETCODE LINKS BANNER ==== -->
     <section id="leetcode" class="max-w-5xl mx-auto px-6 py-24 border-t border-zinc-900">
         <div class="bg-[#121214] border border-zinc-900 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
             <div class="max-w-xl z-10">
@@ -393,6 +440,7 @@
     </section>
 
 
+    <!-- ==== CONTACT INFORMATION FOOTER ==== -->
     <section id="contact" class="max-w-4xl mx-auto px-6 py-32 text-center border-t border-zinc-900">
         <h2 class="text-5xl font-black tracking-tight uppercase mb-4 text-zinc-200">LET'S WORK</h2>
         <p class="text-zinc-500 text-xs tracking-widest uppercase max-w-sm mx-auto mb-10 leading-relaxed">
