@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jasonmyportfolio.netlify.app/sitemap.xml

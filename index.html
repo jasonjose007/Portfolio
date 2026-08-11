@@ -1,500 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ==== GLOBAL SETTINGS AND TAILWIND STYLES ==== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Portfolio</title>
+    <title>Jason J | Software Engineer - Portfolio</title>
+    <meta name="description" content="Jason J - Software Engineer specializing in systems architecture, database optimization, AI integration, and full-stack development.">
+    <meta name="author" content="Jason J">
+    <meta name="keywords" content="software engineer, full stack developer, AI, machine learning, database optimization, backend developer, portfolio">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jasonmyportfolio.netlify.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jason J | Software Engineer">
+    <meta property="og:description" content="Software Engineer specializing in systems architecture, database optimization, and AI integration.">
+    <meta property="og:url" content="https://jasonmyportfolio.netlify.app/">
+    <meta property="og:site_name" content="Jason J Portfolio">
+    <meta property="og:image" content="https://jasonmyportfolio.netlify.app/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jason J | Software Engineer">
+    <meta name="twitter:description" content="Software Engineer specializing in systems architecture, database optimization, and AI integration.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Jason J","url":"https://jasonmyportfolio.netlify.app/","jobTitle":"Software Engineer","sameAs":["https://github.com/jasonjose007","https://www.linkedin.com/in/jason-jose-3b829936b/"],"knowsAbout":["Software Engineering","Database Optimization","AI/ML","Backend Development","Full Stack Development"]}</script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:"class",theme:{extend:{fontFamily:{sans:["Inter","system-ui","sans-serif"]}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #0B0B0C; }
-        .gradient-btn { background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); }
+        body{background-color:#0B0B0C;scroll-behavior:smooth}
+        .gradient-btn{background:linear-gradient(135deg,#a855f7 0%,#ec4899 100%)}
+        .gradient-text{background:linear-gradient(135deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .fade-up{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+        .fade-up.visible{opacity:1;transform:translateY(0)}
+        a:focus-visible,button:focus-visible{outline:2px solid #a855f7;outline-offset:2px;border-radius:4px}
+        ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#0B0B0C}::-webkit-scrollbar-thumb{background:#27272a;border-radius:4px}::-webkit-scrollbar-thumb:hover{background:#3f3f46}
+        .project-card{transition:transform .3s ease,border-color .3s ease}.project-card:hover{transform:translateY(-4px);border-color:#3f3f46}
+        .tech-tag{font-size:9px;padding:2px 8px;border-radius:9999px;border:1px solid #27272a;color:#a1a1aa;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
     </style>
 </head>
 <body class="text-white font-sans antialiased selection:bg-purple-500 selection:text-white">
-
-    <!-- ==== HEADER NAVIGATION LINKS ==== -->
-    <nav class="max-w-6xl mx-auto px-6 py-6 flex flex-wrap gap-4 justify-between items-center tracking-widest text-xs font-semibold uppercase text-gray-400">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-purple-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm">Skip to main content</a>
+    <nav role="navigation" aria-label="Main navigation" class="max-w-6xl mx-auto px-6 py-6 flex flex-wrap gap-4 justify-between items-center tracking-widest text-xs font-semibold uppercase text-gray-400">
         <div class="flex gap-6">
-            <a href="#" class="hover:text-white transition">ABOUT</a>
-            <a href="#services" class="hover:text-white transition">SKILLS</a>
-            <a href="#projects" class="hover:text-white transition">PROJECTS</a>
-            <a href="#certifications" class="hover:text-white transition text-purple-400">CERTIFICATIONS</a>
+            <a href="#main-content" class="hover:text-white transition">About</a>
+            <a href="#services" class="hover:text-white transition">Skills</a>
+            <a href="#projects" class="hover:text-white transition">Projects</a>
+            <a href="#certifications" class="hover:text-white transition text-purple-400">Certifications</a>
         </div>
-        <a href="#contact" class="hover:text-white transition">CONTACT</a>
+        <div class="flex items-center gap-4">
+            <a href="#contact" class="hover:text-white transition">Contact</a>
+            <button id="theme-toggle" aria-label="Toggle dark/light mode" class="w-9 h-9 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-600 transition">
+                <svg id="sun-icon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <svg id="moon-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+            </button>
+        </div>
     </nav>
-
-
-    <!-- ==== HERO INTRO BANNER ==== -->
+    <main id="main-content">
     <section class="max-w-6xl mx-auto px-6 py-20 min-h-[80vh] flex flex-col justify-center relative">
-        <div class="z-10 max-w-4xl">
-            <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-gray-300 leading-none uppercase mb-6">
-                HI, I'M <span class="text-white">Jason J</span>
-            </h1>
-            <p class="text-gray-400 tracking-wider text-sm md:text-base max-w-md uppercase mb-8 leading-relaxed">
-                A Software Engineer driven by architecture design, database optimization, and end-to-end full stack execution.
-            </p>
-            <a href="#contact" class="gradient-btn px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest inline-block hover:opacity-90 transition shadow-lg shadow-purple-500/20">
-                Contact Me
-            </a>
+        <div class="z-10 max-w-4xl fade-up">
+            <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-gray-300 leading-none uppercase mb-6">HI, I'M <span class="gradient-text">Jason J</span></h1>
+            <p class="text-gray-400 tracking-wider text-sm md:text-base max-w-lg uppercase mb-8 leading-relaxed">A Software Engineer driven by architecture design, database optimization, and end-to-end full stack execution.</p>
+            <div class="flex flex-wrap gap-4">
+                <a href="#contact" class="gradient-btn px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest inline-block hover:opacity-90 transition shadow-lg shadow-purple-500/20">Contact Me</a>
+                <a href="/Jason_J_Resume.pdf" download class="px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest inline-block border border-zinc-700 hover:border-purple-500 text-zinc-300 hover:text-white transition">Download Resume</a>
+            </div>
         </div>
-        <div class="absolute right-10 top-20 w-72 h-72 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute right-10 top-20 w-72 h-72 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+        <div class="absolute left-20 bottom-10 w-48 h-48 bg-pink-600/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
     </section>
-
-
-    <!-- ==== BIOGRAPHY TEXT SECTION ==== -->
-    <section class="bg-[#0f0f11] border-y border-zinc-900 py-24">
-        <div class="max-w-3xl mx-auto px-6 text-center">
-            <h2 class="text-xs font-bold tracking-[0.3em] uppercase text-purple-500 mb-6">ABOUT ME</h2>
-            <p class="text-xl md:text-2xl font-light text-zinc-300 leading-relaxed">
-                Software Developer passionate about building robust systems, optimized databases, and clean scalable frontends. Experienced in handling both comprehensive system applications and modern continuous integration pipelines.
-            </p>
+    <section class="bg-[#0f0f11] border-y border-zinc-900 py-24" aria-labelledby="about-heading">
+        <div class="max-w-3xl mx-auto px-6 text-center fade-up">
+            <h2 id="about-heading" class="text-xs font-bold tracking-[0.3em] uppercase text-purple-500 mb-6">About Me</h2>
+            <p class="text-xl md:text-2xl font-light text-zinc-300 leading-relaxed mb-6">I build systems that handle real load — optimized databases, reliable backends, and frontends that don't get in the way. I care about writing code that's maintainable after the deadline passes.</p>
+            <p class="text-sm text-zinc-500 leading-relaxed max-w-xl mx-auto">Currently focused on AI/ML pipelines and cloud-native architectures. I enjoy turning complex problems into clean, performant solutions — whether that's shaving milliseconds off a query or designing a system from scratch.</p>
         </div>
     </section>
-
-
-    <!-- ==== ONLINE RESUME BOX ==== -->
-    <section id="resume" class="max-w-4xl mx-auto px-6 py-16 text-center">
+    <section id="resume" class="max-w-4xl mx-auto px-6 py-16 text-center fade-up">
         <div class="border border-zinc-900 bg-[#121214]/40 rounded-2xl p-8 max-w-2xl mx-auto">
             <h3 class="text-xs font-bold tracking-widest uppercase text-zinc-500 mb-3">Professional Credentials</h3>
             <h4 class="text-xl font-bold uppercase tracking-wide text-zinc-200 mb-4">Curriculum Vitae</h4>
-            <p class="text-zinc-400 text-xs md:text-sm leading-relaxed max-w-md mx-auto mb-6">
-                A comprehensive overview detailing technical proficiencies, engineering work history, architectural project milestones, and formal certifications. 
-            </p>
-            <a href="https://rxresu.me/jasonjose006/my-resume" target="_blank" class="text-xs font-bold tracking-widest uppercase border border-zinc-800 hover:border-purple-500 text-zinc-400 hover:text-white bg-[#0B0B0C] px-6 py-3.5 rounded-full inline-block transition">
-                → View Online Resume
-            </a>
+            <p class="text-zinc-400 text-xs md:text-sm leading-relaxed max-w-md mx-auto mb-6">Technical proficiencies, engineering work history, project milestones, and certifications — all in one place.</p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="https://rxresu.me/jasonjose006/my-resume" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-widest uppercase border border-zinc-800 hover:border-purple-500 text-zinc-400 hover:text-white bg-[#0B0B0C] px-6 py-3.5 rounded-full inline-block transition">View Online Resume</a>
+                <a href="/Jason_J_Resume.pdf" download class="text-xs font-bold tracking-widest uppercase border border-purple-500/30 hover:border-purple-500 text-purple-400 hover:text-white bg-purple-500/5 px-6 py-3.5 rounded-full inline-block transition">Download PDF</a>
+            </div>
         </div>
     </section>
-
-
-    <!-- ==== SERVICES AND SKILLS ROW ==== -->
-    <section id="services" class="max-w-4xl mx-auto px-6 py-24">
-        <h2 class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">EXPERTISE</h2>
+    <section id="services" class="max-w-4xl mx-auto px-6 py-24 fade-up" aria-labelledby="expertise-heading">
+        <h2 id="expertise-heading" class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">Expertise</h2>
         <div class="space-y-12">
             <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
-                <span class="text-2xl font-black text-purple-500">01</span>
-                <div>
-                    <h3 class="text-lg font-bold uppercase tracking-wider mb-2">Systems & AI Integration</h3>
-                    <p class="text-zinc-400 text-sm leading-relaxed">Configuring structural pipelines, advanced processing models, and deep architecture workflows.</p>
-                </div>
+                <span class="text-2xl font-black text-purple-500" aria-hidden="true">01</span>
+                <div><h3 class="text-lg font-bold uppercase tracking-wider mb-2">Systems & AI Integration</h3><p class="text-zinc-400 text-sm leading-relaxed">Building ML pipelines end-to-end — from data ingestion to model serving. Experience with GPT fine-tuning, GANs, and production deployment workflows.</p></div>
             </div>
             <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
-                <span class="text-2xl font-black text-purple-500">02</span>
-                <div>
-                    <h3 class="text-lg font-bold uppercase tracking-wider mb-2">Backend & Databases</h3>
-                    <p class="text-zinc-400 text-sm leading-relaxed">Designing optimized web servers, secure routing logic, and streamlined query structures.</p>
-                </div>
+                <span class="text-2xl font-black text-purple-500" aria-hidden="true">02</span>
+                <div><h3 class="text-lg font-bold uppercase tracking-wider mb-2">Backend & Databases</h3><p class="text-zinc-400 text-sm leading-relaxed">Designing APIs, optimizing query performance, and architecting data models that scale. Node.js, Express, PostgreSQL, and real-time systems with Socket.io.</p></div>
             </div>
             <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
-                <span class="text-2xl font-black text-purple-500">03</span>
-                <div>
-                    <h3 class="text-lg font-bold uppercase tracking-wider mb-2">Pipeline Automation</h3>
-                    <p class="text-zinc-400 text-sm leading-relaxed">Leveraging git workflows and edge platforms to link services with modern automated CI/CD deployments.</p>
-                </div>
+                <span class="text-2xl font-black text-purple-500" aria-hidden="true">03</span>
+                <div><h3 class="text-lg font-bold uppercase tracking-wider mb-2">Pipeline Automation</h3><p class="text-zinc-400 text-sm leading-relaxed">Automating deployments with CI/CD, containerization, and edge platforms. Git workflows that keep teams shipping without breaking production.</p></div>
             </div>
         </div>
     </section>
-
-
-    <!-- ==== DEVELOPMENT PROJECTS CONTAINER ==== -->
-    <section id="projects" class="max-w-5xl mx-auto px-6 py-24 border-t border-zinc-900">
-        <h2 class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">PROJECTS</h2>
+    <section id="projects" class="max-w-5xl mx-auto px-6 py-24 border-t border-zinc-900" aria-labelledby="projects-heading">
+        <h2 id="projects-heading" class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">Projects</h2>
         <div class="grid md:grid-cols-2 gap-8">
-            
-            <!-- ==== PROJECT 1: GPT-2 TUNING ==== -->
-            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-bold text-purple-400 tracking-widest uppercase">01 / LLM</span>
-                        <span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Prodigy InfoTech</span>
-                    </div>
-                    <h3 class="text-xl font-bold uppercase tracking-wide mb-3">GPT-2 Custom Fine-Tuning</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed mb-6">
-                        Fine-tuned OpenAI's GPT-2 architecture on a custom text dataset to generate contextually aware prose. Managed loss convergence and tokenization parameters.
-                    </p>
-                </div>
-                <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
-                    <a href="https://github.com/jasonjose007/PRODIGY_GA_01" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
-                </div>
-            </div>
-
-            <!-- ==== PROJECT 2: PIX2PIX CGAN ==== -->
-            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-bold text-purple-400 tracking-widest uppercase">02 / Computer Vision</span>
-                        <span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Prodigy InfoTech</span>
-                    </div>
-                    <h3 class="text-xl font-bold uppercase tracking-wide mb-3">Pix2Pix cGAN Translation</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed mb-6">
-                        Implemented a Conditional Generative Adversarial Network for paired image-to-image translation, optimizing adversarial loss dynamics between generator and discriminator.
-                    </p>
-                </div>
-                <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
-                    <a href="https://github.com/jasonjose007/PRODIGY_GA_02" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
-                </div>
-            </div>
-
-            <!-- ==== PROJECT 3: DEEP IMAGE GENERATION ==== -->
-            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-bold text-purple-400 tracking-widest uppercase">03 / Deep Learning</span>
-                        <span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Prodigy InfoTech</span>
-                    </div>
-                    <h3 class="text-xl font-bold uppercase tracking-wide mb-3">Deep Image Generation</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed mb-6">
-                        Developed an image synthesis pipeline navigating deep latent spaces to visually render high-fidelity, completely novel synthesized images from learned weights.
-                    </p>
-                </div>
-                <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
-                    <a href="https://github.com/jasonjose007/PRODIGY_GA_03" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
-                </div>
-            </div>
-
-            <!-- ==== PROJECT 4: MARKOV CHAIN ==== -->
-            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-bold text-purple-400 tracking-widest uppercase">04 / Probabilistic NLP</span>
-                        <span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Prodigy InfoTech</span>
-                    </div>
-                    <h3 class="text-xl font-bold uppercase tracking-wide mb-3">Markov Chain Synthesis</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed mb-6">
-                        Built a linguistic probability matrix model mapping word sequence state-transitions to generate sentences based on custom text corpus frequencies.
-                    </p>
-                </div>
-                <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
-                    <a href="https://github.com/jasonjose007/PRODIGY_GA_04" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
-                </div>
-            </div>
-
-            <!-- ==== PROJECT 5: SOCIAL MEDIA DASHBOARD ==== -->
-            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-bold text-purple-400 tracking-widest uppercase">05 / Back-End Architecture</span>
-                        <span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">CodeAlpha</span>
-                    </div>
-                    <h3 class="text-xl font-bold uppercase tracking-wide mb-3">Social Media Platform Dashboard</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed mb-6">
-                        Designed and implemented a back-end structure for a social media dashboard. Engineered dynamic data management pipelines to handle content distribution, statistics tracking, and streamlined dashboard metrics.
-                    </p>
-                </div>
-                <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
-                    <a href="https://github.com/jasonjose007/CodeAlpha_Simple_E-commerce_Store" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
-                </div>
-            </div>
-
-            <!-- ==== PROJECT 6: RELATIONAL DATA MODELS ==== -->
-            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-bold text-purple-400 tracking-wider text-purple-400">06 / Database Management</span>
-                        <span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">CodeAlpha</span>
-                    </div>
-                    <h3 class="text-xl font-bold uppercase tracking-wide mb-3">Relational Database & Data Models</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed mb-6">
-                        Architected optimized database models using Node.js and Express to securely read and manipulate JSON/relational datasets. Focused on minimizing query latencies and establishing scalable table structures.
-                    </p>
-                </div>
-                <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
-                    <a href="https://github.com/jasonjose007/CodeAlpha_SocialMediaApp" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
-                </div>
-            </div>
-
-            <!-- ==== PROJECT 7: PROJECT MANAGEMENT TOOL ==== -->
-            <div class="bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-bold text-purple-400 tracking-widest uppercase">07 / Real-Time Collaboration</span>
-                        <span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">CodeAlpha</span>
-                    </div>
-                    <h3 class="text-xl font-bold uppercase tracking-wide mb-3">Project Management Tool</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed mb-6">
-                        Architected a Trello/Asana-style collaborative platform with task assignments, group projects, and threads. Built real-time notification streams leveraging Socket.io alongside an optimized JSON database file architecture.
-                    </p>
-                </div>
-                <div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4">
-                    <a href="https://github.com/jasonjose007/CodeAlpha_Project-Management-Tool" target="_blank" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">→ View Code</a>
-                </div>
-            </div>
-
-        </div>
+<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">01 / LLM</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Prodigy InfoTech</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">GPT-2 Custom Fine-Tuning</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Fine-tuned GPT-2 on a custom text corpus to generate domain-specific prose. Managed tokenization, loss convergence, and hyperparameter tuning to achieve coherent long-form output.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Python</span><span class="tech-tag">PyTorch</span><span class="tech-tag">Transformers</span><span class="tech-tag">NLP</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://github.com/jasonjose007/PRODIGY_GA_01" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">View Code</a></div></div>
+<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">02 / Computer Vision</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Prodigy InfoTech</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Pix2Pix cGAN Translation</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Built a Conditional GAN for paired image-to-image translation. Optimized adversarial loss between generator and discriminator to produce photorealistic output from sketch inputs.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Python</span><span class="tech-tag">TensorFlow</span><span class="tech-tag">GANs</span><span class="tech-tag">OpenCV</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://github.com/jasonjose007/PRODIGY_GA_02" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">View Code</a></div></div>
+<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">03 / Deep Learning</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Prodigy InfoTech</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Deep Image Generation</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Developed a generative image pipeline that synthesizes novel high-fidelity images by navigating deep latent spaces. Trained on custom datasets with progressive resolution scaling.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Python</span><span class="tech-tag">PyTorch</span><span class="tech-tag">DCGAN</span><span class="tech-tag">CUDA</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://github.com/jasonjose007/PRODIGY_GA_03" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">View Code</a></div></div>
+<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">04 / Probabilistic NLP</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Prodigy InfoTech</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Markov Chain Text Synthesis</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Built a probabilistic text generator using Markov chains that maps word transition frequencies from a custom corpus to produce contextually plausible sentences without neural networks.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Python</span><span class="tech-tag">NLP</span><span class="tech-tag">Probability</span><span class="tech-tag">Statistics</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://github.com/jasonjose007/PRODIGY_GA_04" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">View Code</a></div></div>
+<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">05 / Back-End</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">CodeAlpha</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Social Media Platform Dashboard</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Engineered a backend for a social media dashboard with content distribution pipelines, real-time analytics tracking, and a RESTful API serving dynamic metrics to the frontend.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Node.js</span><span class="tech-tag">Express</span><span class="tech-tag">REST API</span><span class="tech-tag">MongoDB</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://github.com/jasonjose007/CodeAlpha_Simple_E-commerce_Store" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">View Code</a></div></div>
+<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">06 / Database</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">CodeAlpha</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Relational Database & Data Models</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Architected optimized data models with Node.js and Express for low-latency CRUD operations. Focused on query optimization, indexing strategies, and scalable table structures.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Node.js</span><span class="tech-tag">Express</span><span class="tech-tag">SQL</span><span class="tech-tag">JSON</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://github.com/jasonjose007/CodeAlpha_SocialMediaApp" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">View Code</a></div></div>
+<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">07 / Real-Time</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">CodeAlpha</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Project Management Tool</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Built a Trello-style collaborative platform with task boards, team assignments, and real-time notifications via Socket.io. Supports concurrent users with live state sync.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Node.js</span><span class="tech-tag">Socket.io</span><span class="tech-tag">Real-time</span><span class="tech-tag">WebSockets</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://github.com/jasonjose007/CodeAlpha_Project-Management-Tool" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">View Code</a></div></div>
+<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">08 / WebRTC</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">CodeAlpha</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Video Collaboration App</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Real-time video collaboration platform with peer-to-peer connections, screen sharing, and in-call messaging. Built with WebRTC for low-latency media streaming.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">WebRTC</span><span class="tech-tag">Node.js</span><span class="tech-tag">Socket.io</span><span class="tech-tag">P2P</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://github.com/jasonjose007/CodeAlpha_video-collab-app" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">View Code</a></div></div>
+</div>
     </section>
-
-
-    <!-- ==== ALL CERTIFICATIONS SECTION ==== -->
-    <section id="certifications" class="max-w-6xl mx-auto px-6 py-24 border-t border-zinc-900">
-        <h2 class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">CERTIFICATIONS</h2>
+    <section id="certifications" class="max-w-6xl mx-auto px-6 py-24 border-t border-zinc-900" aria-labelledby="cert-heading">
+        <h2 id="cert-heading" class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200 fade-up">Certifications</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <!-- ==== CERTIFICATE 1: AWS ACADEMY NATURAL LANGUAGE PROCESSING ==== -->
-            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
-                <div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-xs text-amber-500">AWS</div>
-                        <div>
-                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">AWS Academy</span>
-                            <span class="text-[10px] text-zinc-500 block">June 27, 2026</span>
-                        </div>
-                    </div>
-                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Machine Learning for Natural Language Processing</h3>
-                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-orange-500/10 text-orange-400 inline-block">NLP</span>
-                </div>
-                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]">
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_aws-academy-graduate-machine-learning-for-share-7476713033981943809-xM47/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ LinkedIn</a>
-                    <a href="https://drive.google.com/file/d/1KxjRfv55y7HCYcAOt0mVfChkMKrVFqg4/view?usp=drive_link" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ Drive Document</a>
-                </div>
-            </div>
-
-            <!-- ==== CERTIFICATE 2: NEW!! AWS ACADEMY CLOUD FOUNDATIONS ==== -->
-            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
-                <div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-xs text-amber-500">AWS</div>
-                        <div>
-                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">AWS Academy</span>
-                            <span class="text-[10px] text-zinc-500 block">June 2026</span>
-                        </div>
-                    </div>
-                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">AWS Academy Cloud Foundations</h3>
-                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-orange-500/10 text-orange-400 inline-block">Cloud</span>
-                </div>
-                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]">
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_aws-academy-graduate-cloud-foundations-share-7477117194607161344-TUqH/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ LinkedIn</a>
-                    <a href="https://drive.google.com/file/d/1lCFrMjtqkr5TKPB0hB0cJjalQpUGSWXM/view?usp=drive_link" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ Drive Document</a>
-                </div>
-            </div>
-
-            <!-- ==== CERTIFICATE 3: CISCO LINUX UNHATCHED ==== -->
-            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
-                <div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-xs text-sky-400">CISCO</div>
-                        <div>
-                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Cisco Academy & NDG</span>
-                            <span class="text-[10px] text-zinc-500 block">June 26, 2026</span>
-                        </div>
-                    </div>
-                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Linux Unhatched</h3>
-                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">Linux</span>
-                </div>
-                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]">
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_linux-unhatched-was-issued-by-cisco-to-jason-share-7476288501869617153-2_lY/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ LinkedIn</a>
-                    <a href="https://drive.google.com/file/d/1T3swuI1S48Clla0CJwe6RMRyyGij8_n_/view?usp=drive_link" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ Drive Document</a>
-                </div>
-            </div>
-
-            <!-- ==== CERTIFICATE 4: PRODIGY GENERATIVE AI INTERNSHIP ==== -->
-            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
-                <div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[10px] text-blue-500">PRODIGY</div>
-                        <div>
-                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Prodigy InfoTech</span>
-                            <span class="text-[10px] text-zinc-500 block">May - June 2026</span>
-                        </div>
-                    </div>
-                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Generative AI Internship</h3>
-                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 inline-block">Internship</span>
-                </div>
-                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]">
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_certificate-of-completion-and-letter-of-recommendation-ugcPost-7472418619264708608-QsNM/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ LinkedIn</a>
-                    <a href="https://drive.google.com/file/d/1eD1BDrHP3frw-2vU5ewv0Q5vw1DO3Zkz/view?usp=drive_link" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ Drive Document</a>
-                </div>
-            </div>
-
-            <!-- ==== CERTIFICATE 5: ORACLE OCI CLOUD AI FOUNDATIONS ==== -->
-            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
-                <div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-xs text-red-500">ORACLE</div>
-                        <div>
-                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Oracle University</span>
-                            <span class="text-[10px] text-zinc-500 block">April 06, 2026</span>
-                        </div>
-                    </div>
-                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">OCI AI Foundations Associate</h3>
-                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">AI</span>
-                </div>
-                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]">
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_oracle-cloud-infrastructure-2025-certified-activity-7446999160043610112-ix-m?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ LinkedIn</a>
-                    <a href="https://drive.google.com/file/d/1ED9WEk_JhPO15bQbcwxJpa3x4Fkwc2bg/view?usp=drive_link" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ Drive Document</a>
-                </div>
-            </div>
-
-            <!-- ==== CERTIFICATE 6: INFOSYS SPRINGBOARD DSA PART 1 ==== -->
-            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
-                <div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <img class="w-12 h-12 object-contain bg-zinc-900 border border-zinc-800 rounded-xl p-1" src="https://www.infosys.com/content/dam/infosys-web/en/global-resource/media-resources/infosys-logo-jpeg.jpg" alt="Infosys Logo">
-                        <div>
-                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Infosys Springboard</span>
-                            <span class="text-[10px] text-zinc-500 block">Feb 22, 2026</span>
-                        </div>
-                    </div>
-                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">DSA using Python - Part 1</h3>
-                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">DSA</span>
-                </div>
-                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]">
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_data-structures-and-algorithms-using-python-activity-7431724570988015616-SD4m?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ LinkedIn</a>
-                    <a href="https://drive.google.com/file/d/1AnbZTLlWvNnEE-Ax63OA9JLIMdaB97NG/view?usp=drive_link" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ Drive Document</a>
-                </div>
-            </div>
-
-            <!-- ==== CERTIFICATE 7: NPTEL PYTHON FOR DATA SCIENCE ==== -->
-            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
-                <div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-xs text-orange-400">NPTEL</div>
-                        <div>
-                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">NPTEL / IIT Madras</span>
-                            <span class="text-[10px] text-zinc-500 block">Jan - Feb 2026</span>
-                        </div>
-                    </div>
-                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Python for Data Science</h3>
-                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-amber-500/10 text-amber-400 inline-block">Elite</span>
-                </div>
-                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-end text-[11px]">
-                    <a href="https://drive.google.com/file/d/1cfngqAMFwvEMy9Ya_hL09dFzfT2EoN7o/view?usp=drive_link" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ Drive Document</a>
-                </div>
-            </div>
-
-            <!-- ==== CERTIFICATE 8: INFOSYS PROGRAMMING FUNDAMENTALS ==== -->
-            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
-                <div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <img class="w-12 h-12 object-contain bg-zinc-900 border border-zinc-800 rounded-xl p-1" src="https://www.infosys.com/content/dam/infosys-web/en/global-resource/media-resources/infosys-logo-jpeg.jpg" alt="Infosys Logo">
-                        <div>
-                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Infosys Springboard</span>
-                            <span class="text-[10px] text-zinc-500 block">Nov 17, 2025</span>
-                        </div>
-                    </div>
-                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Programming Fundamentals</h3>
-                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">Python</span>
-                </div>
-                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]">
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_programming-fundamentals-using-python-activity-7405860352518696960-STmY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ LinkedIn</a>
-                    <a href="https://drive.google.com/file/d/1YLAq392y08EtN33cnKcQu7hQ0YmmYB5e/view?usp=drive_link" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ Drive Document</a>
-                </div>
-            </div>
-
-            <!-- ==== CERTIFICATE 9: SWAYAM BHU COMPUTING FUNDAMENTALS ==== -->
-            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
-                <div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[10px] text-orange-500">SWAYAM</div>
-                        <div>
-                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">SWAYAM / BHU</span>
-                            <span class="text-[10px] text-zinc-500 block">Aug - Oct 2025</span>
-                        </div>
-                    </div>
-                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Fundamentals of Computing</h3>
-                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">Core CS</span>
-                </div>
-                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]">
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_fundamentals-of-computing-activity-7405860625056403456-Y-Wn?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ LinkedIn</a>
-                    <a href="https://drive.google.com/file/d/1g9DEAWffwk2XUsMU-TaUPG4iumTWaFqS/view?usp=drive_link" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ Drive Document</a>
-                </div>
-            </div>
-
-            <!-- ==== CERTIFICATE 10: SIMPLILEARN SKILLUP DSA ==== -->
-            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
-                <div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[9px] text-orange-400">SIMPLI</div>
-                        <div>
-                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Simplilearn SkillUp</span>
-                            <span class="text-[10px] text-zinc-500 block">Sept 06, 2025</span>
-                        </div>
-                    </div>
-                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">DSA in Python</h3>
-                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">DSA</span>
-                </div>
-                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]">
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_data-structures-and-algorithms-in-python-activity-7405859583371440128-_paT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ LinkedIn</a>
-                    <a href="https://drive.google.com/file/d/1jHAi57ib4wzG5CuRyTPBWbzadZTaDeJa/view?usp=drive_link" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ Drive Document</a>
-                </div>
-            </div>
-
-            <!-- ==== CERTIFICATE 11: SIMPLILEARN SKILLUP HTML ==== -->
-            <div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition">
-                <div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[9px] text-orange-400">SIMPLI</div>
-                        <div>
-                            <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Simplilearn SkillUp</span>
-                            <span class="text-[10px] text-zinc-500 block">Sept 05, 2025</span>
-                        </div>
-                    </div>
-                    <h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Introduction to HTML</h3>
-                    <span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">Web</span>
-                </div>
-                <div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]">
-                    <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_introduction-to-html-activity-7405859854361255936-HKIx?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuzX_wBiWUSD8jktb7RFdHKbyUBQWmh7wQ" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ LinkedIn</a>
-                    <a href="https://drive.google.com/file/d/1OH1NYgyHiF6RhfCZZBNrntFt2INFplqP/view?usp=drive_link" target="_blank" class="text-zinc-400 hover:text-purple-400 font-medium transition">→ Drive Document</a>
-                </div>
-            </div>
-
+<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-xs text-amber-500" aria-hidden="true">AWS</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">AWS Academy</span><span class="text-[10px] text-zinc-500 block">June 2026</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Machine Learning for Natural Language Processing</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-orange-500/10 text-orange-400 inline-block">NLP</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_aws-academy-graduate-machine-learning-for-share-7476713033981943809-xM47/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1KxjRfv55y7HCYcAOt0mVfChkMKrVFqg4/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
+<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-xs text-amber-500" aria-hidden="true">AWS</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">AWS Academy</span><span class="text-[10px] text-zinc-500 block">June 2026</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">AWS Academy Cloud Foundations</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-orange-500/10 text-orange-400 inline-block">Cloud</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_aws-academy-graduate-cloud-foundations-share-7477117194607161344-TUqH/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1lCFrMjtqkr5TKPB0hB0cJjalQpUGSWXM/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
+<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[10px] text-sky-400" aria-hidden="true">CISCO</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Cisco Academy & NDG</span><span class="text-[10px] text-zinc-500 block">June 2026</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Linux Unhatched</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">Linux</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_linux-unhatched-was-issued-by-cisco-to-jason-share-7476288501869617153-2_lY/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1T3swuI1S48Clla0CJwe6RMRyyGij8_n_/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
+<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[9px] text-blue-500" aria-hidden="true">PRODIGY</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Prodigy InfoTech</span><span class="text-[10px] text-zinc-500 block">May - June 2026</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Generative AI Internship</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 inline-block">Internship</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_certificate-of-completion-and-letter-of-recommendation-ugcPost-7472418619264708608-QsNM/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1eD1BDrHP3frw-2vU5ewv0Q5vw1DO3Zkz/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
+<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[9px] text-red-500" aria-hidden="true">ORACLE</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Oracle University</span><span class="text-[10px] text-zinc-500 block">April 2026</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">OCI AI Foundations Associate</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">AI</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_oracle-cloud-infrastructure-2025-certified-activity-7446999160043610112-ix-m/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1ED9WEk_JhPO15bQbcwxJpa3x4Fkwc2bg/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
+<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[9px] text-cyan-400" aria-hidden="true">INFOSYS</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Infosys Springboard</span><span class="text-[10px] text-zinc-500 block">Feb 2026</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">DSA using Python - Part 1</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">DSA</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_data-structures-and-algorithms-using-python-activity-7431724570988015616-SD4m/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1AnbZTLlWvNnEE-Ax63OA9JLIMdaB97NG/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
+<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[10px] text-orange-400" aria-hidden="true">NPTEL</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">NPTEL / IIT Madras</span><span class="text-[10px] text-zinc-500 block">Jan - Feb 2026</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Python for Data Science</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-amber-500/10 text-amber-400 inline-block">Elite</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-end text-[11px]"><a href="https://drive.google.com/file/d/1cfngqAMFwvEMy9Ya_hL09dFzfT2EoN7o/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
+<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[9px] text-cyan-400" aria-hidden="true">INFOSYS</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Infosys Springboard</span><span class="text-[10px] text-zinc-500 block">Nov 2025</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Programming Fundamentals</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">Python</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_programming-fundamentals-using-python-activity-7405860352518696960-STmY/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1YLAq392y08EtN33cnKcQu7hQ0YmmYB5e/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
+<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[9px] text-orange-500" aria-hidden="true">SWAYAM</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">SWAYAM / BHU</span><span class="text-[10px] text-zinc-500 block">Aug - Oct 2025</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Fundamentals of Computing</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">Core CS</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_fundamentals-of-computing-activity-7405860625056403456-Y-Wn/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1g9DEAWffwk2XUsMU-TaUPG4iumTWaFqS/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
+<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[9px] text-orange-400" aria-hidden="true">SIMPLI</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Simplilearn SkillUp</span><span class="text-[10px] text-zinc-500 block">Sept 2025</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">DSA in Python</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">DSA</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_data-structures-and-algorithms-in-python-activity-7405859583371440128-_paT/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1jHAi57ib4wzG5CuRyTPBWbzadZTaDeJa/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
+<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[9px] text-orange-400" aria-hidden="true">SIMPLI</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Simplilearn SkillUp</span><span class="text-[10px] text-zinc-500 block">Sept 2025</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Introduction to HTML</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">Web</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_introduction-to-html-activity-7405859854361255936-HKIx/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1OH1NYgyHiF6RhfCZZBNrntFt2INFplqP/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
         </div>
     </section>
-
-
-    <!-- ==== LEETCODE LINKS BANNER ==== -->
-    <section id="leetcode" class="max-w-5xl mx-auto px-6 py-24 border-t border-zinc-900">
+    <section id="leetcode" class="max-w-5xl mx-auto px-6 py-24 border-t border-zinc-900 fade-up" aria-labelledby="leetcode-heading">
         <div class="bg-[#121214] border border-zinc-900 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
             <div class="max-w-xl z-10">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="text-xs font-bold text-amber-500 tracking-widest uppercase">Algorithms & Data Structures</span>
-                    <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
-                </div>
-                <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4 text-zinc-200">LeetCode Repository Archive</h2>
-                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6">
-                    Consistently tackling algorithmic challenges to optimize runtime execution and memory efficiency. This dedicated code repository indexes thoroughly tested solutions mapping out optimal spatial and temporal complexity solutions.
-                </p>
+                <div class="flex items-center gap-3 mb-4"><span class="text-xs font-bold text-amber-500 tracking-widest uppercase">Algorithms & Data Structures</span><span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" aria-hidden="true"></span></div>
+                <h2 id="leetcode-heading" class="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4 text-zinc-200">LeetCode Solutions</h2>
+                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6">Consistently solving algorithmic challenges — optimizing for runtime and memory efficiency. Solutions are indexed by topic with complexity analysis.</p>
             </div>
-            <div class="w-full md:w-auto shrink-0 z-10 text-center md:text-right">
-                <a href="https://github.com/jasonjose007/Leetcode" target="_blank" class="border border-amber-500/30 hover:border-amber-500 text-amber-500 hover:bg-amber-500/5 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest inline-block transition text-center shadow-lg shadow-amber-500/5 w-full md:w-auto">
-                    → Explore Solutions Code
-                </a>
-            </div>
+            <div class="w-full md:w-auto shrink-0 z-10 text-center md:text-right"><a href="https://github.com/jasonjose007/Leetcode" target="_blank" rel="noopener noreferrer" class="border border-amber-500/30 hover:border-amber-500 text-amber-500 hover:bg-amber-500/5 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest inline-block transition text-center shadow-lg shadow-amber-500/5 w-full md:w-auto">Explore Solutions</a></div>
+            <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
         </div>
     </section>
-
-
-    <!-- ==== CONTACT INFORMATION FOOTER WITH FLOATING ACTION BUBBLES ==== -->
-    <section id="contact" class="max-w-4xl mx-auto px-6 py-32 text-center border-t border-zinc-900">
-        <h2 class="text-5xl font-black tracking-tight uppercase mb-4 text-zinc-200">LET'S WORK</h2>
-        <p class="text-zinc-500 text-xs tracking-widest uppercase max-w-sm mx-auto mb-12 leading-relaxed">
-            Looking to implement scalable backend architectures, database infrastructures, or collaborate on end-to-end applications? Let's build something incredible.
-        </p>
-        
-        <!-- FLOATING BUBBLE LINK ICONS -->
-        <div class="flex justify-center items-center gap-4 mb-20">
-            <!-- Email Bubble -->
-            <a href="mailto:jasonjose006@gmail.com" title="Send Email" class="w-14 h-14 rounded-full flex items-center justify-center border border-zinc-800 bg-[#121214] text-zinc-400 hover:text-purple-400 hover:border-purple-500 hover:-translate-y-1 transition duration-300 shadow-xl group">
-                <svg class="w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                </svg>
-            </a>
-            <!-- LinkedIn Bubble -->
-            <a href="https://www.linkedin.com/in/jason-jose-3b829936b/" target="_blank" title="LinkedIn Profile" class="w-14 h-14 rounded-full flex items-center justify-center border border-zinc-800 bg-[#121214] text-zinc-400 hover:text-purple-400 hover:border-purple-500 hover:-translate-y-1 transition duration-300 shadow-xl group">
-                <svg class="w-5 h-5 transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
-                </svg>
-            </a>
-            <!-- GitHub Bubble -->
-            <a href="https://github.com/jasonjose007" target="_blank" title="GitHub Repository" class="w-14 h-14 rounded-full flex items-center justify-center border border-zinc-800 bg-[#121214] text-zinc-400 hover:text-purple-400 hover:border-purple-500 hover:-translate-y-1 transition duration-300 shadow-xl group">
-                <svg class="w-5 h-5 transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path>
-                </svg>
-            </a>
+    <section id="contact" class="max-w-4xl mx-auto px-6 py-32 border-t border-zinc-900" aria-labelledby="contact-heading">
+        <div class="text-center mb-16 fade-up">
+            <h2 id="contact-heading" class="text-5xl font-black tracking-tight uppercase mb-4 text-zinc-200">Let's Work</h2>
+            <p class="text-zinc-500 text-xs tracking-widest uppercase max-w-sm mx-auto leading-relaxed">Looking to build scalable backend systems, optimize databases, or collaborate on full-stack applications? Let's connect.</p>
         </div>
-
-        <p class="text-[10px] text-zinc-700 uppercase tracking-widest">© 2026 All Rights Reserved.</p>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="max-w-lg mx-auto mb-16 fade-up">
+            <input type="hidden" name="form-name" value="contact">
+            <p class="hidden"><label>Do not fill: <input name="bot-field"></label></p>
+            <div class="space-y-4">
+                <div><label for="name" class="block text-[10px] font-bold tracking-widest uppercase text-zinc-500 mb-2">Name</label><input type="text" id="name" name="name" required class="w-full bg-[#121214] border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:border-purple-500 focus:outline-none transition" placeholder="Your name"></div>
+                <div><label for="email" class="block text-[10px] font-bold tracking-widest uppercase text-zinc-500 mb-2">Email</label><input type="email" id="email" name="email" required class="w-full bg-[#121214] border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:border-purple-500 focus:outline-none transition" placeholder="you@example.com"></div>
+                <div><label for="message" class="block text-[10px] font-bold tracking-widest uppercase text-zinc-500 mb-2">Message</label><textarea id="message" name="message" rows="4" required class="w-full bg-[#121214] border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:border-purple-500 focus:outline-none transition resize-none" placeholder="What's on your mind?"></textarea></div>
+                <button type="submit" class="gradient-btn w-full px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest hover:opacity-90 transition shadow-lg shadow-purple-500/20">Send Message</button>
+            </div>
+        </form>
+        <div class="flex justify-center items-center gap-4 mb-20 fade-up">
+            <a href="mailto:jasonjose006@gmail.com" aria-label="Send email" class="w-14 h-14 rounded-full flex items-center justify-center border border-zinc-800 bg-[#121214] text-zinc-400 hover:text-purple-400 hover:border-purple-500 hover:-translate-y-1 transition duration-300 shadow-xl group"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></a>
+            <a href="https://www.linkedin.com/in/jason-jose-3b829936b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" class="w-14 h-14 rounded-full flex items-center justify-center border border-zinc-800 bg-[#121214] text-zinc-400 hover:text-purple-400 hover:border-purple-500 hover:-translate-y-1 transition duration-300 shadow-xl group"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg></a>
+            <a href="https://github.com/jasonjose007" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" class="w-14 h-14 rounded-full flex items-center justify-center border border-zinc-800 bg-[#121214] text-zinc-400 hover:text-purple-400 hover:border-purple-500 hover:-translate-y-1 transition duration-300 shadow-xl group"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg></a>
+            <a href="https://leetcode.com/u/jasonjose/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode profile" class="w-14 h-14 rounded-full flex items-center justify-center border border-zinc-800 bg-[#121214] text-zinc-400 hover:text-amber-400 hover:border-amber-500 hover:-translate-y-1 transition duration-300 shadow-xl group"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.038-1.901l-2.609-2.636a5.055 5.055 0 0 0-2.445-1.337l2.467-2.503c.516-.514.498-1.366-.037-1.901-.535-.535-1.387-.552-1.902-.038l-10.1 10.101c-.981.982-1.494 2.337-1.494 3.835 0 1.498.513 2.895 1.494 3.875l4.347 4.361c.981.979 2.337 1.452 3.834 1.452s2.853-.512 3.835-1.494l2.609-2.637c.514-.514.496-1.365-.039-1.9s-1.386-.553-1.899-.039zM20.811 13.01H10.666c-.702 0-1.27.604-1.27 1.346s.568 1.346 1.27 1.346h10.145c.701 0 1.27-.604 1.27-1.346s-.569-1.346-1.27-1.346z"/></svg></a>
+        </div>
+        <p class="text-[10px] text-zinc-700 uppercase tracking-widest text-center">&copy; 2026 Jason J. All Rights Reserved.</p>
     </section>
-
+    </main>    <button id="back-to-top" aria-label="Back to top" class="fixed bottom-8 right-8 w-10 h-10 rounded-full bg-purple-600 text-white flex items-center justify-center shadow-lg shadow-purple-500/20 opacity-0 pointer-events-none transition-all duration-300 hover:bg-purple-500 z-50"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg></button>
+    <script>
+    const observer=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add("visible")})},{threshold:.1,rootMargin:"0px 0px -50px 0px"});
+    document.querySelectorAll(".fade-up").forEach(el=>observer.observe(el));
+    const backToTop=document.getElementById("back-to-top");
+    window.addEventListener("scroll",()=>{if(window.scrollY>500){backToTop.classList.remove("opacity-0","pointer-events-none");backToTop.classList.add("opacity-100")}else{backToTop.classList.add("opacity-0","pointer-events-none");backToTop.classList.remove("opacity-100")}});
+    backToTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+    const toggle=document.getElementById("theme-toggle"),sunIcon=document.getElementById("sun-icon"),moonIcon=document.getElementById("moon-icon");
+    function setTheme(d){if(d){document.documentElement.classList.remove("light");document.body.style.backgroundColor="#0B0B0C";sunIcon.classList.add("hidden");moonIcon.classList.remove("hidden")}else{document.documentElement.classList.add("light");document.body.style.backgroundColor="#f8f8f8";sunIcon.classList.remove("hidden");moonIcon.classList.add("hidden")}localStorage.setItem("theme",d?"dark":"light")}
+    toggle.addEventListener("click",()=>setTheme(document.documentElement.classList.contains("light")));
+    if(localStorage.getItem("theme")==="light")setTheme(false);
+    document.querySelectorAll("a[href^=\"#\"]").forEach(a=>{a.addEventListener("click",function(e){e.preventDefault();const t=document.querySelector(this.getAttribute("href"));if(t)t.scrollIntoView({behavior:"smooth",block:"start"})})});
+    </script>
 </body>
 </html>
