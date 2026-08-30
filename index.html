@@ -94,6 +94,9 @@ eggClose.addEventListener('click',closeEgg);
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&isOpen)closeEgg()});
 let _eb='';
 document.addEventListener('keydown',e=>{
+  // Still work when not focused on an input
+  const tag=document.activeElement.tagName;
+  if(tag==='INPUT'||tag==='TEXTAREA')return;
   _eb=(_eb+e.key).slice(-7).toLowerCase();
   if(_eb==='hire me')openEgg();
 });
@@ -219,6 +222,7 @@ body{background:#0e0e14;font-family:'Space Grotesk',sans-serif;color:#fff;overfl
 
 /* INTERACTIVE */
 .interactive{}
+@keyframes ping{75%,100%{transform:scale(2);opacity:0}}
 </style>
 <meta name="description" content="Jason J - Software Engineer specializing in AI, backend architecture and full-stack development."><meta name="robots" content="index, follow"><link rel="canonical" href="https://jasonmyportfolio.netlify.app/"><meta property="og:title" content="Jason J | Software Engineer"><meta property="og:image" content="https://jasonmyportfolio.netlify.app/og-image.png"><link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
@@ -419,7 +423,7 @@ body{background:#0e0e14;font-family:'Space Grotesk',sans-serif;color:#fff;overfl
 <a href="https://github.com/jasonjose007" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full flex items-center justify-center border border-white/[.07] bg-white/[.03] text-zinc-400 hover:text-purple-400 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 interactive"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
 <a href="https://leetcode.com/u/jasonjose/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full flex items-center justify-center border border-white/[.07] bg-white/[.03] text-zinc-400 hover:text-amber-400 hover:border-amber-500/40 hover:-translate-y-1 transition duration-300 interactive"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.038-1.901l-2.609-2.636a5.055 5.055 0 0 0-2.445-1.337l2.467-2.503c.516-.514.498-1.366-.037-1.901-.535-.535-1.387-.552-1.902-.038l-10.1 10.101c-.981.982-1.494 2.337-1.494 3.835 0 1.498.513 2.895 1.494 3.875l4.347 4.361c.981.979 2.337 1.452 3.834 1.452s2.853-.512 3.835-1.494l2.609-2.637c.514-.514.496-1.365-.039-1.9s-1.386-.553-1.899-.039zM20.811 13.01H10.666c-.702 0-1.27.604-1.27 1.346s.568 1.346 1.27 1.346h10.145c.701 0 1.27-.604 1.27-1.346s-.569-1.346-1.27-1.346z"/></svg></a>
 </div>
-<p class="text-zinc-800 text-[9px] font-mono tracking-[.3em] uppercase">&copy; 2026 Jason Jose. All Rights Reserved.</p>
+<p class="text-zinc-800 text-[9px] font-mono tracking-[.3em] uppercase">&copy; 2026 Jason Jose. All Rights Reserved. &nbsp;<span id="eggHint" style="opacity:.35;font-size:9px;cursor:default" title="try typing something...">✦ there is a secret</span></p>
 </div></section>
 
 </div><!-- end max-w -->
@@ -467,6 +471,11 @@ setTimeout(()=>{document.getElementById('hc').classList.add('s');document.getEle
     <div style="display:flex;justify-content:center;gap:20px;font-family:JetBrains Mono,monospace;font-size:9px;color:#3f3f46;margin-bottom:28px;letter-spacing:.1em"><span>17+ PROJECTS</span><span style="color:#27272a">&bull;</span><span>7+ HACKATHONS</span><span style="color:#27272a">&bull;</span><span>2 INTERNSHIPS</span></div>
     <button id="eggClose" style="border:1px solid #27272a;padding:8px 24px;border-radius:999px;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#3f3f46;background:none;cursor:pointer;font-family:JetBrains Mono,monospace">[ ESC or click to close ]</button>
   </div>
+</div>
+<div id="secretHint" style="position:fixed;bottom:90px;left:24px;z-index:40;cursor:default;user-select:none" title="Click here then type: hire me">
+<div style="width:8px;height:8px;border-radius:50%;background:rgba(168,85,247,.4);animation:float 3s ease-in-out infinite;position:relative">
+<div style="position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(168,85,247,.2);animation:ping 2s cubic-bezier(0,0,.2,1) infinite"></div>
+</div>
 </div>
 </body>
 </html>
