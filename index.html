@@ -1,242 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jason J | Software Engineer - Portfolio</title>
-    <meta name="description" content="Jason J - Software Engineer specializing in systems architecture, database optimization, AI integration, and full-stack development.">
-    <meta name="author" content="Jason J">
-    <meta name="keywords" content="software engineer, full stack developer, AI, machine learning, database optimization, backend developer, portfolio">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://jasonmyportfolio.netlify.app/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Jason J | Software Engineer">
-    <meta property="og:description" content="Software Engineer specializing in systems architecture, database optimization, and AI integration.">
-    <meta property="og:url" content="https://jasonmyportfolio.netlify.app/">
-    <meta property="og:site_name" content="Jason J Portfolio">
-    <meta property="og:image" content="https://jasonmyportfolio.netlify.app/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Jason J | Software Engineer">
-    <meta name="twitter:description" content="Software Engineer specializing in systems architecture, database optimization, and AI integration.">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Jason J","url":"https://jasonmyportfolio.netlify.app/","jobTitle":"Software Engineer","sameAs":["https://github.com/jasonjose007","https://www.linkedin.com/in/jason-jose-3b829936b/"],"knowsAbout":["Software Engineering","Database Optimization","AI/ML","Backend Development","Full Stack Development"]}</script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={darkMode:"class",theme:{extend:{fontFamily:{sans:["Inter","system-ui","sans-serif"]}}}}</script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <style>
-        body{background-color:#0B0B0C;scroll-behavior:smooth}
-        .gradient-btn{background:linear-gradient(135deg,#a855f7 0%,#ec4899 100%)}
-        .gradient-text{background:linear-gradient(135deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .fade-up{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
-        .fade-up.visible{opacity:1;transform:translateY(0)}
-        a:focus-visible,button:focus-visible{outline:2px solid #a855f7;outline-offset:2px;border-radius:4px}
-        ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#0B0B0C}::-webkit-scrollbar-thumb{background:#27272a;border-radius:4px}::-webkit-scrollbar-thumb:hover{background:#3f3f46}
-        .project-card{transition:transform .3s ease,border-color .3s ease}.project-card:hover{transform:translateY(-4px);border-color:#3f3f46}
-        .tech-tag{font-size:9px;padding:2px 8px;border-radius:9999px;border:1px solid #27272a;color:#a1a1aa;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
-    </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Jason J | Software Engineer - Portfolio</title>
+<script src="https://cdn.tailwindcss.com">
+let _eb='';document.addEventListener('keydown',e=>{_eb=(_eb+e.key).slice(-7).toLowerCase();if(_eb==='hire me'){document.getElementById('egg').style.display='flex'}});
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0e0e14;font-family:'Space Grotesk',sans-serif;color:#fff;overflow-x:hidden;cursor:none}
+
+/* BG */
+.mesh-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.mesh-orb{position:absolute;border-radius:50%;filter:blur(90px);animation:drift 22s ease-in-out infinite}
+.mesh-orb:nth-child(1){width:700px;height:700px;background:radial-gradient(circle,rgba(124,58,237,.55),transparent 70%);top:-15%;left:-10%;opacity:.55}
+.mesh-orb:nth-child(2){width:600px;height:600px;background:radial-gradient(circle,rgba(236,72,153,.5),transparent 70%);top:35%;right:-12%;opacity:.45;animation-delay:-8s;animation-duration:28s}
+.mesh-orb:nth-child(3){width:500px;height:500px;background:radial-gradient(circle,rgba(6,182,212,.45),transparent 70%);bottom:5%;left:25%;opacity:.4;animation-delay:-15s;animation-duration:25s}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(60px,-50px) scale(1.08)}66%{transform:translate(-40px,60px) scale(.93)}}
+.noise{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* CURSOR */
+.cur{width:20px;height:20px;border:2px solid rgba(168,85,247,.8);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s,border-color .2s}
+.cur.h{width:55px;height:55px;border-color:#ec4899;background:rgba(236,72,153,.05)}
+.dot{width:5px;height:5px;background:#a855f7;border-radius:50%;position:fixed;pointer-events:none;z-index:10000;transform:translate(-50%,-50%)}
+
+/* SCROLL ANIM */
+.r{opacity:0;transform:translateY(50px);transition:all .85s cubic-bezier(.16,1,.3,1)}.r.s{opacity:1;transform:none}
+.rl{opacity:0;transform:translateX(-70px);transition:all .85s cubic-bezier(.16,1,.3,1)}.rl.s{opacity:1;transform:none}
+.rr{opacity:0;transform:translateX(70px);transition:all .85s cubic-bezier(.16,1,.3,1)}.rr.s{opacity:1;transform:none}
+.rs{opacity:0;transform:scale(.88);transition:all .85s cubic-bezier(.16,1,.3,1)}.rs.s{opacity:1;transform:scale(1)}
+.rb{opacity:0;filter:blur(10px);transform:translateY(30px);transition:all .85s cubic-bezier(.16,1,.3,1)}.rb.s{opacity:1;filter:blur(0);transform:none}
+
+/* GRADIENT UTILS */
+.gt{background:linear-gradient(135deg,#a855f7,#ec4899,#06b6d4,#a855f7);background-size:300% 300%;animation:ga 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gb{background:linear-gradient(135deg,#a855f7,#ec4899,#06b6d4,#a855f7);background-size:300% 300%;animation:ga 6s ease infinite}
+@keyframes ga{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+/* PILL NAV */
+.pill-nav{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:50;background:rgba(5,5,7,.7);backdrop-filter:blur(30px);border:1px solid rgba(255,255,255,.06);border-radius:999px;padding:5px;display:flex;gap:2px}
+.pill-nav a{padding:7px 18px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#52525b;transition:all .3s;font-family:'JetBrains Mono',monospace}
+.pill-nav a:hover,.pill-nav a.on{color:#fff;background:rgba(168,85,247,.18);box-shadow:0 0 20px rgba(168,85,247,.1)}
+
+/* SCROLL BAR */
+.spbar{position:fixed;top:0;left:0;height:2px;z-index:100;transition:width .1s}
+
+/* ===== SECTION-SPECIFIC TREATMENTS ===== */
+
+/* HERO — full viewport, massive type */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 40px;position:relative}
+.hero-sup{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:#71717a;margin-bottom:24px;font-family:'JetBrains Mono',monospace}
+.hero-name{font-size:clamp(64px,10vw,144px);font-weight:900;line-height:.85;letter-spacing:-.04em;margin-bottom:32px}
+.hero-sub{color:#71717a;font-size:18px;font-weight:300;max-width:420px;line-height:1.6;margin-bottom:40px}
+.typewriter{border-right:2px solid #a855f7;animation:blink .7s step-end infinite;font-family:'JetBrains Mono',monospace;font-size:13px;color:#a855f7}
+@keyframes blink{50%{border-color:transparent}}
+
+/* FEATURED — full-bleed gradient card, different from everything else */
+.featured-card{background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(236,72,153,.06),rgba(6,182,212,.08));border:1px solid rgba(255,255,255,.06);border-radius:32px;padding:60px;position:relative;overflow:hidden;transition:all .5s}
+.featured-card:hover{border-color:rgba(168,85,247,.2);box-shadow:0 40px 80px rgba(168,85,247,.08)}
+.featured-card::after{content:'';position:absolute;inset:0;border-radius:32px;background:radial-gradient(ellipse at 80% 20%,rgba(168,85,247,.08),transparent 60%);pointer-events:none}
+
+/* STATS — horizontal strip with large numbers, no cards */
+.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04)}
+.stat-item{padding:40px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.04);position:relative;overflow:hidden}
+.stat-item:last-child{border-right:none}
+.stat-item::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(168,85,247,.03),transparent);opacity:0;transition:opacity .4s}
+.stat-item:hover::before{opacity:1}
+.stat-num{font-size:48px;font-weight:900;line-height:1;display:block}
+.stat-label{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#52525b;margin-top:8px;font-family:'JetBrains Mono',monospace}
+
+/* PROJECTS — bento grid (mixed sizes, not all same) */
+.bento{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:220px;gap:16px}
+.bento-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:20px;padding:28px;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;justify-content:space-between}
+.bento-card:hover{border-color:rgba(168,85,247,.2);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.bento-card.wide{grid-column:span 2}
+.bento-card.tall{grid-row:span 2}
+.bento-card.accent{background:linear-gradient(135deg,rgba(168,85,247,.08),rgba(236,72,153,.04))}
+.bento-tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#6d28d9;font-family:'JetBrains Mono',monospace;font-weight:700}
+.bento-title{font-size:17px;font-weight:700;line-height:1.2;margin:8px 0 4px}
+.bento-desc{font-size:11px;color:#71717a;line-height:1.5;flex:1}
+.bento-links{display:flex;gap:12px;margin-top:12px}
+.bento-links a{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#a855f7;transition:color .2s;font-family:'JetBrains Mono',monospace}
+.bento-links a:hover{color:#ec4899}
+.bento-glow{position:absolute;width:200px;height:200px;border-radius:50%;filter:blur(60px);opacity:.08;pointer-events:none;transition:opacity .4s}
+.bento-card:hover .bento-glow{opacity:.15}
+
+/* SKILLS — option B style: icon grid */
+.skill-grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.sk{position:relative;width:100px}
+.sk-inner{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px 10px;text-align:center;transition:all .35s cubic-bezier(.16,1,.3,1);cursor:default}
+.sk:hover .sk-inner{background:rgba(168,85,247,.07);border-color:rgba(168,85,247,.3);transform:translateY(-6px);box-shadow:0 16px 32px rgba(168,85,247,.1)}
+.sk-name{font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#71717a;font-family:'JetBrains Mono',monospace;margin-top:8px}
+.sk-badge{position:absolute;top:-6px;right:-6px;width:18px;height:18px;border-radius:50%;font-size:7px;font-weight:900;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;color:#fff;border:1.5px solid #050507}
+
+/* TIMELINE — alternating left/right, not a card grid */
+.tl{position:relative;padding:0 0 0 32px}
+.tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,rgba(168,85,247,.3) 10%,rgba(168,85,247,.3) 90%,transparent)}
+.tl-item{position:relative;padding:0 0 48px 32px}
+.tl-item::before{content:'';position:absolute;left:-5px;top:6px;width:11px;height:11px;border-radius:50%;border:2px solid rgba(168,85,247,.4);background:#050507;transition:all .3s}
+.tl-item:hover::before{background:rgba(168,85,247,.4);border-color:rgba(168,85,247,.8);box-shadow:0 0 12px rgba(168,85,247,.4)}
+.tl-date{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#6d28d9;font-family:'JetBrains Mono',monospace;margin-bottom:6px}
+.tl-title{font-size:16px;font-weight:700;margin-bottom:4px}
+.tl-org{font-size:11px;color:#71717a}
+
+/* INTERNSHIP — horizontal scrolling strip, not grid */
+.hstrip{display:flex;gap:20px;overflow-x:auto;padding-bottom:20px;scrollbar-width:none}
+.hstrip::-webkit-scrollbar{display:none}
+.hcard{min-width:280px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:20px;padding:28px;flex-shrink:0;transition:all .4s}
+.hcard:hover{border-color:rgba(168,85,247,.2);transform:translateY(-4px)}
+
+/* CERTIFICATIONS — masonry feel with alternating heights */
+.cert-grid{columns:3;gap:16px}
+.cert-card{break-inside:avoid;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:16px;padding:20px;margin-bottom:16px;transition:all .3s}
+.cert-card:hover{border-color:rgba(168,85,247,.2)}
+
+/* CONTACT — big centered layout, different from everything */
+.contact-wrap{text-align:center;position:relative;overflow:hidden;padding:80px 40px;border-radius:32px;background:linear-gradient(135deg,rgba(124,58,237,.06),rgba(236,72,153,.04),rgba(6,182,212,.04))}
+.contact-wrap::before{content:'';position:absolute;inset:0;border:1px solid rgba(255,255,255,.05);border-radius:32px;pointer-events:none}
+
+/* TAG PILL */
+.tag{font-size:9px;padding:3px 10px;border-radius:999px;background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.15);color:#c4b5fd;font-weight:700;font-family:'JetBrains Mono',monospace;display:inline-block}
+
+.section-label{font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:#52525b;font-family:'JetBrains Mono',monospace;margin-bottom:48px}
+.glow-line{height:1px;background:linear-gradient(90deg,transparent,rgba(168,85,247,.3),rgba(236,72,153,.2),transparent)}
+
+/* INTERACTIVE */
+.interactive{}
+</style>
+<meta name="description" content="Jason J - Software Engineer specializing in AI, backend architecture and full-stack development."><meta name="robots" content="index, follow"><link rel="canonical" href="https://jasonmyportfolio.netlify.app/"><meta property="og:title" content="Jason J | Software Engineer"><meta property="og:image" content="https://jasonmyportfolio.netlify.app/og-image.png"><link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
-<body class="text-white font-sans antialiased selection:bg-purple-500 selection:text-white">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-purple-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm">Skip to main content</a>
-    <nav role="navigation" aria-label="Main navigation" class="max-w-6xl mx-auto px-6 py-6 flex flex-wrap gap-4 justify-between items-center tracking-widest text-xs font-semibold uppercase text-gray-400">
-        <div class="flex gap-6">
-            <a href="#main-content" class="hover:text-white transition">About</a>
-            <a href="#services" class="hover:text-white transition">Skills</a>
-            <a href="#projects" class="hover:text-white transition">Projects</a>
-            <a href="#internship-projects" class="hover:text-white transition">Internships</a>
-            <a href="#certifications" class="hover:text-white transition text-purple-400">Certifications</a>
+<body>
+<div class="mesh-bg"><div class="mesh-orb"></div><div class="mesh-orb"></div><div class="mesh-orb"></div></div>
+<div class="noise"></div>
+<div class="spbar gb" id="sp"></div>
+<div class="cur" id="cur"></div>
+<div class="dot" id="dot"></div>
+<div class="pill-nav">
+    <a href="#hero" class="on interactive">Home</a>
+    <a href="#work" class="interactive">Work</a>
+    <a href="#skills" class="interactive">Skills</a>
+    <a href="#journey" class="interactive">Journey</a>
+    <a href="#resume" class="interactive">Resume</a><a href="#contact" class="interactive">Contact</a>
+</div>
+
+<div class="relative z-10 max-w-6xl mx-auto px-6">
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+    <div class="r" id="hc">
+        <p class="hero-sup">Available for opportunities</p>
+        <h1 class="hero-name"><span class="gt">Jason</span><br><span class="text-white">Jose</span></h1>
+        <p class="hero-sub">Building systems that handle real load. AI pipelines, backend architecture, and full-stack apps — all the way to production.</p>
+        <div class="flex items-center gap-3 mb-10">
+            <span class="w-6 h-[1px] bg-purple-500"></span>
+            <span class="typewriter" id="typed">Systems Architect</span>
         </div>
-        <div class="flex items-center gap-4">
-            <a href="#contact" class="hover:text-white transition">Contact</a>
-            <button id="theme-toggle" aria-label="Toggle dark/light mode" class="w-9 h-9 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-600 transition">
-                <svg id="sun-icon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-                <svg id="moon-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-            </button>
+        <div class="flex gap-4">
+            <a href="mailto:jasonjose006@gmail.com" class="gb px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest text-white hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 transition-all interactive">Let's Talk</a>
+            <a href="/Jason_J_Resume.pdf" download class="border border-zinc-800 px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest text-zinc-400 hover:border-zinc-600 hover:text-white transition interactive">Download CV</a>
         </div>
-    </nav>
-    <main id="main-content">
-    <section class="max-w-6xl mx-auto px-6 py-20 min-h-[80vh] flex flex-col justify-center relative">
-        <div class="z-10 max-w-4xl fade-up">
-            <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-gray-300 leading-none uppercase mb-6">HI, I'M <span class="gradient-text">Jason J</span></h1>
-            <p class="text-gray-400 tracking-wider text-sm md:text-base max-w-lg uppercase mb-8 leading-relaxed">A Software Engineer driven by architecture design, database optimization, and end-to-end full stack execution.</p>
-            <div class="flex flex-wrap gap-4">
-                <a href="#contact" class="gradient-btn px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest inline-block hover:opacity-90 transition shadow-lg shadow-purple-500/20">Contact Me</a>
-                <a href="/Jason_J_Resume.pdf" download class="px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest inline-block border border-zinc-700 hover:border-purple-500 text-zinc-300 hover:text-white transition">Download Resume</a>
+    </div>
+    <!-- floating chips -->
+    <div class="absolute right-8 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-4 r" id="hchips">
+        <div class="bg-white/[.03] border border-white/5 rounded-2xl px-5 py-3 text-right"><span class="text-2xl font-black gt">17+</span><p class="text-[9px] text-zinc-600 tracking-widest uppercase font-mono">Projects</p></div>
+        <div class="bg-white/[.03] border border-white/5 rounded-2xl px-5 py-3 text-right"><span class="text-2xl font-black gt">7+</span><p class="text-[9px] text-zinc-600 tracking-widest uppercase font-mono">Hackathons</p></div>
+        <div class="bg-white/[.03] border border-white/5 rounded-2xl px-5 py-3 text-right"><span class="text-2xl font-black gt">11+</span><p class="text-[9px] text-zinc-600 tracking-widest uppercase font-mono">Certifications</p></div>
+    </div>
+</section>
+
+<!-- ===== STATS STRIP ===== -->
+<div class="stat-strip rs mb-0">
+    <div class="stat-item"><span class="stat-num gt counter" data-t="17">0</span><span class="stat-label">Projects</span></div>
+    <div class="stat-item"><span class="stat-num gt counter" data-t="11">0</span><span class="stat-label">Certifications</span></div>
+    <div class="stat-item"><span class="stat-num gt counter" data-t="7">0</span><span class="stat-label">Hackathons</span></div>
+    <div class="stat-item"><span class="stat-num gt counter" data-t="2">0</span><span class="stat-label">Internships</span></div>
+</div>
+
+<!-- ===== FEATURED PROJECT — wide card, totally different from grid ===== -->
+<section id="work" class="py-24">
+    <div class="section-label r">Featured Project</div>
+    <div class="featured-card r interactive">
+        <div class="flex flex-col md:flex-row gap-10 items-start">
+            <div class="flex-1">
+                <div class="flex gap-3 mb-6"><span class="tag">OOSC 4.0 Hackathon</span><span class="tag">AI / ML</span><span class="tag">Full Stack</span></div>
+                <h2 class="text-5xl md:text-6xl font-black tracking-tight leading-[.9] mb-6">Nyaya<span class="gt">Setu</span></h2>
+                <p class="text-zinc-400 leading-relaxed mb-8 max-w-lg">AI-powered civic and legal rights assistant. Converts complex bureaucratic language into clear guidance through conversational AI with bilingual English/Hindi support and document generation.</p>
+                <div class="flex flex-wrap gap-2 mb-8"><span class="tag">Next.js</span><span class="tag">FastAPI</span><span class="tag">Gemini AI</span><span class="tag">ChromaDB</span><span class="tag">RAG</span></div>
+                <div class="flex gap-6"><a href="https://nyaya-setu-brown.vercel.app" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-purple-400 hover:text-white transition interactive group">Live Demo <span class="group-hover:translate-x-1 inline-block transition-transform">→</span></a><a href="https://github.com/jasonjose007/NyayaSetu" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-zinc-500 hover:text-white transition interactive group">Source <span class="group-hover:translate-x-1 inline-block transition-transform">→</span></a></div>
             </div>
-        </div>
-        <div class="absolute right-10 top-20 w-72 h-72 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
-        <div class="absolute left-20 bottom-10 w-48 h-48 bg-pink-600/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
-    </section>
-    <section class="bg-[#0f0f11] border-y border-zinc-900 py-24" aria-labelledby="about-heading">
-        <div class="max-w-3xl mx-auto px-6 text-center fade-up">
-            <h2 id="about-heading" class="text-xs font-bold tracking-[0.3em] uppercase text-purple-500 mb-6">About Me</h2>
-            <p class="text-xl md:text-2xl font-light text-zinc-300 leading-relaxed mb-6">I build systems that handle real load — optimized databases, reliable backends, and frontends that don't get in the way. I care about writing code that's maintainable after the deadline passes.</p>
-            <p class="text-sm text-zinc-500 leading-relaxed max-w-xl mx-auto">Currently focused on AI/ML pipelines and cloud-native architectures. I enjoy turning complex problems into clean, performant solutions — whether that's shaving milliseconds off a query or designing a system from scratch.</p>
-        </div>
-    </section>
-    <section id="resume" class="max-w-4xl mx-auto px-6 py-16 text-center fade-up">
-        <div class="border border-zinc-900 bg-[#121214]/40 rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 class="text-xs font-bold tracking-widest uppercase text-zinc-500 mb-3">Professional Credentials</h3>
-            <h4 class="text-xl font-bold uppercase tracking-wide text-zinc-200 mb-4">Curriculum Vitae</h4>
-            <p class="text-zinc-400 text-xs md:text-sm leading-relaxed max-w-md mx-auto mb-6">Technical proficiencies, engineering work history, project milestones, and certifications — all in one place.</p>
-            <div class="flex flex-wrap justify-center gap-3">
-                <a href="https://rxresu.me/jasonjose006/my-resume" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-widest uppercase border border-zinc-800 hover:border-purple-500 text-zinc-400 hover:text-white bg-[#0B0B0C] px-6 py-3.5 rounded-full inline-block transition">View Online Resume</a>
-                <a href="/Jason_J_Resume.pdf" download class="text-xs font-bold tracking-widest uppercase border border-purple-500/30 hover:border-purple-500 text-purple-400 hover:text-white bg-purple-500/5 px-6 py-3.5 rounded-full inline-block transition">Download PDF</a>
-            </div>
-        </div>
-    </section>
-    <section id="services" class="max-w-4xl mx-auto px-6 py-24 fade-up" aria-labelledby="expertise-heading">
-        <h2 id="expertise-heading" class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">Expertise</h2>
-        <div class="space-y-12">
-            <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
-                <span class="text-2xl font-black text-purple-500" aria-hidden="true">01</span>
-                <div><h3 class="text-lg font-bold uppercase tracking-wider mb-2">Systems & AI Integration</h3><p class="text-zinc-400 text-sm leading-relaxed">Building ML pipelines end-to-end — from data ingestion to model serving. Experience with GPT fine-tuning, GANs, and production deployment workflows.</p></div>
-            </div>
-            <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
-                <span class="text-2xl font-black text-purple-500" aria-hidden="true">02</span>
-                <div><h3 class="text-lg font-bold uppercase tracking-wider mb-2">Backend & Databases</h3><p class="text-zinc-400 text-sm leading-relaxed">Designing APIs, optimizing query performance, and architecting data models that scale. Node.js, Express, PostgreSQL, and real-time systems with Socket.io.</p></div>
-            </div>
-            <div class="flex flex-col md:flex-row border-t border-zinc-800 pt-8 items-start gap-6">
-                <span class="text-2xl font-black text-purple-500" aria-hidden="true">03</span>
-                <div><h3 class="text-lg font-bold uppercase tracking-wider mb-2">Pipeline Automation</h3><p class="text-zinc-400 text-sm leading-relaxed">Automating deployments with CI/CD, containerization, and edge platforms. Git workflows that keep teams shipping without breaking production.</p></div>
-            </div>
-        </div>
-    </section>
-    <section id="featured-project" class="max-w-5xl mx-auto px-6 py-24 border-t border-zinc-900" aria-labelledby="featured-heading">
-        <div class="text-center mb-12 fade-up">
-            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-400 mb-4 block">Featured Project</span>
-            <h2 id="featured-heading" class="text-5xl font-black tracking-tight uppercase text-zinc-200">NyayaSetu</h2>
-        </div>
-        <div class="bg-[#121214] border border-zinc-900 rounded-3xl p-8 md:p-12 relative overflow-hidden fade-up">
-            <div class="flex flex-col lg:flex-row gap-10 items-start">
-                <div class="flex-1 z-10">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="text-[10px] font-bold tracking-wider border border-emerald-500/30 px-3 py-1 rounded-full text-emerald-400 uppercase">OOSC 4.0 Hackathon</span>
-                        <span class="text-[10px] font-bold tracking-wider border border-zinc-800 px-3 py-1 rounded-full text-zinc-500 uppercase">Aug 2026</span>
-                    </div>
-                    <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4 text-zinc-200">AI-Powered Legal Rights Assistant</h3>
-                    <p class="text-zinc-400 text-sm leading-relaxed mb-6">A platform that helps Indian citizens understand and exercise their civic and legal rights. Converts complex bureaucratic and legal language into clear, actionable guidance through conversational AI — with bilingual support in English and Hindi.</p>
-                    <div class="space-y-2 mb-6">
-                        <div class="flex items-start gap-2"><span class="text-emerald-400 text-xs mt-0.5">&#9654;</span><span class="text-zinc-300 text-xs">Conversational legal assistant with law citations</span></div>
-                        <div class="flex items-start gap-2"><span class="text-emerald-400 text-xs mt-0.5">&#9654;</span><span class="text-zinc-300 text-xs">Document generator — RTI applications, consumer complaints, legal notices</span></div>
-                        <div class="flex items-start gap-2"><span class="text-emerald-400 text-xs mt-0.5">&#9654;</span><span class="text-zinc-300 text-xs">Government scheme eligibility matcher across 12+ schemes</span></div>
-                        <div class="flex items-start gap-2"><span class="text-emerald-400 text-xs mt-0.5">&#9654;</span><span class="text-zinc-300 text-xs">RAG architecture with ChromaDB vector storage</span></div>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5 mb-8">
-                        <span class="tech-tag">Next.js</span>
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">FastAPI</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Gemini AI</span>
-                        <span class="tech-tag">ChromaDB</span>
-                        <span class="tech-tag">RAG</span>
-                        <span class="tech-tag">Tailwind</span>
-                    </div>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="https://nyaya-setu-brown.vercel.app" target="_blank" rel="noopener noreferrer" class="gradient-btn px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest inline-block hover:opacity-90 transition shadow-lg shadow-purple-500/20">Live Demo</a>
-                        <a href="https://github.com/jasonjose007/NyayaSetu" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest inline-block border border-zinc-700 hover:border-purple-500 text-zinc-300 hover:text-white transition">View Source</a>
-                        <a href="https://www.linkedin.com/posts/jason-jose-3b829936b_ai-legaltech-hackathon-ugcPost-7495530510958383105-WFbi/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest inline-block border border-zinc-700 hover:border-blue-500 text-zinc-300 hover:text-white transition">LinkedIn Post</a>
-                    </div>
+            <!-- Right side: mini code preview -->
+            <div class="shrink-0 hidden md:block">
+                <div class="bg-black/40 border border-white/5 rounded-2xl p-6 font-mono text-[11px] leading-relaxed w-64">
+                    <div class="flex gap-2 mb-4"><div class="w-3 h-3 rounded-full bg-red-500/60"></div><div class="w-3 h-3 rounded-full bg-yellow-500/60"></div><div class="w-3 h-3 rounded-full bg-green-500/60"></div></div>
+                    <p class="text-purple-400">@app<span class="text-zinc-500">.route(</span><span class="text-emerald-400">'/api/legal'</span><span class="text-zinc-500">)</span></p>
+                    <p class="text-blue-400">async def <span class="text-yellow-300">query</span><span class="text-zinc-500">():</span></p>
+                    <p class="text-zinc-500 pl-4">result = await</p>
+                    <p class="text-zinc-500 pl-6">rag<span class="text-white">.run</span><span class="text-zinc-500">(</span></p>
+                    <p class="text-zinc-500 pl-8">lang=<span class="text-emerald-400">'hi'</span></p>
+                    <p class="text-zinc-500 pl-6"><span class="text-zinc-500">)</span></p>
+                    <p class="text-blue-400">return <span class="text-yellow-300">jsonify</span><span class="text-zinc-500">(result)</span></p>
                 </div>
             </div>
-            <div class="absolute -right-20 -top-20 w-72 h-72 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
-            <div class="absolute -left-10 -bottom-10 w-48 h-48 bg-purple-500/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
         </div>
-    </section>
-    <section id="projects" class="max-w-5xl mx-auto px-6 py-24 border-t border-zinc-900" aria-labelledby="projects-heading">
-        <h2 id="projects-heading" class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200">Projects</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">01 / AI + EdTech</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Open Hackathon 2026</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Adhyai — Multilingual AI Tutor</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Offline-capable adaptive learning assistant that adjusts lesson depth using Bloom's Taxonomy and responds in 30+ languages. Built for students in low-connectivity regions. Aligned with SDG 4 (Quality Education) and SDG 10 (Reduced Inequalities).</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Python</span><span class="tech-tag">Gradio</span><span class="tech-tag">LangChain</span><span class="tech-tag">HuggingFace</span><span class="tech-tag">FastAPI</span><span class="tech-tag">SQLite</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://adhyai-krgr.onrender.com" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">Live Demo</a><a href="https://github.com/jasonjose007/adhyai" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-purple-400 transition uppercase">View Code</a></div></div>
-<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">02 / SaaS Tool</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Personal</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">SwiftBill — Invoice Generator</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Free browser-based invoice generator that creates professional PDFs instantly. No signup, no fees, no watermarks — all processing happens client-side so data never leaves the browser.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">HTML</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">jsPDF</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://swiftbill-one.vercel.app" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">Live Demo</a><a href="https://github.com/jasonjose007/swiftbill" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-purple-400 transition uppercase">View Code</a></div></div>
-<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">03 / Smart Buildings</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Schneider Electric Hackathon</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">ThermaSync — Thermal Banking</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">AI-powered system that optimizes building energy by using thermal mass as energy storage. Pre-cools buildings during off-peak hours, cutting costs 25-35% while maintaining occupant comfort.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">HTML5</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">Chart.js</span><span class="tech-tag">JavaScript</span><span class="tech-tag">FastAPI</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://thermasync.vercel.app" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">Live Demo</a><a href="https://github.com/jasonjose007/ThermaSync" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-purple-400 transition uppercase">View Code</a></div></div>
-<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">04 / Edge AI</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">MSME Hackathon 2025</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">MotorGuard-AI</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Edge-AI sensor system for industrial motors detecting bearing wear, shaft misalignment, and electrical faults weeks before failure. Uses FFT analysis and Isolation Forest ML for anomaly detection.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Python</span><span class="tech-tag">Flask</span><span class="tech-tag">scikit-learn</span><span class="tech-tag">SciPy</span><span class="tech-tag">Chart.js</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://motorguard-ai.vercel.app" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">Live Demo</a><a href="https://github.com/jasonjose007/MotorGuard-AI" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-purple-400 transition uppercase">View Code</a></div></div>
-<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">05 / AI Analytics</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Hackathon</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Crime Analytics Platform</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Conversational AI platform for law enforcement — query crime databases in English and Kannada, visualize criminal networks, detect hotspots, and get AI-powered case recommendations with evidence trails.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Python</span><span class="tech-tag">Flask</span><span class="tech-tag">NetworkX</span><span class="tech-tag">scikit-learn</span><span class="tech-tag">SQLite</span><span class="tech-tag">NLP</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://crime-analytics-platform-lovat.vercel.app" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">Live Demo</a><a href="https://github.com/jasonjose007/crime-analytics-platform-Hackathon" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-purple-400 transition uppercase">View Code</a></div></div>
-<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">06 / Frontend</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Personal</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">CHRONOS-X</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Modern React application built with Vite for fast development and optimized production builds. Features hot module replacement and modern tooling.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">React</span><span class="tech-tag">Vite</span><span class="tech-tag">JavaScript</span><span class="tech-tag">CSS</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://chronos-x-flame.vercel.app" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">Live Demo</a><a href="https://github.com/jasonjose007/CHRONOS-X" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-purple-400 transition uppercase">View Code</a></div></div>
-<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">07 / Healthcare</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Global NEXUS Hackathon</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Medical Records Management</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Flask-based medical data management system for storing, viewing, and editing patient records. Secure admin dashboard with authentication and persistent SQLite storage.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Python</span><span class="tech-tag">Flask</span><span class="tech-tag">SQLite</span><span class="tech-tag">Bootstrap</span><span class="tech-tag">Jinja2</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://github.com/jasonjose007/Global_NEXUS-Hackathon" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">View Code</a></div></div>
-<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">08 / Health-Tech</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Hackathon</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Remote Patient Monitoring</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Real-time remote monitoring for chronic condition patients. Integrates ML models with a clinician dashboard to track vitals, predict hospitalization risk, and trigger alerts for abnormal readings.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">React</span><span class="tech-tag">Node.js</span><span class="tech-tag">Express</span><span class="tech-tag">Python</span><span class="tech-tag">TensorFlow</span><span class="tech-tag">MongoDB</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://github.com/jasonjose007/Remote-Patient-Monitering-Hackathon" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">View Code</a></div></div>
-</div>
-    </section>
-    <section id="internship-projects" class="max-w-5xl mx-auto px-6 py-24 border-t border-zinc-900" aria-labelledby="internship-heading">
-        <div class="text-center mb-16 fade-up">
-            <span class="text-xs font-bold tracking-[0.3em] uppercase text-blue-400 mb-4 block">Professional Experience</span>
-            <h2 id="internship-heading" class="text-5xl font-black tracking-tight uppercase text-zinc-200">Internship Projects</h2>
-            <p class="text-zinc-500 text-xs tracking-widest uppercase max-w-md mx-auto mt-4 leading-relaxed">Projects completed during internships at Prodigy InfoTech (Generative AI) and CodeAlpha (Software Engineering)</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-8">
-<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">01 / LLM</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Prodigy InfoTech</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">GPT-2 Custom Fine-Tuning</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Fine-tuned GPT-2 on a custom text corpus to generate domain-specific prose. Managed tokenization, loss convergence, and hyperparameter tuning to achieve coherent long-form output.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Python</span><span class="tech-tag">PyTorch</span><span class="tech-tag">Transformers</span><span class="tech-tag">NLP</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://github.com/jasonjose007/PRODIGY_GA_01" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">View Code</a></div></div>
-<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">02 / Computer Vision</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Prodigy InfoTech</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Pix2Pix cGAN Translation</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Built a Conditional GAN for paired image-to-image translation. Optimized adversarial loss between generator and discriminator to produce photorealistic output from sketch inputs.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Python</span><span class="tech-tag">TensorFlow</span><span class="tech-tag">GANs</span><span class="tech-tag">OpenCV</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://github.com/jasonjose007/PRODIGY_GA_02" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">View Code</a></div></div>
-<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">03 / Deep Learning</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Prodigy InfoTech</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Deep Image Generation</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Developed a generative image pipeline that synthesizes novel high-fidelity images by navigating deep latent spaces. Trained on custom datasets with progressive resolution scaling.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Python</span><span class="tech-tag">PyTorch</span><span class="tech-tag">DCGAN</span><span class="tech-tag">CUDA</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://github.com/jasonjose007/PRODIGY_GA_03" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">View Code</a></div></div>
-<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">04 / Probabilistic NLP</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">Prodigy InfoTech</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Markov Chain Text Synthesis</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Built a probabilistic text generator using Markov chains that maps word transition frequencies from a custom corpus to produce contextually plausible sentences without neural networks.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Python</span><span class="tech-tag">NLP</span><span class="tech-tag">Probability</span><span class="tech-tag">Statistics</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://github.com/jasonjose007/PRODIGY_GA_04" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">View Code</a></div></div>
-<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">05 / Back-End</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">CodeAlpha</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Social Media Platform Dashboard</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Engineered a backend for a social media dashboard with content distribution pipelines, real-time analytics tracking, and a RESTful API serving dynamic metrics to the frontend.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Node.js</span><span class="tech-tag">Express</span><span class="tech-tag">REST API</span><span class="tech-tag">MongoDB</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://jworld-social-app.vercel.app" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">Live Demo</a><a href="https://github.com/jasonjose007/CodeAlpha_Simple_E-commerce_Store" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-zinc-400 hover:text-purple-400 transition uppercase">View Code</a></div></div>
-<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">06 / Database</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">CodeAlpha</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Relational Database & Data Models</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Architected optimized data models with Node.js and Express for low-latency CRUD operations. Focused on query optimization, indexing strategies, and scalable table structures.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Node.js</span><span class="tech-tag">Express</span><span class="tech-tag">SQL</span><span class="tech-tag">JSON</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://github.com/jasonjose007/CodeAlpha_SocialMediaApp" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">View Code</a></div></div>
-<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">07 / Real-Time</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">CodeAlpha</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Project Management Tool</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Built a Trello-style collaborative platform with task boards, team assignments, and real-time notifications via Socket.io. Supports concurrent users with live state sync.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">Node.js</span><span class="tech-tag">Socket.io</span><span class="tech-tag">Real-time</span><span class="tech-tag">WebSockets</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://github.com/jasonjose007/CodeAlpha_Project-Management-Tool" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">View Code</a></div></div>
-<div class="project-card bg-[#121214] p-8 rounded-2xl border border-zinc-900 flex flex-col justify-between fade-up"><div><div class="flex justify-between items-start mb-4"><span class="text-xs font-bold text-purple-400 tracking-widest uppercase">10 / WebRTC</span><span class="text-[10px] tracking-wider border border-zinc-800 px-2 py-1 rounded text-zinc-500 uppercase">CodeAlpha</span></div><h3 class="text-xl font-bold uppercase tracking-wide mb-3">Video Collaboration App</h3><p class="text-zinc-400 text-xs leading-relaxed mb-4">Real-time video collaboration platform with peer-to-peer connections, screen sharing, and in-call messaging. Built with WebRTC for low-latency media streaming.</p><div class="flex flex-wrap gap-1.5 mb-6"><span class="tech-tag">WebRTC</span><span class="tech-tag">Node.js</span><span class="tech-tag">Socket.io</span><span class="tech-tag">P2P</span></div></div><div class="flex gap-4 border-t border-zinc-800 pt-4 mt-4"><a href="https://github.com/jasonjose007/CodeAlpha_video-collab-app" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-wider text-purple-400 hover:text-pink-400 transition uppercase">View Code</a></div></div>
-</div>
-    </section>
-    <section id="certifications" class="max-w-6xl mx-auto px-6 py-24 border-t border-zinc-900" aria-labelledby="cert-heading">
-        <h2 id="cert-heading" class="text-5xl font-black text-center tracking-tight mb-16 uppercase text-zinc-200 fade-up">Certifications</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-xs text-amber-500" aria-hidden="true">AWS</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">AWS Academy</span><span class="text-[10px] text-zinc-500 block">June 2026</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Machine Learning for Natural Language Processing</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-orange-500/10 text-orange-400 inline-block">NLP</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_aws-academy-graduate-machine-learning-for-share-7476713033981943809-xM47/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1KxjRfv55y7HCYcAOt0mVfChkMKrVFqg4/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
-<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-xs text-amber-500" aria-hidden="true">AWS</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">AWS Academy</span><span class="text-[10px] text-zinc-500 block">June 2026</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">AWS Academy Cloud Foundations</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-orange-500/10 text-orange-400 inline-block">Cloud</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_aws-academy-graduate-cloud-foundations-share-7477117194607161344-TUqH/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1lCFrMjtqkr5TKPB0hB0cJjalQpUGSWXM/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
-<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[10px] text-sky-400" aria-hidden="true">CISCO</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Cisco Academy & NDG</span><span class="text-[10px] text-zinc-500 block">June 2026</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Linux Unhatched</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">Linux</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_linux-unhatched-was-issued-by-cisco-to-jason-share-7476288501869617153-2_lY/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1T3swuI1S48Clla0CJwe6RMRyyGij8_n_/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
-<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[9px] text-blue-500" aria-hidden="true">PRODIGY</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Prodigy InfoTech</span><span class="text-[10px] text-zinc-500 block">May - June 2026</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Generative AI Internship</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 inline-block">Internship</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_certificate-of-completion-and-letter-of-recommendation-ugcPost-7472418619264708608-QsNM/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1eD1BDrHP3frw-2vU5ewv0Q5vw1DO3Zkz/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
-<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[9px] text-red-500" aria-hidden="true">ORACLE</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Oracle University</span><span class="text-[10px] text-zinc-500 block">April 2026</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">OCI AI Foundations Associate</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">AI</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_oracle-cloud-infrastructure-2025-certified-activity-7446999160043610112-ix-m/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1ED9WEk_JhPO15bQbcwxJpa3x4Fkwc2bg/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
-<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[9px] text-cyan-400" aria-hidden="true">INFOSYS</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Infosys Springboard</span><span class="text-[10px] text-zinc-500 block">Feb 2026</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">DSA using Python - Part 1</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">DSA</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_data-structures-and-algorithms-using-python-activity-7431724570988015616-SD4m/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1AnbZTLlWvNnEE-Ax63OA9JLIMdaB97NG/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
-<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[10px] text-orange-400" aria-hidden="true">NPTEL</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">NPTEL / IIT Madras</span><span class="text-[10px] text-zinc-500 block">Jan - Feb 2026</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Python for Data Science</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-amber-500/10 text-amber-400 inline-block">Elite</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-end text-[11px]"><a href="https://drive.google.com/file/d/1cfngqAMFwvEMy9Ya_hL09dFzfT2EoN7o/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
-<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[9px] text-cyan-400" aria-hidden="true">INFOSYS</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Infosys Springboard</span><span class="text-[10px] text-zinc-500 block">Nov 2025</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Programming Fundamentals</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">Python</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_programming-fundamentals-using-python-activity-7405860352518696960-STmY/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1YLAq392y08EtN33cnKcQu7hQ0YmmYB5e/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
-<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[9px] text-orange-500" aria-hidden="true">SWAYAM</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">SWAYAM / BHU</span><span class="text-[10px] text-zinc-500 block">Aug - Oct 2025</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Fundamentals of Computing</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">Core CS</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_fundamentals-of-computing-activity-7405860625056403456-Y-Wn/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1g9DEAWffwk2XUsMU-TaUPG4iumTWaFqS/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
-<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[9px] text-orange-400" aria-hidden="true">SIMPLI</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Simplilearn SkillUp</span><span class="text-[10px] text-zinc-500 block">Sept 2025</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">DSA in Python</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">DSA</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_data-structures-and-algorithms-in-python-activity-7405859583371440128-_paT/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1jHAi57ib4wzG5CuRyTPBWbzadZTaDeJa/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
-<div class="bg-[#121214] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition fade-up"><div><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl font-bold text-[9px] text-orange-400" aria-hidden="true">SIMPLI</div><div><span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">Simplilearn SkillUp</span><span class="text-[10px] text-zinc-500 block">Sept 2025</span></div></div><h3 class="text-base font-bold text-zinc-200 uppercase tracking-wide leading-snug mb-2">Introduction to HTML</h3><span class="text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded bg-purple-500/10 text-purple-400 inline-block">Web</span></div><div class="mt-6 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-[11px]"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_introduction-to-html-activity-7405859854361255936-HKIx/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">LinkedIn</a><a href="https://drive.google.com/file/d/1OH1NYgyHiF6RhfCZZBNrntFt2INFplqP/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-purple-400 font-medium transition">Certificate</a></div></div>
-        </div>
-    </section>
-    <section id="leetcode" class="max-w-5xl mx-auto px-6 py-24 border-t border-zinc-900 fade-up" aria-labelledby="leetcode-heading">
-        <div class="bg-[#121214] border border-zinc-900 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
-            <div class="max-w-xl z-10">
-                <div class="flex items-center gap-3 mb-4"><span class="text-xs font-bold text-amber-500 tracking-widest uppercase">Algorithms & Data Structures</span><span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" aria-hidden="true"></span></div>
-                <h2 id="leetcode-heading" class="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4 text-zinc-200">LeetCode Solutions</h2>
-                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6">Consistently solving algorithmic challenges — optimizing for runtime and memory efficiency. Solutions are indexed by topic with complexity analysis.</p>
+    </div>
+</section>
+
+<!-- ===== BENTO GRID (projects) — mixed sizes, not uniform ===== -->
+<section class="pb-24">
+    <div class="section-label r">Project Archive</div>
+    <div class="bento r">
+        <div class="bento-card wide accent interactive"><div class="bento-glow" style="background:#a855f7;top:-50px;right:-50px"></div><div class="bento-tag">AI / LLM</div><div class="bento-title text-xl">GPT-2 Custom Fine-Tuning</div><p class="bento-desc">Fine-tuned GPT-2 on custom corpus for domain-specific prose. Managed tokenization, loss convergence, and hyperparameters.</p><div class="bento-links"><a href="https://github.com/jasonjose007/PRODIGY_GA_01" target="_blank" rel="noopener noreferrer" class="interactive">View Code →</a></div><div class="flex flex-wrap gap-1.5 mt-2"><span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">NLP</span></div><a href="https://github.com/jasonjose007/PRODIGY_GA_01" target="_blank" rel="noopener noreferrer" class="text-[9px] font-mono text-zinc-500 hover:text-purple-400 transition mt-3 block">View →</a></div>
+        <div class="bento-card interactive"><div class="bento-glow" style="background:#ec4899;bottom:-40px;left:-40px"></div><div class="bento-tag">Computer Vision</div><div class="bento-title">Pix2Pix cGAN</div><p class="bento-desc text-[10px]">Conditional GAN for image-to-image translation.</p><div class="bento-links"><a href="https://github.com/jasonjose007/PRODIGY_GA_02" target="_blank" rel="noopener noreferrer" class="interactive">View →</a></div></div>
+        <div class="bento-card interactive"><div class="bento-glow" style="background:#06b6d4;top:-40px;right:-40px"></div><div class="bento-tag">SaaS</div><div class="bento-title">SwiftBill</div><p class="bento-desc text-[10px]">Free invoice generator. Client-side PDF. No signup.</p><div class="bento-links"><a href="https://swiftbill-one.vercel.app" target="_blank" rel="noopener noreferrer" class="interactive">Live Demo →</a><a href="https://github.com/jasonjose007/swiftbill" target="_blank" rel="noopener noreferrer" class="interactive">GitHub →</a></div></div>
+        <div class="bento-card interactive"><div class="bento-glow" style="background:#a855f7;bottom:-40px;right:-40px"></div><div class="bento-tag">Smart Buildings</div><div class="bento-title">ThermaSync</div><p class="bento-desc text-[10px]">AI thermal banking. Schneider Hackathon. 25-35% savings.</p><div class="bento-links"><a href="https://thermasync.vercel.app" target="_blank" rel="noopener noreferrer" class="interactive">Live →</a><a href="https://github.com/jasonjose007/ThermaSync" target="_blank" rel="noopener noreferrer" class="interactive">GitHub →</a></div></div>
+        <div class="bento-card wide interactive"><div class="bento-glow" style="background:#ec4899;top:-30px;left:50%"></div><div class="bento-tag">AI Analytics</div><div class="bento-title">Crime Analytics Platform</div><p class="bento-desc">Conversational AI for law enforcement — English + Kannada. Criminal network visualization, hotspot detection, 16 intent classifiers.</p><div class="bento-links"><a href="https://github.com/jasonjose007/crime-analytics-platform-Hackathon" target="_blank" rel="noopener noreferrer" class="interactive">View Code →</a></div><div class="flex flex-wrap gap-1.5 mt-2"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">NetworkX</span><span class="tag">NLP</span></div></div>
+        <div class="bento-card interactive"><div class="bento-glow" style="background:#06b6d4;bottom:-40px;left:-40px"></div><div class="bento-tag">Edge AI</div><div class="bento-title">MotorGuard-AI</div><p class="bento-desc text-[10px]">Predictive maintenance for industrial motors.</p><div class="bento-links"><a href="https://github.com/jasonjose007/MotorGuard-AI" target="_blank" rel="noopener noreferrer" class="interactive">View →</a></div></div>
+    
+        <div class="bento-card interactive"><div class="bento-glow" style="background:#a855f7;top:-40px;right:-40px"></div><div class="bento-tag">AI + EdTech</div><div class="bento-title">Adhyai</div><p class="bento-desc text-[10px]">Offline multilingual AI tutor for low-connectivity regions. Bloom's Taxonomy adaptive learning in 30+ languages.</p><div class="bento-links"><a href="https://adhyai-krgr.onrender.com" target="_blank" rel="noopener noreferrer" class="interactive">Live →</a><a href="https://github.com/jasonjose007/adhyai" target="_blank" rel="noopener noreferrer" class="interactive">GitHub →</a></div></div>
+        <div class="bento-card interactive"><div class="bento-glow" style="background:#06b6d4;bottom:-40px;left:-40px"></div><div class="bento-tag">Frontend</div><div class="bento-title">CHRONOS-X</div><p class="bento-desc text-[10px]">Luxury watch landing page with GSAP scroll animations, 3D exploded-view, and Lenis smooth scroll.</p><div class="bento-links"><a href="https://github.com/jasonjose007/CHRONOS-X" target="_blank" rel="noopener noreferrer" class="interactive">GitHub →</a></div></div>
+        <div class="bento-card interactive"><div class="bento-glow" style="background:#ec4899;top:-40px;left:-40px"></div><div class="bento-tag">Healthcare</div><div class="bento-title">Medical Records</div><p class="bento-desc text-[10px]">Flask patient data management system with admin auth. Global NEXUS Hackathon.</p><div class="bento-links"><a href="https://github.com/jasonjose007/Global_NEXUS-Hackathon" target="_blank" rel="noopener noreferrer" class="interactive">GitHub →</a></div></div>
+        <div class="bento-card wide interactive"><div class="bento-glow" style="background:#a855f7;bottom:-40px;right:-40px"></div><div class="bento-tag">Health-Tech</div><div class="bento-title">Remote Patient Monitoring</div><p class="bento-desc">ML-powered clinician dashboard for chronic condition patients. Tracks vitals, predicts hospitalization risk, triggers alerts for abnormal readings in real-time.</p><div class="bento-links"><a href="https://github.com/jasonjose007/Remote-Patient-Monitering-Hackathon" target="_blank" rel="noopener noreferrer" class="interactive">GitHub →</a></div><div class="flex flex-wrap gap-1.5 mt-2"><span class="tag">React</span><span class="tag">TensorFlow</span><span class="tag">MongoDB</span><span class="tag">Node.js</span></div></div>
+    </div>
+</section>
+
+<!-- ===== SKILLS — Option B Icon Grid ===== -->
+<section id="skills" class="py-24 border-t border-white/[.03]">
+    <div class="section-label r">Technical Skills</div>
+    <div class="skill-grid r">
+        <div class="sk"><div class="sk-inner interactive"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" class="mx-auto"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><p class="sk-name">Python</p></div><div class="sk-badge" style="background:#7c3aed">★★★</div></div>
+        <div class="sk"><div class="sk-inner interactive"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.5" class="mx-auto"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><p class="sk-name">JS / TS</p></div><div class="sk-badge" style="background:#be185d">★★★</div></div>
+        <div class="sk"><div class="sk-inner interactive"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="1.5" class="mx-auto"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/></svg><p class="sk-name">React</p></div><div class="sk-badge" style="background:#0e7490">★★☆</div></div>
+        <div class="sk"><div class="sk-inner interactive"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" class="mx-auto"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><p class="sk-name">Node.js</p></div><div class="sk-badge" style="background:#7c3aed">★★★</div></div>
+        <div class="sk"><div class="sk-inner interactive"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.5" class="mx-auto"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg><p class="sk-name">MongoDB</p></div><div class="sk-badge" style="background:#be185d">★★★</div></div>
+        <div class="sk"><div class="sk-inner interactive"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="1.5" class="mx-auto"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5"/></svg><p class="sk-name">FastAPI</p></div><div class="sk-badge" style="background:#0e7490">★★★</div></div>
+        <div class="sk"><div class="sk-inner interactive"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.5" class="mx-auto"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><p class="sk-name">AWS</p></div><div class="sk-badge" style="background:#b45309">★★☆</div></div>
+        <div class="sk"><div class="sk-inner interactive"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" class="mx-auto"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg><p class="sk-name">AI / RAG</p></div><div class="sk-badge" style="background:#7c3aed">★★★</div></div>
+        <div class="sk"><div class="sk-inner interactive"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.5" class="mx-auto"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg><p class="sk-name">PyTorch</p></div><div class="sk-badge" style="background:#be185d">★★☆</div></div>
+        <div class="sk"><div class="sk-inner interactive"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="1.5" class="mx-auto"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg><p class="sk-name">Docker</p></div><div class="sk-badge" style="background:#0e7490">★★☆</div></div>
+        <div class="sk"><div class="sk-inner interactive"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" class="mx-auto"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg><p class="sk-name">Git / CI</p></div><div class="sk-badge" style="background:#7c3aed">★★★</div></div>
+        <div class="sk"><div class="sk-inner interactive"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.5" class="mx-auto"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><p class="sk-name">Socket.io</p></div><div class="sk-badge" style="background:#b45309">★★★</div></div>
+    </div>
+    <p class="text-center text-zinc-700 text-[9px] font-mono mt-10 tracking-widest">★★★ Expert · ★★☆ Proficient · ★☆☆ Learning</p>
+</section>
+
+<!-- ===== TIMELINE — vertical, alternating, totally different feel ===== -->
+<section id="journey" class="py-24 border-t border-white/[.03]">
+    <div class="section-label r">Journey</div>
+    <div class="grid md:grid-cols-2 gap-16">
+        <div class="rl">
+            <h3 class="text-xs font-mono tracking-widest uppercase text-zinc-500 mb-8">Experience</h3>
+            <div class="tl">
+                <div class="tl-item r"><p class="tl-date">May – Jul 2026</p><h4 class="tl-title">Generative AI Intern</h4><p class="tl-org">Prodigy InfoTech · GPT-2, GANs, Markov chains</p></div>
+                <div class="tl-item r" style="transition-delay:.1s"><p class="tl-date">Jun – Aug 2026</p><h4 class="tl-title">Software Engineering Intern</h4><p class="tl-org">CodeAlpha · Full-stack apps, real-time systems</p></div>
             </div>
-            <div class="w-full md:w-auto shrink-0 z-10 text-center md:text-right"><a href="https://github.com/jasonjose007/Leetcode" target="_blank" rel="noopener noreferrer" class="border border-amber-500/30 hover:border-amber-500 text-amber-500 hover:bg-amber-500/5 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest inline-block transition text-center shadow-lg shadow-amber-500/5 w-full md:w-auto">Explore Solutions</a></div>
-            <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
         </div>
-    </section>
-    <section id="contact" class="max-w-4xl mx-auto px-6 py-32 border-t border-zinc-900" aria-labelledby="contact-heading">
-        <div class="text-center mb-16 fade-up">
-            <h2 id="contact-heading" class="text-5xl font-black tracking-tight uppercase mb-4 text-zinc-200">Let's Work</h2>
-            <p class="text-zinc-500 text-xs tracking-widest uppercase max-w-sm mx-auto leading-relaxed">Looking to build scalable backend systems, optimize databases, or collaborate on full-stack applications? Let's connect.</p>
-        </div>
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="max-w-lg mx-auto mb-16 fade-up">
-            <input type="hidden" name="form-name" value="contact">
-            <p class="hidden"><label>Do not fill: <input name="bot-field"></label></p>
-            <div class="space-y-4">
-                <div><label for="name" class="block text-[10px] font-bold tracking-widest uppercase text-zinc-500 mb-2">Name</label><input type="text" id="name" name="name" required class="w-full bg-[#121214] border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:border-purple-500 focus:outline-none transition" placeholder="Your name"></div>
-                <div><label for="email" class="block text-[10px] font-bold tracking-widest uppercase text-zinc-500 mb-2">Email</label><input type="email" id="email" name="email" required class="w-full bg-[#121214] border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:border-purple-500 focus:outline-none transition" placeholder="you@example.com"></div>
-                <div><label for="message" class="block text-[10px] font-bold tracking-widest uppercase text-zinc-500 mb-2">Message</label><textarea id="message" name="message" rows="4" required class="w-full bg-[#121214] border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:border-purple-500 focus:outline-none transition resize-none" placeholder="What's on your mind?"></textarea></div>
-                <button type="submit" class="gradient-btn w-full px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest hover:opacity-90 transition shadow-lg shadow-purple-500/20">Send Message</button>
+        <div class="rr">
+            <h3 class="text-xs font-mono tracking-widest uppercase text-zinc-500 mb-8">Hackathons & Highlights</h3>
+            <div class="tl">
+                <div class="tl-item r"><p class="tl-date">Aug 2026</p><h4 class="tl-title">NyayaSetu — OOSC 4.0</h4><p class="tl-org">AI legal rights assistant for Indian citizens</p></div>
+                <div class="tl-item r" style="transition-delay:.1s"><p class="tl-date">Aug 2026</p><h4 class="tl-title">ThermaSync — Schneider Electric</h4><p class="tl-org">Smart building thermal banking system</p></div>
+                <div class="tl-item r" style="transition-delay:.2s"><p class="tl-date">Aug 2026</p><h4 class="tl-title">Adhyai — Open Hackathon</h4><p class="tl-org">Offline multilingual AI tutor · SDG 4 & 10</p></div>
+                <div class="tl-item r" style="transition-delay:.3s"><p class="tl-date">Aug 2025</p><h4 class="tl-title">MotorGuard-AI — MSME</h4><p class="tl-org">Edge-AI predictive maintenance system</p></div>
             </div>
-        </form>
-        <div class="flex justify-center items-center gap-4 mb-20 fade-up">
-            <a href="mailto:jasonjose006@gmail.com" aria-label="Send email" class="w-14 h-14 rounded-full flex items-center justify-center border border-zinc-800 bg-[#121214] text-zinc-400 hover:text-purple-400 hover:border-purple-500 hover:-translate-y-1 transition duration-300 shadow-xl group"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></a>
-            <a href="https://www.linkedin.com/in/jason-jose-3b829936b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" class="w-14 h-14 rounded-full flex items-center justify-center border border-zinc-800 bg-[#121214] text-zinc-400 hover:text-purple-400 hover:border-purple-500 hover:-translate-y-1 transition duration-300 shadow-xl group"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg></a>
-            <a href="https://github.com/jasonjose007" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" class="w-14 h-14 rounded-full flex items-center justify-center border border-zinc-800 bg-[#121214] text-zinc-400 hover:text-purple-400 hover:border-purple-500 hover:-translate-y-1 transition duration-300 shadow-xl group"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg></a>
-            <a href="https://leetcode.com/u/jasonjose/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode profile" class="w-14 h-14 rounded-full flex items-center justify-center border border-zinc-800 bg-[#121214] text-zinc-400 hover:text-amber-400 hover:border-amber-500 hover:-translate-y-1 transition duration-300 shadow-xl group"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.038-1.901l-2.609-2.636a5.055 5.055 0 0 0-2.445-1.337l2.467-2.503c.516-.514.498-1.366-.037-1.901-.535-.535-1.387-.552-1.902-.038l-10.1 10.101c-.981.982-1.494 2.337-1.494 3.835 0 1.498.513 2.895 1.494 3.875l4.347 4.361c.981.979 2.337 1.452 3.834 1.452s2.853-.512 3.835-1.494l2.609-2.637c.514-.514.496-1.365-.039-1.9s-1.386-.553-1.899-.039zM20.811 13.01H10.666c-.702 0-1.27.604-1.27 1.346s.568 1.346 1.27 1.346h10.145c.701 0 1.27-.604 1.27-1.346s-.569-1.346-1.27-1.346z"/></svg></a>
         </div>
-        <p class="text-[10px] text-zinc-700 uppercase tracking-widest text-center">&copy; 2026 Jason J. All Rights Reserved.</p>
-    </section>
-    </main>    <button id="back-to-top" aria-label="Back to top" class="fixed bottom-8 right-8 w-10 h-10 rounded-full bg-purple-600 text-white flex items-center justify-center shadow-lg shadow-purple-500/20 opacity-0 pointer-events-none transition-all duration-300 hover:bg-purple-500 z-50"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg></button>
-    <script>
-    const observer=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add("visible")})},{threshold:.1,rootMargin:"0px 0px -50px 0px"});
-    document.querySelectorAll(".fade-up").forEach(el=>observer.observe(el));
-    const backToTop=document.getElementById("back-to-top");
-    window.addEventListener("scroll",()=>{if(window.scrollY>500){backToTop.classList.remove("opacity-0","pointer-events-none");backToTop.classList.add("opacity-100")}else{backToTop.classList.add("opacity-0","pointer-events-none");backToTop.classList.remove("opacity-100")}});
-    backToTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
-    const toggle=document.getElementById("theme-toggle"),sunIcon=document.getElementById("sun-icon"),moonIcon=document.getElementById("moon-icon");
-    function setTheme(d){if(d){document.documentElement.classList.remove("light");document.body.style.backgroundColor="#0B0B0C";sunIcon.classList.add("hidden");moonIcon.classList.remove("hidden")}else{document.documentElement.classList.add("light");document.body.style.backgroundColor="#f8f8f8";sunIcon.classList.remove("hidden");moonIcon.classList.add("hidden")}localStorage.setItem("theme",d?"dark":"light")}
-    toggle.addEventListener("click",()=>setTheme(document.documentElement.classList.contains("light")));
-    if(localStorage.getItem("theme")==="light")setTheme(false);
-    document.querySelectorAll("a[href^=\"#\"]").forEach(a=>{a.addEventListener("click",function(e){e.preventDefault();const t=document.querySelector(this.getAttribute("href"));if(t)t.scrollIntoView({behavior:"smooth",block:"start"})})});
-    </script>
+    </div>
+</section>
+
+<!-- ===== INTERNSHIP HORIZONTAL SCROLL ===== -->
+<section class="py-24 border-t border-white/[.03]">
+    <div class="section-label r">Internship Projects</div>
+    <div class="hstrip rb">
+        <div class="hcard interactive"><div class="text-[9px] font-mono text-purple-400 tracking-wider uppercase mb-2">01 / LLM · Prodigy</div><h3 class="font-bold mb-2">GPT-2 Fine-Tuning</h3><p class="text-zinc-500 text-xs leading-relaxed mb-4">Domain-specific text generation via custom corpus training.</p><div class="flex flex-wrap gap-1"><span class="tag">Python</span><span class="tag">PyTorch</span></div></div>
+        <div class="hcard interactive"><div class="text-[9px] font-mono text-pink-400 tracking-wider uppercase mb-2">02 / CV · Prodigy</div><h3 class="font-bold mb-2">Pix2Pix cGAN</h3><p class="text-zinc-500 text-xs leading-relaxed mb-4">Paired image-to-image translation with adversarial optimization.</p><div class="flex flex-wrap gap-1"><span class="tag">TensorFlow</span><span class="tag">GANs</span></div><a href="https://github.com/jasonjose007/PRODIGY_GA_02" target="_blank" rel="noopener noreferrer" class="text-[9px] font-mono text-zinc-500 hover:text-purple-400 transition mt-3 block">View →</a></div>
+        <div class="hcard interactive"><div class="text-[9px] font-mono text-cyan-400 tracking-wider uppercase mb-2">03 / DL · Prodigy</div><h3 class="font-bold mb-2">Deep Image Generation</h3><p class="text-zinc-500 text-xs leading-relaxed mb-4">High-fidelity image synthesis from deep latent spaces.</p><div class="flex flex-wrap gap-1"><span class="tag">DCGAN</span><span class="tag">CUDA</span></div><a href="https://github.com/jasonjose007/PRODIGY_GA_03" target="_blank" rel="noopener noreferrer" class="text-[9px] font-mono text-zinc-500 hover:text-purple-400 transition mt-3 block">View →</a></div>
+        <div class="hcard interactive"><div class="text-[9px] font-mono text-purple-400 tracking-wider uppercase mb-2">04 / NLP · Prodigy</div><h3 class="font-bold mb-2">Markov Chain Synthesis</h3><p class="text-zinc-500 text-xs leading-relaxed mb-4">Probabilistic text generation without neural networks.</p><div class="flex flex-wrap gap-1"><span class="tag">Python</span><span class="tag">NLP</span></div><a href="https://github.com/jasonjose007/PRODIGY_GA_04" target="_blank" rel="noopener noreferrer" class="text-[9px] font-mono text-zinc-500 hover:text-purple-400 transition mt-3 block">View →</a></div>
+        <div class="hcard interactive"><div class="text-[9px] font-mono text-pink-400 tracking-wider uppercase mb-2">05 / BE · CodeAlpha</div><h3 class="font-bold mb-2">Social Media Dashboard</h3><p class="text-zinc-500 text-xs leading-relaxed mb-4">RESTful backend with real-time analytics tracking.</p><div class="flex flex-wrap gap-1"><span class="tag">Node.js</span><span class="tag">Express</span></div><a href="https://github.com/jasonjose007/CodeAlpha_Simple_E-commerce_Store" target="_blank" rel="noopener noreferrer" class="text-[9px] font-mono text-zinc-500 hover:text-purple-400 transition mt-3 block">View →</a></div>
+        <div class="hcard interactive"><div class="text-[9px] font-mono text-cyan-400 tracking-wider uppercase mb-2">06 / DB · CodeAlpha</div><h3 class="font-bold mb-2">Relational DB Models</h3><p class="text-zinc-500 text-xs leading-relaxed mb-4">Low-latency CRUD ops with query optimization.</p><div class="flex flex-wrap gap-1"><span class="tag">SQL</span><span class="tag">Express</span></div><a href="https://github.com/jasonjose007/CodeAlpha_SocialMediaApp" target="_blank" rel="noopener noreferrer" class="text-[9px] font-mono text-zinc-500 hover:text-purple-400 transition mt-3 block">View →</a></div>
+        <div class="hcard interactive"><div class="text-[9px] font-mono text-purple-400 tracking-wider uppercase mb-2">07 / RT · CodeAlpha</div><h3 class="font-bold mb-2">Project Management Tool</h3><p class="text-zinc-500 text-xs leading-relaxed mb-4">Trello-style platform with live Socket.io state sync.</p><div class="flex flex-wrap gap-1"><span class="tag">Socket.io</span><span class="tag">WebSockets</span></div><a href="https://github.com/jasonjose007/CodeAlpha_Project-Management-Tool" target="_blank" rel="noopener noreferrer" class="text-[9px] font-mono text-zinc-500 hover:text-purple-400 transition mt-3 block">View →</a></div>
+        <div class="hcard interactive"><div class="text-[9px] font-mono text-pink-400 tracking-wider uppercase mb-2">08 / WR · CodeAlpha</div><h3 class="font-bold mb-2">Video Collab App</h3><p class="text-zinc-500 text-xs leading-relaxed mb-4">P2P video with screen share via WebRTC.</p><div class="flex flex-wrap gap-1"><span class="tag">WebRTC</span><span class="tag">P2P</span></div><a href="https://github.com/jasonjose007/CodeAlpha_video-collab-app" target="_blank" rel="noopener noreferrer" class="text-[9px] font-mono text-zinc-500 hover:text-purple-400 transition mt-3 block">View →</a></div>
+    </div>
+    <p class="text-zinc-700 text-[9px] font-mono tracking-widest mt-4">← scroll to explore</p>
+</section>
+
+<!-- ===== CONTACT — totally different, big centered ===== -->
+<section id="leetcode" class="py-20 border-t border-white/[.03] r">
+<div class="max-w-5xl mx-auto px-6">
+<div class="bg-white/[.02] border border-white/[.05] rounded-3xl p-10 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+<div class="max-w-xl z-10">
+<div class="flex items-center gap-3 mb-4"><span class="text-[9px] font-bold text-amber-500 tracking-widest uppercase font-mono">Algorithms & Data Structures</span><span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span></div>
+<h2 class="text-3xl font-black uppercase tracking-tight mb-4 text-zinc-200">LeetCode Solutions</h2>
+<p class="text-zinc-500 text-sm leading-relaxed">Consistently solving algorithmic challenges — optimizing for runtime and memory efficiency. Solutions indexed by topic with complexity analysis.</p>
+</div>
+<div class="shrink-0 z-10 flex flex-col gap-3 text-center">
+<a href="https://github.com/jasonjose007/Leetcode" target="_blank" rel="noopener noreferrer" class="border border-amber-500/30 hover:border-amber-500 text-amber-500 hover:bg-amber-500/5 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest inline-block transition interactive">Explore Solutions</a>
+<a href="https://leetcode.com/u/jasonjose/" target="_blank" rel="noopener noreferrer" class="border border-zinc-700 hover:border-amber-500/50 text-zinc-500 hover:text-amber-500 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest inline-block transition interactive">LeetCode Profile</a>
+</div>
+</div></div></section>
+<section id="resume" class="py-20 border-t border-white/[.03] r">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<div class="border border-white/[.05] bg-white/[.02] rounded-2xl p-8 max-w-2xl mx-auto">
+<h3 class="text-[9px] font-mono tracking-[.3em] uppercase text-zinc-600 mb-3">Professional Credentials</h3>
+<h4 class="text-xl font-bold uppercase tracking-wide text-zinc-200 mb-4">Curriculum Vitae</h4>
+<p class="text-zinc-500 text-xs leading-relaxed max-w-sm mx-auto mb-6">Technical proficiencies, engineering work history, project milestones, and certifications.</p>
+<div class="flex flex-wrap justify-center gap-3">
+<a href="https://rxresu.me/jasonjose006/my-resume" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-widest uppercase border border-white/[.08] hover:border-purple-500/50 text-zinc-400 hover:text-white bg-white/[.02] px-6 py-3.5 rounded-full inline-block transition interactive">View Online</a>
+<a href="/Jason_J_Resume.pdf" download class="text-xs font-bold tracking-widest uppercase border border-purple-500/25 hover:border-purple-500 text-purple-400 hover:text-white bg-purple-500/5 px-6 py-3.5 rounded-full inline-block transition interactive">Download PDF</a>
+</div></div></div></section>
+<section id="contact" class="py-24 border-t border-white/[.03]">
+<div class="contact-wrap r interactive">
+<p class="text-[9px] font-mono tracking-[.4em] uppercase text-zinc-500 mb-6">Open to opportunities</p>
+<h2 class="text-6xl md:text-8xl font-black tracking-tight mb-6 gt">Let's Build.</h2>
+<p class="text-zinc-500 max-w-sm mx-auto leading-relaxed mb-10 text-sm">Got a project, hackathon, or collaboration in mind? I build fast and ship faster.</p>
+<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="max-w-md mx-auto mb-10 text-left">
+<input type="hidden" name="form-name" value="contact">
+<p class="hidden"><label>Do not fill: <input name="bot-field"></label></p>
+<div class="space-y-4">
+<div><label class="block text-[9px] font-mono tracking-[.25em] uppercase text-zinc-600 mb-2">Name</label><input type="text" name="name" required class="w-full bg-white/[.03] border border-white/[.07] rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:border-purple-500/40 focus:outline-none transition" placeholder="Your name"></div>
+<div><label class="block text-[9px] font-mono tracking-[.25em] uppercase text-zinc-600 mb-2">Email</label><input type="email" name="email" required class="w-full bg-white/[.03] border border-white/[.07] rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:border-purple-500/40 focus:outline-none transition" placeholder="you@example.com"></div>
+<div><label class="block text-[9px] font-mono tracking-[.25em] uppercase text-zinc-600 mb-2">Message</label><textarea name="message" rows="4" required class="w-full bg-white/[.03] border border-white/[.07] rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:border-purple-500/40 focus:outline-none transition resize-none" placeholder="What are you building?"></textarea></div>
+<button type="submit" class="gb w-full px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest text-white hover:opacity-90 transition-all interactive">Send Message</button>
+</div></form>
+<div class="flex justify-center items-center gap-4 mb-10">
+<a href="mailto:jasonjose006@gmail.com" class="w-12 h-12 rounded-full flex items-center justify-center border border-white/[.07] bg-white/[.03] text-zinc-400 hover:text-purple-400 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 interactive"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
+<a href="https://www.linkedin.com/in/jason-jose-3b829936b/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full flex items-center justify-center border border-white/[.07] bg-white/[.03] text-zinc-400 hover:text-purple-400 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 interactive"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></a>
+<a href="https://github.com/jasonjose007" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full flex items-center justify-center border border-white/[.07] bg-white/[.03] text-zinc-400 hover:text-purple-400 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 interactive"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
+<a href="https://leetcode.com/u/jasonjose/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full flex items-center justify-center border border-white/[.07] bg-white/[.03] text-zinc-400 hover:text-amber-400 hover:border-amber-500/40 hover:-translate-y-1 transition duration-300 interactive"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.038-1.901l-2.609-2.636a5.055 5.055 0 0 0-2.445-1.337l2.467-2.503c.516-.514.498-1.366-.037-1.901-.535-.535-1.387-.552-1.902-.038l-10.1 10.101c-.981.982-1.494 2.337-1.494 3.835 0 1.498.513 2.895 1.494 3.875l4.347 4.361c.981.979 2.337 1.452 3.834 1.452s2.853-.512 3.835-1.494l2.609-2.637c.514-.514.496-1.365-.039-1.9s-1.386-.553-1.899-.039zM20.811 13.01H10.666c-.702 0-1.27.604-1.27 1.346s.568 1.346 1.27 1.346h10.145c.701 0 1.27-.604 1.27-1.346s-.569-1.346-1.27-1.346z"/></svg></a>
+</div>
+<p class="text-zinc-800 text-[9px] font-mono tracking-[.3em] uppercase">&copy; 2026 Jason Jose. All Rights Reserved.</p>
+</div></section>
+
+</div><!-- end max-w -->
+<script>
+// Cursor
+const cur=document.getElementById('cur'),dot=document.getElementById('dot');
+let mx=0,my=0,cx=0,cy=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
+function ac(){cx+=(mx-cx)*.14;cy+=(my-cy)*.14;cur.style.left=cx+'px';cur.style.top=cy+'px';requestAnimationFrame(ac)}ac();
+document.querySelectorAll('.interactive').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('h'));el.addEventListener('mouseleave',()=>cur.classList.remove('h'))});
+
+// Scroll reveal (re-triggers up and down)
+const sel='.r,.rl,.rr,.rs,.rb';
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('s');else el.target.classList.remove('s')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll(sel).forEach(el=>obs.observe(el));
+
+// Counters
+function runC(el){const t=+el.dataset.t;const s=performance.now();function step(n){const p=Math.min((n-s)/1300,1);const e2=1-Math.pow(1-p,4);el.textContent=Math.floor(e2*t);if(p<1)requestAnimationFrame(step);else el.textContent=t+'+'}requestAnimationFrame(step)}
+const co=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)runC(en.target);else en.target.textContent='0'})},{threshold:.5});
+document.querySelectorAll('.counter').forEach(el=>co.observe(el));
+
+// Scroll progress
+window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;document.getElementById('sp').style.width=(scrollY/h*100)+'%'});
+
+// Typewriter
+const roles=['Systems Architect','AI/ML Engineer','Backend Developer','Full Stack Builder','Hackathon Builder'];let ri=0,ci=0,del=false;const typed=document.getElementById('typed');
+setInterval(()=>{if(!del){ci++;if(ci>roles[ri].length){setTimeout(()=>del=true,1800);return}}else{ci--;if(ci<0){ci=0;del=false;ri=(ri+1)%roles.length;return}}typed.textContent=roles[ri].slice(0,ci)},70);
+
+// Hero content immediate show
+setTimeout(()=>{document.getElementById('hc').classList.add('s');document.getElementById('hchips').classList.add('s')},100);
+</script>
+<div id="egg" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);backdrop-filter:blur(20px);align-items:center;justify-content:center;flex-direction:column;gap:16px"><p style="font-size:40px;font-weight:900;background:linear-gradient(135deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">YOU FOUND ME!</p><p style="color:#a1a1aa;font-family:monospace;font-size:13px">Type "hire me" anywhere</p><p style="color:#a1a1aa;font-size:13px">jasonjose006@gmail.com</p><button onclick="this.parentElement.style.display='none'" style="margin-top:24px;border:1px solid #3f3f46;padding:8px 24px;border-radius:999px;font-size:10px;color:#71717a;background:none;cursor:pointer">Close</button></div>
 </body>
 </html>
