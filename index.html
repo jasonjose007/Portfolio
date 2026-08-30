@@ -71,6 +71,7 @@ function closeEgg(){
 }
 
 // Attach close button and dot click after DOM ready
+window.__openEgg=openEgg;
 window.addEventListener('load',function(){
   var btn=document.getElementById('eggClose');if(btn)btn.addEventListener('click',closeEgg);
   var dot=document.getElementById('secretHint');if(dot)dot.addEventListener('click',openEgg);
@@ -459,6 +460,6 @@ setTimeout(()=>{document.getElementById('hc').classList.add('s');document.getEle
     <button id="eggClose" style="border:1px solid #27272a;padding:8px 24px;border-radius:999px;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#3f3f46;background:none;cursor:pointer;font-family:JetBrains Mono,monospace">[ ESC or click to close ]</button>
   </div>
 </div>
-<div id="secretHint" style="position:fixed;bottom:90px;left:20px;z-index:60;cursor:pointer;user-select:none;padding:12px" title="Click me!"><div style="width:12px;height:12px;border-radius:50%;background:rgba(168,85,247,.5);position:relative"><div style="position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(168,85,247,.25);animation:ping 2s cubic-bezier(0,0,.2,1) infinite"></div></div></div>
+<div id="secretHint" onclick="window.__openEgg&&window.__openEgg()" style="position:fixed;bottom:90px;left:20px;z-index:60;cursor:pointer;user-select:none;padding:16px" title="Click me!"><div style="width:12px;height:12px;border-radius:50%;background:rgba(168,85,247,.55);position:relative"><div style="position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(168,85,247,.3);animation:ping 2s cubic-bezier(0,0,.2,1) infinite"></div></div></div>
 </body>
 </html>
