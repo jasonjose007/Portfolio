@@ -6,104 +6,87 @@
 <script src="https://cdn.tailwindcss.com">
 
 (function(){
-const egg=document.getElementById('egg');
-const eggCanvas=document.getElementById('eggCanvas');
-const eggClose=document.getElementById('eggClose');
 let raf=null,isOpen=false;
 
 function launchConfetti(){
-  eggCanvas.style.display='block';
-  eggCanvas.width=innerWidth;eggCanvas.height=innerHeight;
-  const ctx2=eggCanvas.getContext('2d');
-  const particles=[];
-  const colors=['#a855f7','#ec4899','#06b6d4','#f59e0b','#fff','#c4b5fd','#fbcfe8'];
-  for(let i=0;i<200;i++){
-    particles.push({x:Math.random()*innerWidth,y:-20-Math.random()*300,vx:(Math.random()-0.5)*8,vy:Math.random()*5+2,rot:Math.random()*360,rotV:(Math.random()-0.5)*10,w:Math.random()*12+4,h:Math.random()*7+2,color:colors[Math.floor(Math.random()*colors.length)]});
+  var ec=document.getElementById('eggCanvas');
+  if(!ec)return;
+  ec.style.display='block';ec.width=innerWidth;ec.height=innerHeight;
+  var ctx2=ec.getContext('2d');
+  var pts=[];var cols=['#a855f7','#ec4899','#06b6d4','#f59e0b','#fff','#c4b5fd','#fbcfe8'];
+  for(var i=0;i<200;i++)pts.push({x:Math.random()*ec.width,y:-20-Math.random()*300,vx:(Math.random()-.5)*8,vy:Math.random()*5+2,rot:Math.random()*360,rotV:(Math.random()-.5)*10,w:Math.random()*12+4,h:Math.random()*7+2,col:cols[Math.floor(Math.random()*cols.length)]});
+  function dc(){
+    ctx2.clearRect(0,0,ec.width,ec.height);var alive=false;
+    pts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.rot+=p.rotV;p.vy+=.1;if(p.y<ec.height+60)alive=true;ctx2.save();ctx2.translate(p.x,p.y);ctx2.rotate(p.rot*Math.PI/180);ctx2.globalAlpha=Math.max(0,1-(p.y/(ec.height*1.1)));ctx2.fillStyle=p.col;ctx2.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx2.restore();});
+    if(alive)raf=requestAnimationFrame(dc);else ec.style.display='none';
   }
-  function drawConf(){
-    ctx2.clearRect(0,0,eggCanvas.width,eggCanvas.height);
-    let alive=false;
-    particles.forEach(p=>{
-      p.x+=p.vx;p.y+=p.vy;p.rot+=p.rotV;p.vy+=0.1;
-      if(p.y<innerHeight+60)alive=true;
-      ctx2.save();ctx2.translate(p.x,p.y);ctx2.rotate(p.rot*Math.PI/180);
-      ctx2.globalAlpha=Math.max(0,1-(p.y/(innerHeight*1.1)));
-      ctx2.fillStyle=p.color;ctx2.fillRect(-p.w/2,-p.h/2,p.w,p.h);
-      ctx2.restore();
-    });
-    if(alive)raf=requestAnimationFrame(drawConf);
-    else eggCanvas.style.display='none';
-  }
-  drawConf();
+  dc();
 }
 
 function playChime(){
   try{
-    const ac=new (window.AudioContext||window.webkitAudioContext)();
-    [[0,0],[4,0.12],[7,0.24],[12,0.36],[16,0.5]].forEach(([semi,t])=>{
-      const o=ac.createOscillator(),g=ac.createGain();
-      o.connect(g);g.connect(ac.destination);
-      o.frequency.value=523.25*Math.pow(2,semi/12);
-      o.type='sine';
-      g.gain.setValueAtTime(0,ac.currentTime+t);
-      g.gain.linearRampToValueAtTime(0.15,ac.currentTime+t+0.03);
-      g.gain.exponentialRampToValueAtTime(0.001,ac.currentTime+t+0.5);
-      o.start(ac.currentTime+t);o.stop(ac.currentTime+t+0.6);
+    var ac=new(window.AudioContext||window.webkitAudioContext)();
+    [[0,.0],[4,.12],[7,.24],[12,.36],[16,.5]].forEach(function(s){
+      var o=ac.createOscillator(),g=ac.createGain();o.connect(g);g.connect(ac.destination);
+      o.frequency.value=523.25*Math.pow(2,s[0]/12);o.type='sine';
+      g.gain.setValueAtTime(0,ac.currentTime+s[1]);g.gain.linearRampToValueAtTime(.15,ac.currentTime+s[1]+.03);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+s[1]+.5);
+      o.start(ac.currentTime+s[1]);o.stop(ac.currentTime+s[1]+.6);
     });
   }catch(e){}
 }
 
 function glitch(){
-  const el=document.getElementById('eggGlitch');
-  let n=0;
-  const id=setInterval(()=>{
-    const x=(Math.random()-0.5)*6,y=(Math.random()-0.5)*3;
-    el.style.transform=n%2?'':'translate('+x+'px,'+y+'px)';
+  var el=document.getElementById('eggGlitch');if(!el)return;
+  var n=0,id=setInterval(function(){
+    el.style.transform=n%2?'':'translate('+(Math.random()-.5)*6+'px,'+(Math.random()-.5)*3+'px)';
     el.style.filter=n%3===0?'hue-rotate(45deg) saturate(2)':'';
-    if(++n>14){clearInterval(id);el.style.transform='';el.style.filter=''}
+    if(++n>14){clearInterval(id);el.style.transform='';el.style.filter='';}
   },55);
 }
 
 function typeMsg(){
-  const el=document.getElementById('eggTyped');
+  var el=document.getElementById('eggTyped');if(!el)return;
   el.textContent='';
-  const msg="Hey — you found the secret!
+  var msg="Hey — you found the secret!
 
-I built this portfolio to show what I can do, not just list it.
-If you like what you see, let's talk about
-your next project, hackathon, or open role.";
-  let i=0;
-  function next(){if(i<=msg.length){el.textContent=msg.slice(0,i++);setTimeout(next,i<12?100:28)};}
-  next();
+I built this portfolio to show what I can do,
+not just list it. If you like what you see,
+let's talk about your next project or role.";
+  var i=0;function next(){if(i<=msg.length){el.textContent=msg.slice(0,i++);setTimeout(next,i<12?100:28);}}next();
 }
 
 function openEgg(){
   if(isOpen)return;isOpen=true;
+  var egg=document.getElementById('egg');if(!egg)return;
   egg.style.display='flex';
   launchConfetti();playChime();
-  setTimeout(()=>{glitch();typeMsg()},200);
+  setTimeout(function(){glitch();typeMsg();},200);
 }
 
 function closeEgg(){
-  isOpen=false;egg.style.display='none';
+  isOpen=false;
+  var egg=document.getElementById('egg');if(egg)egg.style.display='none';
   if(raf){cancelAnimationFrame(raf);raf=null;}
-  eggCanvas.style.display='none';
+  var ec=document.getElementById('eggCanvas');if(ec)ec.style.display='none';
 }
 
-eggClose.addEventListener('click',closeEgg);
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&isOpen)closeEgg()});
-let _eb='';
-document.addEventListener('keydown',e=>{
-  // Only capture single printable characters (ignore Shift, Ctrl, Backspace etc.)
+// Attach close button and dot click after DOM ready
+window.addEventListener('load',function(){
+  var btn=document.getElementById('eggClose');if(btn)btn.addEventListener('click',closeEgg);
+  var dot=document.getElementById('secretHint');if(dot)dot.addEventListener('click',openEgg);
+});
+
+// ESC key
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&isOpen)closeEgg();});
+
+// Type "hire me"
+var _eb='';
+document.addEventListener('keydown',function(e){
   if(e.key.length!==1)return;
-  // Skip if typing in a form field
-  const tag=document.activeElement.tagName;
-  if(tag==='INPUT'||tag==='TEXTAREA')return;
+  var tag=document.activeElement.tagName;if(tag==='INPUT'||tag==='TEXTAREA')return;
   _eb=(_eb+e.key).slice(-7).toLowerCase();
   if(_eb==='hire me')openEgg();
 });
-// Also: clicking the hint dot opens it directly
-window.addEventListener('load',function(){var d=document.getElementById('secretHint');if(d)d.addEventListener('click',openEgg);});
 })();
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
