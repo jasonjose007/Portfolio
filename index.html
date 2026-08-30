@@ -94,12 +94,17 @@ eggClose.addEventListener('click',closeEgg);
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&isOpen)closeEgg()});
 let _eb='';
 document.addEventListener('keydown',e=>{
-  // Still work when not focused on an input
+  // Only capture single printable characters (ignore Shift, Ctrl, Backspace etc.)
+  if(e.key.length!==1)return;
+  // Skip if typing in a form field
   const tag=document.activeElement.tagName;
   if(tag==='INPUT'||tag==='TEXTAREA')return;
   _eb=(_eb+e.key).slice(-7).toLowerCase();
   if(_eb==='hire me')openEgg();
 });
+// Also: clicking the hint dot opens it directly
+const secretDot=document.getElementById('secretHint');
+if(secretDot)secretDot.addEventListener('click',openEgg);
 })();
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -472,7 +477,7 @@ setTimeout(()=>{document.getElementById('hc').classList.add('s');document.getEle
     <button id="eggClose" style="border:1px solid #27272a;padding:8px 24px;border-radius:999px;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#3f3f46;background:none;cursor:pointer;font-family:JetBrains Mono,monospace">[ ESC or click to close ]</button>
   </div>
 </div>
-<div id="secretHint" style="position:fixed;bottom:90px;left:24px;z-index:40;cursor:default;user-select:none" title="Click here then type: hire me">
+<div id="secretHint" style="position:fixed;bottom:90px;left:24px;z-index:40;cursor:default;user-select:none" title="Click me or type: hire me" style="position:fixed;bottom:90px;left:24px;z-index:40;cursor:pointer;user-select:none">
 <div style="width:8px;height:8px;border-radius:50%;background:rgba(168,85,247,.4);animation:float 3s ease-in-out infinite;position:relative">
 <div style="position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(168,85,247,.2);animation:ping 2s cubic-bezier(0,0,.2,1) infinite"></div>
 </div>
