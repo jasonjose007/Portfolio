@@ -284,56 +284,84 @@ body{background:#0e0e14;font-family:'Space Grotesk',sans-serif;color:#fff;overfl
 <!-- ===== OPEN SOURCE CONTRIBUTIONS ===== -->
 <section id="opensource" class="py-24 border-t border-white/[.03] r">
 <div class="section-label r">Open Source</div>
-<div class="max-w-5xl mx-auto">
-<div style="background:linear-gradient(135deg,rgba(16,185,129,.07) 0%,rgba(6,182,212,.04) 100%);border:1px solid rgba(16,185,129,.18)" class="rounded-3xl p-8 md:p-12 relative overflow-hidden">
-    <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full blur-3xl pointer-events-none" style="background:rgba(16,185,129,.05)"></div>
-    <div class="absolute -left-12 -bottom-12 w-64 h-64 rounded-full blur-3xl pointer-events-none" style="background:rgba(6,182,212,.04)"></div>
-    <div class="relative z-10 flex flex-col lg:flex-row gap-10 items-start">
-        <div class="flex-1">
-            <div class="flex items-center gap-3 mb-3">
-                <span class="text-[9px] font-mono tracking-[.35em] uppercase text-emerald-400">Active Contributor · 2026</span>
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            </div>
-            <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4 text-zinc-100">Open Source<br><span style="-webkit-background-clip:text;-webkit-text-fill-color:transparent;background:linear-gradient(135deg,#34d399,#06b6d4);background-clip:text">Contributions</span></h2>
-            <p class="text-zinc-400 text-sm leading-relaxed mb-6 max-w-md">Submitting production-quality pull requests to active open source repositories through the <span class="font-semibold text-emerald-400">OSCI 2026</span> program — India's premier open source contributor initiative. Every merged PR is peer-reviewed and tracked on the national leaderboard.</p>
-            <div class="flex flex-wrap gap-3 mb-8">
-                <div class="flex items-center gap-2 rounded-full px-4 py-1.5" style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25)">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                    <span class="text-emerald-300 text-[10px] font-bold tracking-widest uppercase font-mono">OSCI 2026</span>
-                </div>
-                <div class="flex items-center gap-2 rounded-full px-4 py-1.5" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)">
-                    <span class="text-amber-400 text-[10px]">🏆</span>
-                    <span class="text-zinc-300 text-[10px] font-bold tracking-widest uppercase font-mono">Ranked Contributor</span>
-                </div>
-                <div class="flex items-center gap-2 rounded-full px-4 py-1.5" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)">
-                    <span class="text-[10px] font-mono text-zinc-400 tracking-widest">Merged PRs ↑</span>
-                </div>
-            </div>
-            <a href="https://osci.osconnect.org/dashboard" target="_blank" rel="noopener noreferrer" class="pill-btn interactive" style="border:1px solid rgba(16,185,129,.4);color:#34d399;background:rgba(16,185,129,.06)">View OSCI Dashboard →</a>
+<div class="max-w-5xl mx-auto space-y-4">
+
+  <!-- Hero rank card -->
+  <div class="rounded-3xl p-8 md:p-12 relative overflow-hidden" style="background:linear-gradient(135deg,rgba(249,115,22,.08) 0%,rgba(16,185,129,.05) 60%,rgba(6,182,212,.04) 100%);border:1px solid rgba(249,115,22,.2)">
+    <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full blur-3xl pointer-events-none" style="background:rgba(249,115,22,.06)"></div>
+    <div class="absolute -left-12 -bottom-12 w-64 h-64 rounded-full blur-3xl pointer-events-none" style="background:rgba(16,185,129,.05)"></div>
+    <div class="relative z-10 flex flex-col lg:flex-row gap-10 items-center">
+
+      <!-- Left: headline + badges -->
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="text-[9px] font-mono tracking-[.35em] uppercase text-orange-400">OSCI 2026 · Verified Contributor</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
         </div>
-        <div class="w-full lg:w-72 shrink-0 space-y-3">
-            <p class="text-[9px] font-mono tracking-widest uppercase text-zinc-600 mb-4">Contributed To</p>
-            <div class="rounded-2xl p-4 interactive" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);transition:border-color .3s" onmouseenter="this.style.borderColor='rgba(6,182,212,.3)'" onmouseleave="this.style.borderColor='rgba(255,255,255,.06)'">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-[9px] font-mono text-cyan-400 tracking-wider uppercase">Matrix · Element</span>
-                    <svg class="w-3.5 h-3.5 text-zinc-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                </div>
-                <h4 class="text-sm font-bold text-zinc-200 mb-1">element-web</h4>
-                <p class="text-zinc-500 text-[11px] leading-relaxed mb-3">A glossy Matrix collaboration client used by thousands globally. Contributing UI/UX improvements and feature implementations.</p>
-                <div class="flex flex-wrap gap-1"><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Matrix</span></div>
-            </div>
-            <div class="rounded-2xl p-4 interactive" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);transition:border-color .3s" onmouseenter="this.style.borderColor='rgba(168,85,247,.3)'" onmouseleave="this.style.borderColor='rgba(255,255,255,.06)'">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-[9px] font-mono text-purple-400 tracking-wider uppercase">Arduino · CLI</span>
-                    <svg class="w-3.5 h-3.5 text-zinc-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                </div>
-                <h4 class="text-sm font-bold text-zinc-200 mb-1">arduino-cli-interactive</h4>
-                <p class="text-zinc-500 text-[11px] leading-relaxed mb-3">An interactive interface for the arduino-cli, making embedded development more accessible.</p>
-                <div class="flex flex-wrap gap-1"><span class="tag">Python</span><span class="tag">CLI</span><span class="tag">Arduino</span></div>
-            </div>
+        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight mb-2 text-zinc-100">Open Source<br><span style="-webkit-background-clip:text;-webkit-text-fill-color:transparent;background:linear-gradient(135deg,#f97316,#34d399);background-clip:text">Connect India</span></h2>
+        <p class="text-zinc-400 text-sm leading-relaxed mb-6 max-w-lg">Contributing production-quality pull requests to active open source repositories — peer-reviewed, merged, and tracked on India's national open source leaderboard. <span class="text-orange-300 font-semibold">Currently ranked #2 nationally.</span></p>
+        <div class="flex flex-wrap gap-3 mb-8">
+          <div class="flex items-center gap-2 rounded-full px-4 py-1.5" style="background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.3)">
+            <span class="text-orange-300 text-[10px] font-bold tracking-widest uppercase font-mono">● Contributor</span>
+          </div>
+          <div class="flex items-center gap-2 rounded-full px-4 py-1.5" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)">
+            <span class="text-zinc-300 text-[10px] font-bold tracking-widest uppercase font-mono">✓ Verified</span>
+          </div>
+          <div class="flex items-center gap-2 rounded-full px-4 py-1.5" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)">
+            <span class="text-zinc-400 text-[10px] font-mono tracking-wider">@jasonjose007</span>
+          </div>
         </div>
+        <a href="https://osci.osconnect.org/dashboard" target="_blank" rel="noopener noreferrer" class="pill-btn interactive" style="border:1px solid rgba(249,115,22,.4);color:#fb923c;background:rgba(249,115,22,.07)">View Dashboard →</a>
+      </div>
+
+      <!-- Right: stat tiles -->
+      <div class="grid grid-cols-2 gap-3 w-full lg:w-auto lg:shrink-0">
+        <div class="rounded-2xl p-5 text-center" style="background:rgba(255,255,255,.03);border:1px solid rgba(249,115,22,.2)">
+          <p class="text-[9px] font-mono tracking-widest uppercase text-zinc-500 mb-1">Rank</p>
+          <p class="text-4xl font-black" style="color:#f97316">#2</p>
+          <p class="text-[9px] text-zinc-600 font-mono mt-1">Leaderboard</p>
+        </div>
+        <div class="rounded-2xl p-5 text-center" style="background:rgba(255,255,255,.03);border:1px solid rgba(16,185,129,.2)">
+          <p class="text-[9px] font-mono tracking-widest uppercase text-zinc-500 mb-1">Merged PRs</p>
+          <p class="text-4xl font-black" style="color:#34d399">327</p>
+          <p class="text-[9px] text-zinc-600 font-mono mt-1">+350 this week</p>
+        </div>
+        <div class="rounded-2xl p-5 text-center" style="background:rgba(255,255,255,.03);border:1px solid rgba(168,85,247,.2)">
+          <p class="text-[9px] font-mono tracking-widest uppercase text-zinc-500 mb-1">Merit Score</p>
+          <p class="text-4xl font-black" style="color:#a855f7">3300</p>
+          <p class="text-[9px] text-zinc-600 font-mono mt-1">+3550 this week</p>
+        </div>
+        <div class="rounded-2xl p-5 text-center" style="background:rgba(255,255,255,.03);border:1px solid rgba(6,182,212,.2)">
+          <p class="text-[9px] font-mono tracking-widest uppercase text-zinc-500 mb-1">Projects</p>
+          <p class="text-4xl font-black" style="color:#06b6d4">8</p>
+          <p class="text-[9px] text-zinc-600 font-mono mt-1">Active</p>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+
+  <!-- Contributed repos row -->
+  <div class="grid md:grid-cols-2 gap-4">
+    <div class="rounded-2xl p-5 interactive" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);transition:border-color .3s" onmouseenter="this.style.borderColor='rgba(6,182,212,.3)'" onmouseleave="this.style.borderColor='rgba(255,255,255,.06)'">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[9px] font-mono text-cyan-400 tracking-widest uppercase">Matrix · Element</span>
+        <svg class="w-4 h-4 text-zinc-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      </div>
+      <h4 class="font-bold text-zinc-200 mb-1">element-web</h4>
+      <p class="text-zinc-500 text-xs leading-relaxed mb-3">Matrix collaboration client used by thousands globally. Contributing UI/UX improvements, feature PRs, and bug fixes to the production codebase.</p>
+      <div class="flex flex-wrap gap-1"><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Matrix</span></div>
+    </div>
+    <div class="rounded-2xl p-5 interactive" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);transition:border-color .3s" onmouseenter="this.style.borderColor='rgba(168,85,247,.3)'" onmouseleave="this.style.borderColor='rgba(255,255,255,.06)'">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-[9px] font-mono text-purple-400 tracking-widest uppercase">Arduino · CLI</span>
+        <svg class="w-4 h-4 text-zinc-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      </div>
+      <h4 class="font-bold text-zinc-200 mb-1">arduino-cli-interactive</h4>
+      <p class="text-zinc-500 text-xs leading-relaxed mb-3">An interactive interface for arduino-cli, making embedded development workflows more accessible for newcomers and professionals alike.</p>
+      <div class="flex flex-wrap gap-1"><span class="tag">Python</span><span class="tag">CLI</span><span class="tag">Arduino</span></div>
+    </div>
+  </div>
+
 </div>
 </section>
 
