@@ -137,6 +137,122 @@ body{background:#0e0e14;font-family:'Space Grotesk',sans-serif;color:#fff;overfl
 /* INTERACTIVE */
 .interactive{}
 @keyframes ping{75%,100%{transform:scale(2);opacity:0}}
+
+/* ── NEW CERTS (nc-) ── */
+.nc-lanes{display:flex;flex-direction:column;gap:44px;max-width:1100px;margin:0 auto}
+.nc-lane{display:flex;gap:28px}
+.nc-strip{width:3px;border-radius:999px;flex-shrink:0}
+.nc-content{flex:1}
+.nc-label{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.05em;margin-bottom:16px}
+.nc-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.nc-card{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;transition:border-color .2s}
+.nc-left{flex:1}.nc-org{font-size:10px;font-weight:500;margin-bottom:4px}.nc-title{font-size:13px;font-weight:600;color:#fff;line-height:1.3}
+.nc-right{text-align:right;flex-shrink:0}.nc-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:#475569;white-space:nowrap}
+.nc-badge{margin-top:5px;font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:700;padding:2px 7px;border-radius:999px;display:inline-block}
+.nc-links{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.nc-link{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:5px 12px;border-radius:999px;text-decoration:none;border:1px solid rgba(255,255,255,.1);color:#94a3b8;background:rgba(255,255,255,.03);transition:all .2s;display:inline-block}
+.nc-link:hover{color:#fff;border-color:rgba(255,255,255,.3)}
+.nc-lane-cloud .nc-strip{background:#f59e0b}.nc-lane-cloud .nc-label{color:#f59e0b}.nc-lane-cloud .nc-card:hover{border-color:rgba(245,158,11,.35)}.nc-lane-cloud .nc-org{color:#f59e0b}.nc-lane-cloud .nc-badge{background:rgba(245,158,11,.1);color:#f59e0b}
+.nc-lane-ai .nc-strip{background:#e879f9}.nc-lane-ai .nc-label{color:#e879f9}.nc-lane-ai .nc-card:hover{border-color:rgba(232,121,249,.35)}.nc-lane-ai .nc-org{color:#e879f9}.nc-lane-ai .nc-badge{background:rgba(232,121,249,.1);color:#e879f9}
+.nc-lane-dsa .nc-strip{background:#22d3ee}.nc-lane-dsa .nc-label{color:#22d3ee}.nc-lane-dsa .nc-card:hover{border-color:rgba(34,211,238,.35)}.nc-lane-dsa .nc-org{color:#22d3ee}.nc-lane-dsa .nc-badge{background:rgba(34,211,238,.1);color:#22d3ee}
+.nc-lane-networking .nc-strip{background:#38bdf8}.nc-lane-networking .nc-label{color:#38bdf8}.nc-lane-networking .nc-card:hover{border-color:rgba(56,189,248,.35)}.nc-lane-networking .nc-org{color:#38bdf8}.nc-lane-networking .nc-badge{background:rgba(56,189,248,.1);color:#38bdf8}
+.nc-lane-hackathon .nc-strip{background:#34d399}.nc-lane-hackathon .nc-label{color:#34d399}.nc-lane-hackathon .nc-card:hover{border-color:rgba(52,211,153,.35)}.nc-lane-hackathon .nc-org{color:#34d399}.nc-lane-hackathon .nc-badge{background:rgba(52,211,153,.1);color:#34d399}
+.nc-lane-achievement .nc-strip{background:#a3e635}.nc-lane-achievement .nc-label{color:#a3e635}.nc-lane-achievement .nc-card:hover{border-color:rgba(163,230,53,.35)}.nc-lane-achievement .nc-org{color:#a3e635}.nc-lane-achievement .nc-badge{background:rgba(163,230,53,.1);color:#a3e635}
+@media(max-width:768px){.nc-lane{flex-direction:column}.nc-strip{width:100%;height:3px}.nc-cards{grid-template-columns:1fr}}
+
+/* ── OPEN SOURCE (oc-) ── */
+.oc-section{max-width:1100px;margin:0 auto;padding:0 24px}
+.oc-hero{display:flex;align-items:flex-start;gap:56px;margin-bottom:64px}
+.oc-hero-left{position:relative;flex-shrink:0}
+.oc-glow{position:absolute;inset:-60px;background:radial-gradient(ellipse at center,rgba(74,222,128,.13) 0%,transparent 70%);pointer-events:none;z-index:0}
+.oc-number{position:relative;z-index:1;font-size:clamp(100px,13vw,172px);font-weight:900;color:#4ade80;line-height:1;letter-spacing:-5px}
+.oc-label{position:relative;z-index:1;font-family:'JetBrains Mono',monospace;font-size:15px;color:#64748b;margin-top:6px}
+.oc-rank-badge{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:6px 14px;border-radius:999px;background:rgba(251,146,60,.1);border:1px solid rgba(251,146,60,.35);color:#fb923c;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;position:relative;z-index:1}
+.oc-stats{display:flex;flex-direction:column;gap:28px;padding-top:12px}
+.oc-stat-num{font-size:36px;font-weight:800;line-height:1}
+.oc-stat-lbl{font-family:'JetBrains Mono',monospace;font-size:10px;color:#475569;letter-spacing:.05em;margin-top:3px}
+.oc-repos-lbl{font-family:'JetBrains Mono',monospace;font-size:10px;color:#64748b;letter-spacing:.15em;margin-bottom:18px}
+.oc-repos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:44px}
+.oc-repo{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:18px;transition:border-color .25s,transform .25s}
+.oc-repo:hover{border-color:rgba(74,222,128,.25);transform:translateY(-3px)}
+.oc-repo-hd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:5px}
+.oc-repo-name{font-size:14px;font-weight:700;color:#fff}
+.oc-pr-badge{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:#4ade80;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.2);padding:3px 8px;border-radius:999px;white-space:nowrap;flex-shrink:0}
+.oc-repo-org{font-family:'JetBrains Mono',monospace;font-size:10px;color:#475569;margin-bottom:8px}
+.oc-repo-desc{font-size:12px;color:#94a3b8;line-height:1.5;margin-bottom:12px}
+.oc-tags{display:flex;flex-wrap:wrap;gap:5px}
+.oc-osci{position:relative;border-radius:18px;padding:1px;background:linear-gradient(135deg,rgba(249,115,22,.5),rgba(34,197,94,.5))}
+.oc-osci-in{background:#0d0d10;border-radius:17px;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.oc-osci-t{font-size:13px;font-weight:700;color:#fff}
+.oc-osci-s{font-family:'JetBrains Mono',monospace;font-size:10px;color:#64748b;margin-top:3px}
+.oc-osci-h{font-family:'JetBrains Mono',monospace;font-size:12px;color:#94a3b8}
+.oc-osci-v{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;margin-top:3px}
+.oc-btn{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;padding:10px 20px;border-radius:999px;border:1px solid rgba(249,115,22,.4);color:#fb923c;background:rgba(249,115,22,.07);text-decoration:none;transition:background .2s,border-color .2s;white-space:nowrap}
+.oc-btn:hover{background:rgba(249,115,22,.15);border-color:rgba(249,115,22,.7)}
+@media(max-width:768px){.oc-hero{flex-direction:column;gap:28px}.oc-stats{flex-direction:row;flex-wrap:wrap;gap:20px}.oc-repos{grid-template-columns:1fr}.oc-osci-in{flex-direction:column;text-align:center}}
+
+/* ── CODOLIO/CODING (cp-) ── */
+.cp-section{max-width:1100px;margin:0 auto;padding:0 24px}
+.cp-warn{background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.25);border-radius:10px;padding:10px 16px;display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#fb923c;margin-bottom:36px}
+.cp-hero{text-align:center;padding:48px 0 44px;position:relative}
+.cp-hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);width:400px;height:300px;background:radial-gradient(ellipse at center,rgba(251,146,60,.1) 0%,transparent 70%);pointer-events:none}
+.cp-hero-num{font-size:clamp(64px,12vw,112px);font-weight:900;color:#fb923c;line-height:1;letter-spacing:-.03em;position:relative}
+.cp-hero-lbl{font-family:'JetBrains Mono',monospace;font-size:14px;color:#64748b;margin-top:10px}
+.cp-hero-note{font-family:'JetBrains Mono',monospace;font-size:10px;color:#334155;margin-top:6px}
+.cp-eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:#475569;letter-spacing:.2em;margin-bottom:14px}
+.cp-platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:40px}
+@media(max-width:720px){.cp-platforms{grid-template-columns:1fr}}
+.cp-pcard{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:24px 20px;transition:border-color .3s,transform .3s;position:relative;overflow:hidden}
+.cp-pcard::after{content:'';position:absolute;bottom:-24px;right:-24px;width:100px;height:100px;background:radial-gradient(circle,var(--cp-accent) 0%,transparent 70%);opacity:.07;pointer-events:none}
+.cp-lc{--cp-accent:#ffa116}.cp-lc:hover{border-color:rgba(255,161,22,.35);transform:translateY(-3px)}
+.cp-cc{--cp-accent:#c8a97e}.cp-cc:hover{border-color:rgba(200,169,126,.35);transform:translateY(-3px)}
+.cp-hr{--cp-accent:#00ea64}.cp-hr:hover{border-color:rgba(0,234,100,.35);transform:translateY(-3px)}
+.cp-pname{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--cp-accent);letter-spacing:.15em;margin-bottom:14px;display:flex;align-items:center;gap:7px}
+.cp-pname::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--cp-accent)}
+.cp-pprimary{font-size:38px;font-weight:800;color:#fff;line-height:1;margin-bottom:3px}
+.cp-psublabel{font-family:'JetBrains Mono',monospace;font-size:10px;color:#475569;margin-bottom:12px}
+.cp-pills{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+.cp-pill{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:3px 8px;border-radius:999px}
+.cp-pill-easy{background:rgba(74,222,128,.12);color:#4ade80;border:1px solid rgba(74,222,128,.2)}
+.cp-pill-med{background:rgba(251,191,36,.12);color:#fbbf24;border:1px solid rgba(251,191,36,.2)}
+.cp-pill-hard{background:rgba(248,113,113,.12);color:#f87171;border:1px solid rgba(248,113,113,.2)}
+.cp-pill-gen{background:rgba(255,255,255,.06);color:#94a3b8;border:1px solid rgba(255,255,255,.1)}
+.cp-pmeta{font-family:'JetBrains Mono',monospace;font-size:10px;color:#475569;margin-bottom:12px}
+.cp-pmeta span{color:#94a3b8}
+.cp-prog-track{height:3px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden;margin-bottom:12px}
+.cp-prog-fill{height:100%;background:var(--cp-accent);border-radius:999px}
+.cp-plink{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;color:var(--cp-accent);text-decoration:none;opacity:.65;transition:opacity .2s}.cp-plink:hover{opacity:1}
+.cp-divider{height:1px;background:rgba(255,255,255,.05);margin:36px 0}
+.cp-barchart{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:24px;margin-bottom:40px}
+.cp-bc-title{font-family:'JetBrains Mono',monospace;font-size:10px;color:#475569;letter-spacing:.2em;margin-bottom:18px}
+.cp-bar-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.cp-bar-lbl{font-family:'JetBrains Mono',monospace;font-size:11px;color:#64748b;width:88px;flex-shrink:0}
+.cp-bar-track{flex:1;height:7px;background:rgba(255,255,255,.05);border-radius:999px;overflow:hidden}
+.cp-bar-fill{height:100%;border-radius:999px}
+.cp-bar-val{font-family:'JetBrains Mono',monospace;font-size:11px;color:#64748b;width:46px;text-align:right;flex-shrink:0}
+.cp-block-lbl{font-family:'JetBrains Mono',monospace;font-size:10px;color:#475569;letter-spacing:.2em;margin-bottom:18px}
+.cp-contest-trail{display:flex;flex-direction:column;position:relative;margin-bottom:40px}
+.cp-contest-trail::before{content:'';position:absolute;left:6px;top:5px;bottom:5px;width:1px;background:rgba(255,255,255,.07)}
+.cp-contest-item{display:flex;align-items:flex-start;gap:18px;padding:0 0 22px 26px;position:relative}
+.cp-contest-item::before{content:'';position:absolute;left:2px;top:5px;width:9px;height:9px;border-radius:50%;border:2px solid rgba(255,255,255,.15);background:#0B0B0C;transition:border-color .3s,background .3s}
+.cp-contest-item:hover::before{border-color:#fb923c;background:rgba(251,146,60,.2)}
+.cp-c-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:#475569;width:68px;flex-shrink:0;padding-top:2px}
+.cp-c-name{font-size:13px;font-weight:600;color:#e2e8f0;margin-bottom:4px}
+.cp-c-meta{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.cp-c-platform{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:2px 7px;border-radius:999px}
+.cp-lc-tag{background:rgba(255,161,22,.1);color:#ffa116;border:1px solid rgba(255,161,22,.2)}
+.cp-cc-tag{background:rgba(200,169,126,.1);color:#c8a97e;border:1px solid rgba(200,169,126,.2)}
+.cp-hr-tag{background:rgba(0,234,100,.1);color:#00ea64;border:1px solid rgba(0,234,100,.2)}
+.cp-c-result{font-family:'JetBrains Mono',monospace;font-size:10px;color:#475569}
+.cp-badge-wall{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.cp-badge-chip{display:flex;flex-direction:column;align-items:center;gap:5px;padding:14px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);transition:transform .25s,border-color .25s;cursor:default;min-width:96px}
+.cp-badge-chip:hover{transform:translateY(-3px)}
+.cp-badge-icon{font-size:20px;line-height:1}
+.cp-badge-name{font-size:11px;font-weight:700;color:#fff;text-align:center;white-space:nowrap}
+.cp-badge-plat{font-family:'JetBrains Mono',monospace;font-size:9px;text-align:center}
+.cp-badge-hr{border-color:rgba(0,234,100,.2)}.cp-badge-hr .cp-badge-plat{color:#00ea64}.cp-badge-hr:hover{border-color:rgba(0,234,100,.4)}
+.cp-badge-amber{border-color:rgba(251,146,60,.2)}.cp-badge-amber .cp-badge-plat{color:#fb923c}.cp-badge-amber:hover{border-color:rgba(251,146,60,.4)}
+.cp-badge-cc{border-color:rgba(200,169,126,.2)}.cp-badge-cc .cp-badge-plat{color:#c8a97e}.cp-badge-cc:hover{border-color:rgba(200,169,126,.4)}
 </style>
 <meta name="description" content="Jason J - Software Engineer specializing in AI, backend architecture and full-stack development."><meta name="robots" content="index, follow"><link rel="canonical" href="https://jasonmyportfolio.netlify.app/"><meta property="og:title" content="Jason J | Software Engineer"><meta property="og:image" content="https://jasonmyportfolio.netlify.app/og-image.png"><link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
@@ -153,6 +269,7 @@ body{background:#0e0e14;font-family:'Space Grotesk',sans-serif;color:#fff;overfl
     <a href="#journey" class="interactive">Journey</a>
 <a href="#opensource" class="interactive">OSS</a>
 <a href="#certifications" class="interactive">Certs</a>
+<a href="#coding" class="interactive">Coding</a>
     <a href="#resume" class="interactive">Resume</a><a href="#contact" class="interactive">Contact</a>
 </div>
 
@@ -290,84 +407,54 @@ body{background:#0e0e14;font-family:'Space Grotesk',sans-serif;color:#fff;overfl
 <!-- ===== OPEN SOURCE CONTRIBUTIONS ===== -->
 <section id="opensource" class="py-24 border-t border-white/[.03] r">
 <div class="section-label r">Open Source</div>
-<div class="max-w-5xl mx-auto space-y-4">
-
-  <!-- Hero rank card -->
-  <div class="rounded-3xl p-8 md:p-12 relative overflow-hidden" style="background:linear-gradient(135deg,rgba(249,115,22,.08) 0%,rgba(16,185,129,.05) 60%,rgba(6,182,212,.04) 100%);border:1px solid rgba(249,115,22,.2)">
-    <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full blur-3xl pointer-events-none" style="background:rgba(249,115,22,.06)"></div>
-    <div class="absolute -left-12 -bottom-12 w-64 h-64 rounded-full blur-3xl pointer-events-none" style="background:rgba(16,185,129,.05)"></div>
-    <div class="relative z-10 flex flex-col lg:flex-row gap-10 items-center">
-
-      <!-- Left: headline + badges -->
-      <div class="flex-1">
-        <div class="flex items-center gap-3 mb-3">
-          <span class="text-[9px] font-mono tracking-[.35em] uppercase text-orange-400">OSCI 2026 · Verified Contributor</span>
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        </div>
-        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight mb-2 text-zinc-100">Open Source<br><span style="-webkit-background-clip:text;-webkit-text-fill-color:transparent;background:linear-gradient(135deg,#f97316,#34d399);background-clip:text">Connect India</span></h2>
-        <p class="text-zinc-400 text-sm leading-relaxed mb-6 max-w-lg">Contributing production-quality pull requests to active open source repositories — peer-reviewed, merged, and tracked on India's national open source leaderboard. <span class="text-orange-300 font-semibold">Currently ranked #2 nationally.</span></p>
-        <div class="flex flex-wrap gap-3 mb-8">
-          <div class="flex items-center gap-2 rounded-full px-4 py-1.5" style="background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.3)">
-            <span class="text-orange-300 text-[10px] font-bold tracking-widest uppercase font-mono">● Contributor</span>
-          </div>
-          <div class="flex items-center gap-2 rounded-full px-4 py-1.5" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)">
-            <span class="text-zinc-300 text-[10px] font-bold tracking-widest uppercase font-mono">✓ Verified</span>
-          </div>
-          <div class="flex items-center gap-2 rounded-full px-4 py-1.5" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)">
-            <span class="text-zinc-400 text-[10px] font-mono tracking-wider">@jasonjose007</span>
-          </div>
-        </div>
-        <a href="https://osci.osconnect.org/dashboard" target="_blank" rel="noopener noreferrer" class="pill-btn interactive" style="border:1px solid rgba(249,115,22,.4);color:#fb923c;background:rgba(249,115,22,.07)">View Dashboard →</a>
-      </div>
-
-      <!-- Right: stat tiles -->
-      <div class="grid grid-cols-2 gap-3 w-full lg:w-auto lg:shrink-0">
-        <div class="rounded-2xl p-5 text-center" style="background:rgba(255,255,255,.03);border:1px solid rgba(249,115,22,.2)">
-          <p class="text-[9px] font-mono tracking-widest uppercase text-zinc-500 mb-1">Rank</p>
-          <p class="text-4xl font-black" style="color:#f97316">#2</p>
-          <p class="text-[9px] text-zinc-600 font-mono mt-1">Leaderboard</p>
-        </div>
-        <div class="rounded-2xl p-5 text-center" style="background:rgba(255,255,255,.03);border:1px solid rgba(16,185,129,.2)">
-          <p class="text-[9px] font-mono tracking-widest uppercase text-zinc-500 mb-1">Merged PRs</p>
-          <p class="text-4xl font-black" style="color:#34d399">327</p>
-          <p class="text-[9px] text-zinc-600 font-mono mt-1">+350 this week</p>
-        </div>
-        <div class="rounded-2xl p-5 text-center" style="background:rgba(255,255,255,.03);border:1px solid rgba(168,85,247,.2)">
-          <p class="text-[9px] font-mono tracking-widest uppercase text-zinc-500 mb-1">Merit Score</p>
-          <p class="text-4xl font-black" style="color:#a855f7">3300</p>
-          <p class="text-[9px] text-zinc-600 font-mono mt-1">+3550 this week</p>
-        </div>
-        <div class="rounded-2xl p-5 text-center" style="background:rgba(255,255,255,.03);border:1px solid rgba(6,182,212,.2)">
-          <p class="text-[9px] font-mono tracking-widest uppercase text-zinc-500 mb-1">Projects</p>
-          <p class="text-4xl font-black" style="color:#06b6d4">8</p>
-          <p class="text-[9px] text-zinc-600 font-mono mt-1">Active</p>
-        </div>
-      </div>
+<div class="oc-section">
+  <div class="oc-hero">
+    <div class="oc-hero-left">
+      <div class="oc-glow"></div>
+      <div class="oc-number">327</div>
+      <div class="oc-label">merged pull requests</div>
+      <div class="oc-rank-badge">🏆 Ranked #2 nationally · OSCI 2026</div>
+    </div>
+    <div class="oc-stats">
+      <div><div class="oc-stat-num" style="color:#e879f9">3300</div><div class="oc-stat-lbl">merit score</div></div>
+      <div><div class="oc-stat-num" style="color:#22d3ee">8</div><div class="oc-stat-lbl">active projects</div></div>
+      <div><div class="oc-stat-num" style="color:#4ade80">✓</div><div class="oc-stat-lbl">verified contributor</div></div>
     </div>
   </div>
-
-  <!-- Contributed repos row -->
-  <div class="grid md:grid-cols-2 gap-4">
-    <div class="rounded-2xl p-5 interactive" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);transition:border-color .3s" onmouseenter="this.style.borderColor='rgba(6,182,212,.3)'" onmouseleave="this.style.borderColor='rgba(255,255,255,.06)'">
-      <div class="flex items-center justify-between mb-3">
-        <span class="text-[9px] font-mono text-cyan-400 tracking-widest uppercase">Matrix · Element</span>
-        <svg class="w-4 h-4 text-zinc-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-      </div>
-      <h4 class="font-bold text-zinc-200 mb-1">element-web</h4>
-      <p class="text-zinc-500 text-xs leading-relaxed mb-3">Matrix collaboration client used by thousands globally. Contributing UI/UX improvements, feature PRs, and bug fixes to the production codebase.</p>
-      <div class="flex flex-wrap gap-1"><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Matrix</span></div>
+  <div class="oc-repos-lbl">Contributed repositories</div>
+  <div class="oc-repos">
+    <div class="oc-repo">
+      <div class="oc-repo-hd"><span class="oc-repo-name">element-web</span><span class="oc-pr-badge">multiple PRs</span></div>
+      <div class="oc-repo-org">matrix-org · matrix.org</div>
+      <div class="oc-repo-desc">Matrix collaboration client — UI/UX improvements, feature implementations and bug fixes to the production codebase used by thousands globally.</div>
+      <div class="oc-tags"><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Matrix</span></div>
     </div>
-    <div class="rounded-2xl p-5 interactive" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);transition:border-color .3s" onmouseenter="this.style.borderColor='rgba(168,85,247,.3)'" onmouseleave="this.style.borderColor='rgba(255,255,255,.06)'">
-      <div class="flex items-center justify-between mb-3">
-        <span class="text-[9px] font-mono text-purple-400 tracking-widest uppercase">Arduino · CLI</span>
-        <svg class="w-4 h-4 text-zinc-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-      </div>
-      <h4 class="font-bold text-zinc-200 mb-1">arduino-cli-interactive</h4>
-      <p class="text-zinc-500 text-xs leading-relaxed mb-3">An interactive interface for arduino-cli, making embedded development workflows more accessible for newcomers and professionals alike.</p>
-      <div class="flex flex-wrap gap-1"><span class="tag">Python</span><span class="tag">CLI</span><span class="tag">Arduino</span></div>
+    <div class="oc-repo">
+      <div class="oc-repo-hd"><span class="oc-repo-name">arduino-cli-interactive</span><span class="oc-pr-badge">multiple PRs</span></div>
+      <div class="oc-repo-org">arduino · arduino.cc</div>
+      <div class="oc-repo-desc">Interactive interface for arduino-cli, making embedded development workflows more accessible for both newcomers and professionals.</div>
+      <div class="oc-tags"><span class="tag">Python</span><span class="tag">CLI</span><span class="tag">Arduino</span></div>
+    </div>
+    <div class="oc-repo">
+      <div class="oc-repo-hd"><span class="oc-repo-name">WalletWise</span><span class="oc-pr-badge">8 branches</span></div>
+      <div class="oc-repo-org">open source · finance</div>
+      <div class="oc-repo-desc">Finance app test suite contributions — auth token formats, vault routes, recurring detection, subscription service, financial health math.</div>
+      <div class="oc-tags"><span class="tag">TypeScript</span><span class="tag">Jest</span><span class="tag">Node.js</span></div>
+    </div>
+    <div class="oc-repo">
+      <div class="oc-repo-hd"><span class="oc-repo-name">iloveAgents</span><span class="oc-pr-badge">1 merged</span></div>
+      <div class="oc-repo-org">AditthyaSS · AI agents</div>
+      <div class="oc-repo-desc">AI agents platform — bug fixes and test coverage. PR already merged into upstream: fix/suite-quiz-stale-tags, database optimizer, analytics safety.</div>
+      <div class="oc-tags"><span class="tag">Python</span><span class="tag">AI</span><span class="tag">Agents</span></div>
     </div>
   </div>
-
+  <div class="oc-osci">
+    <div class="oc-osci-in">
+      <div><div class="oc-osci-t">Open Source Connect India</div><div class="oc-osci-s">OSCI 2026 · National Program</div></div>
+      <div><div class="oc-osci-h">@jasonjose007</div><div class="oc-osci-v"><span style="color:#f97316">●</span> Contributor <span style="color:#22c55e">✓</span> Verified</div></div>
+      <a href="https://osci.osconnect.org/dashboard" target="_blank" rel="noopener noreferrer" class="oc-btn interactive">View Dashboard →</a>
+    </div>
+  </div>
 </div>
 </section>
 
@@ -388,27 +475,82 @@ body{background:#0e0e14;font-family:'Space Grotesk',sans-serif;color:#fff;overfl
 </section>
 
 <!-- ===== CONTACT — totally different, big centered ===== -->
-<section id="certifications" class="max-w-6xl mx-auto px-6 py-24 border-t border-white/[.03]">
-<div class="sec-label sa">Certifications</div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-amber-500 text-xs">AWS</div><div><span class="cert-org">AWS Academy</span><span class="cert-date">June 2026</span></div></div><h3 class="cert-title">Machine Learning for NLP</h3><span class="cert-tag bg-orange-500/10 text-orange-400">NLP</span><div class="cert-links justify-between"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_aws-academy-graduate-machine-learning-for-share-7476713033981943809-xM47/" target="_blank" rel="noopener noreferrer" class="cert-link interactive">View Credentials</a><a href="https://drive.google.com/file/d/1KxjRfv55y7HCYcAOt0mVfChkMKrVFqg4/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-amber-500 text-xs">AWS</div><div><span class="cert-org">AWS Academy</span><span class="cert-date">June 2026</span></div></div><h3 class="cert-title">AWS Academy Cloud Foundations</h3><span class="cert-tag bg-orange-500/10 text-orange-400">Cloud</span><div class="cert-links justify-between"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_aws-academy-graduate-cloud-foundations-share-7477117194607161344-TUqH/" target="_blank" rel="noopener noreferrer" class="cert-link interactive">View Credentials</a><a href="https://drive.google.com/file/d/1lCFrMjtqkr5TKPB0hB0cJjalQpUGSWXM/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-sky-400 text-[10px]">CISCO</div><div><span class="cert-org">Cisco Academy &amp; NDG</span><span class="cert-date">June 2026</span></div></div><h3 class="cert-title">Linux Unhatched</h3><span class="cert-tag bg-purple-500/10 text-purple-400">Linux</span><div class="cert-links justify-between"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_linux-unhatched-was-issued-by-cisco-to-jason-share-7476288501869617153-2_lY/" target="_blank" rel="noopener noreferrer" class="cert-link interactive">View Credentials</a><a href="https://drive.google.com/file/d/1T3swuI1S48Clla0CJwe6RMRyyGij8_n_/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-blue-500 text-[10px]">PRODIGY</div><div><span class="cert-org">Prodigy InfoTech</span><span class="cert-date">May - June 2026</span></div></div><h3 class="cert-title">Generative AI Internship</h3><span class="cert-tag bg-emerald-500/10 text-emerald-400">Internship</span><div class="cert-links justify-between"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_certificate-of-completion-and-letter-of-recommendation-ugcPost-7472418619264708608-QsNM/" target="_blank" rel="noopener noreferrer" class="cert-link interactive">View Credentials</a><a href="https://drive.google.com/file/d/1eD1BDrHP3frw-2vU5ewv0Q5vw1DO3Zkz/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-red-500 text-[9px]">ORACLE</div><div><span class="cert-org">Oracle University</span><span class="cert-date">April 2026</span></div></div><h3 class="cert-title">OCI AI Foundations Associate</h3><span class="cert-tag bg-purple-500/10 text-purple-400">AI</span><div class="cert-links justify-between"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_oracle-cloud-infrastructure-2025-certified-activity-7446999160043610112-ix-m/" target="_blank" rel="noopener noreferrer" class="cert-link interactive">View Credentials</a><a href="https://drive.google.com/file/d/1ED9WEk_JhPO15bQbcwxJpa3x4Fkwc2bg/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-cyan-400 text-[9px]">INFOSYS</div><div><span class="cert-org">Infosys Springboard</span><span class="cert-date">Feb 2026</span></div></div><h3 class="cert-title">DSA using Python - Part 1</h3><span class="cert-tag bg-purple-500/10 text-purple-400">DSA</span><div class="cert-links justify-between"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_data-structures-and-algorithms-using-python-activity-7431724570988015616-SD4m/" target="_blank" rel="noopener noreferrer" class="cert-link interactive">View Credentials</a><a href="https://drive.google.com/file/d/1AnbZTLlWvNnEE-Ax63OA9JLIMdaB97NG/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-orange-400 text-[9px]">NPTEL</div><div><span class="cert-org">NPTEL / IIT Madras</span><span class="cert-date">Jan - Feb 2026</span></div></div><h3 class="cert-title">Python for Data Science</h3><span class="cert-tag bg-amber-500/10 text-amber-400">Elite</span><div class="cert-links justify-end"><a href="https://drive.google.com/file/d/1cfngqAMFwvEMy9Ya_hL09dFzfT2EoN7o/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-cyan-400 text-[9px]">INFOSYS</div><div><span class="cert-org">Infosys Springboard</span><span class="cert-date">Nov 2025</span></div></div><h3 class="cert-title">Programming Fundamentals</h3><span class="cert-tag bg-purple-500/10 text-purple-400">Python</span><div class="cert-links justify-between"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_programming-fundamentals-using-python-activity-7405860352518696960-STmY/" target="_blank" rel="noopener noreferrer" class="cert-link interactive">View Credentials</a><a href="https://drive.google.com/file/d/1YLAq392y08EtN33cnKcQu7hQ0YmmYB5e/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-orange-500 text-[9px]">SWAYAM</div><div><span class="cert-org">SWAYAM / BHU</span><span class="cert-date">Aug - Oct 2025</span></div></div><h3 class="cert-title">Fundamentals of Computing</h3><span class="cert-tag bg-purple-500/10 text-purple-400">Core CS</span><div class="cert-links justify-between"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_fundamentals-of-computing-activity-7405860625056403456-Y-Wn/" target="_blank" rel="noopener noreferrer" class="cert-link interactive">View Credentials</a><a href="https://drive.google.com/file/d/1g9DEAWffwk2XUsMU-TaUPG4iumTWaFqS/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-orange-400 text-[9px]">SIMPLI</div><div><span class="cert-org">Simplilearn SkillUp</span><span class="cert-date">Sept 2025</span></div></div><h3 class="cert-title">DSA in Python</h3><span class="cert-tag bg-purple-500/10 text-purple-400">DSA</span><div class="cert-links justify-between"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_data-structures-and-algorithms-in-python-activity-7405859583371440128-_paT/" target="_blank" rel="noopener noreferrer" class="cert-link interactive">View Credentials</a><a href="https://drive.google.com/file/d/1jHAi57ib4wzG5CuRyTPBWbzadZTaDeJa/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-orange-400 text-[9px]">SIMPLI</div><div><span class="cert-org">Simplilearn SkillUp</span><span class="cert-date">Sept 2025</span></div></div><h3 class="cert-title">Introduction to HTML</h3><span class="cert-tag bg-purple-500/10 text-purple-400">Web</span><div class="cert-links justify-between"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_introduction-to-html-activity-7405859854361255936-HKIx/" target="_blank" rel="noopener noreferrer" class="cert-link interactive">View Credentials</a><a href="https://drive.google.com/file/d/1OH1NYgyHiF6RhfCZZBNrntFt2INFplqP/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-sky-400 text-[10px]">CISCO</div><div><span class="cert-org">Cisco Networking Academy</span><span class="cert-date">Oct 2026</span></div></div><h3 class="cert-title">Introduction to Modern AI</h3><span class="cert-tag bg-cyan-500/10 text-cyan-400">AI</span><div class="cert-links justify-end"><a href="https://drive.google.com/file/d/1ceRqB3HYN0Rvqc9agLLYyNBVRElnOmo_/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-sky-400 text-[10px]">CISCO</div><div><span class="cert-org">Cisco Networking Academy</span><span class="cert-date">Oct 2026</span></div></div><h3 class="cert-title">Network Technician Career Path</h3><span class="cert-tag bg-sky-500/10 text-sky-400">Networking</span><div class="cert-links justify-end"><a href="https://drive.google.com/file/d/19OygUB6g5ZYdIlBRqwzh1O_hdd7O7GGh/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-orange-400 text-[9px]">NPTEL</div><div><span class="cert-org">NPTEL / IIT</span><span class="cert-date">Oct 2026</span></div></div><h3 class="cert-title">NPTEL Certification (2026)</h3><span class="cert-tag bg-amber-500/10 text-amber-400">CS</span><div class="cert-links justify-end"><a href="https://drive.google.com/file/d/1PbY3EgoV83aa-RRLsqogdJTZWqZRcFJr/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-emerald-400 text-[9px]">360°</div><div><span class="cert-org">Hackathon 360°</span><span class="cert-date">Oct 2026</span></div></div><h3 class="cert-title">International Level Hackathon 360° 4.0</h3><span class="cert-tag bg-emerald-500/10 text-emerald-400">Hackathon</span><div class="cert-links justify-end"><a href="https://drive.google.com/file/d/1T7TidXonUKolCRhDGm4VLrfy4D8CKH1N/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-blue-400 text-[9px]">ISSO</div><div><span class="cert-org">Space Science Olympiad</span><span class="cert-date">Aug 2026</span></div></div><h3 class="cert-title">International Space Science Olympiad</h3><span class="cert-tag bg-blue-500/10 text-blue-400">Olympiad</span><div class="cert-links justify-end"><a href="https://drive.google.com/file/d/1WZdgZQaGaLcArBK1eG2WN8cxbKQj7zLN/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-purple-400 text-[9px]">CERT</div><div><span class="cert-org">—</span><span class="cert-date">Sept 2026</span></div></div><h3 class="cert-title">eCertificate</h3><span class="cert-tag bg-purple-500/10 text-purple-400">Achievement</span><div class="cert-links justify-end"><a href="https://drive.google.com/file/d/14SpGd5AVYMBsTcArQpIs5OtH6K9PzBSY/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
-<div class="cert-card sa interactive"><div class="flex items-center gap-3 mb-4"><div class="cert-icon text-green-400 text-[9px]">HR</div><div><span class="cert-org">HackerRank</span><span class="cert-date">Oct 2026</span></div></div><h3 class="cert-title">Orchestrate October 2026 — Badge</h3><span class="cert-tag bg-green-500/10 text-green-400">Badge</span><div class="cert-links justify-end"><a href="https://drive.google.com/file/d/1tt1qykfKYKX-rJ-C52wHb3WRpfmaO0yG/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link interactive">Certificate</a></div></div>
+<section id="certifications" class="py-24 border-t border-white/[.03] r">
+<div class="section-label r">Credentials &amp; Recognition</div>
+<div class="nc-lanes">
+
+  <div class="nc-lane nc-lane-cloud">
+    <div class="nc-strip"></div>
+    <div class="nc-content">
+      <div class="nc-label">Cloud &amp; Infrastructure</div>
+      <div class="nc-cards">
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">AWS Academy</div><div class="nc-title">Machine Learning for NLP</div><div class="nc-links"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_aws-academy-graduate-machine-learning-for-share-7476713033981943809-xM47/" target="_blank" rel="noopener noreferrer" class="nc-link">View Credentials</a><a href="https://drive.google.com/file/d/1KxjRfv55y7HCYcAOt0mVfChkMKrVFqg4/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">Jun 2026</div><div class="nc-badge">Cloud / AI</div></div></div>
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">AWS Academy</div><div class="nc-title">Cloud Foundations</div><div class="nc-links"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_aws-academy-graduate-cloud-foundations-share-7477117194607161344-TUqH/" target="_blank" rel="noopener noreferrer" class="nc-link">View Credentials</a><a href="https://drive.google.com/file/d/1lCFrMjtqkr5TKPB0hB0cJjalQpUGSWXM/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">Jun 2026</div><div class="nc-badge">Cloud</div></div></div>
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">Oracle University</div><div class="nc-title">OCI AI Foundations Associate</div><div class="nc-links"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_oracle-cloud-infrastructure-2025-certified-activity-7446999160043610112-ix-m/" target="_blank" rel="noopener noreferrer" class="nc-link">View Credentials</a><a href="https://drive.google.com/file/d/1ED9WEk_JhPO15bQbcwxJpa3x4Fkwc2bg/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">Apr 2026</div><div class="nc-badge">Cloud / AI</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nc-lane nc-lane-ai">
+    <div class="nc-strip"></div>
+    <div class="nc-content">
+      <div class="nc-label">Artificial Intelligence</div>
+      <div class="nc-cards">
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">Prodigy InfoTech</div><div class="nc-title">Generative AI Internship</div><div class="nc-links"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_certificate-of-completion-and-letter-of-recommendation-ugcPost-7472418619264708608-QsNM/" target="_blank" rel="noopener noreferrer" class="nc-link">View Credentials</a><a href="https://drive.google.com/file/d/1eD1BDrHP3frw-2vU5ewv0Q5vw1DO3Zkz/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">May–Jun 2026</div><div class="nc-badge">Internship</div></div></div>
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">Cisco Networking Academy</div><div class="nc-title">Introduction to Modern AI</div><div class="nc-links"><a href="https://drive.google.com/file/d/1ceRqB3HYN0Rvqc9agLLYyNBVRElnOmo_/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">Oct 2026</div><div class="nc-badge">AI</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nc-lane nc-lane-dsa">
+    <div class="nc-strip"></div>
+    <div class="nc-content">
+      <div class="nc-label">Data Structures, Algorithms &amp; Programming</div>
+      <div class="nc-cards">
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">Infosys Springboard</div><div class="nc-title">DSA using Python — Part 1</div><div class="nc-links"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_data-structures-and-algorithms-using-python-activity-7431724570988015616-SD4m/" target="_blank" rel="noopener noreferrer" class="nc-link">View Credentials</a><a href="https://drive.google.com/file/d/1AnbZTLlWvNnEE-Ax63OA9JLIMdaB97NG/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">Feb 2026</div><div class="nc-badge">DSA</div></div></div>
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">NPTEL / IIT Madras</div><div class="nc-title">Python for Data Science (Elite)</div><div class="nc-links"><a href="https://drive.google.com/file/d/1cfngqAMFwvEMy9Ya_hL09dFzfT2EoN7o/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">Jan–Feb 2026</div><div class="nc-badge">Elite</div></div></div>
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">Infosys Springboard</div><div class="nc-title">Programming Fundamentals</div><div class="nc-links"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_programming-fundamentals-using-python-activity-7405860352518696960-STmY/" target="_blank" rel="noopener noreferrer" class="nc-link">View Credentials</a><a href="https://drive.google.com/file/d/1YLAq392y08EtN33cnKcQu7hQ0YmmYB5e/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">Nov 2025</div><div class="nc-badge">DSA</div></div></div>
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">SWAYAM / BHU</div><div class="nc-title">Fundamentals of Computing</div><div class="nc-links"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_fundamentals-of-computing-activity-7405860625056403456-Y-Wn/" target="_blank" rel="noopener noreferrer" class="nc-link">View Credentials</a><a href="https://drive.google.com/file/d/1g9DEAWffwk2XUsMU-TaUPG4iumTWaFqS/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">Aug–Oct 2025</div><div class="nc-badge">Core CS</div></div></div>
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">Simplilearn SkillUp</div><div class="nc-title">DSA in Python</div><div class="nc-links"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_data-structures-and-algorithms-in-python-activity-7405859583371440128-_paT/" target="_blank" rel="noopener noreferrer" class="nc-link">View Credentials</a><a href="https://drive.google.com/file/d/1jHAi57ib4wzG5CuRyTPBWbzadZTaDeJa/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">Sept 2025</div><div class="nc-badge">DSA</div></div></div>
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">Simplilearn SkillUp</div><div class="nc-title">Introduction to HTML</div><div class="nc-links"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_introduction-to-html-activity-7405859854361255936-HKIx/" target="_blank" rel="noopener noreferrer" class="nc-link">View Credentials</a><a href="https://drive.google.com/file/d/1OH1NYgyHiF6RhfCZZBNrntFt2INFplqP/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">Sept 2025</div><div class="nc-badge">Web</div></div></div>
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">Cisco Academy &amp; NDG</div><div class="nc-title">Linux Unhatched</div><div class="nc-links"><a href="https://www.linkedin.com/posts/jason-jose-3b829936b_linux-unhatched-was-issued-by-cisco-to-jason-share-7476288501869617153-2_lY/" target="_blank" rel="noopener noreferrer" class="nc-link">View Credentials</a><a href="https://drive.google.com/file/d/1T3swuI1S48Clla0CJwe6RMRyyGij8_n_/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">Jun 2026</div><div class="nc-badge">Linux</div></div></div>
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">NPTEL / IIT</div><div class="nc-title">NPTEL Certification (2026)</div><div class="nc-links"><a href="https://drive.google.com/file/d/1PbY3EgoV83aa-RRLsqogdJTZWqZRcFJr/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">Oct 2026</div><div class="nc-badge">CS</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nc-lane nc-lane-networking">
+    <div class="nc-strip"></div>
+    <div class="nc-content">
+      <div class="nc-label">Networking</div>
+      <div class="nc-cards">
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">Cisco Networking Academy</div><div class="nc-title">Network Technician Career Path</div><div class="nc-links"><a href="https://drive.google.com/file/d/19OygUB6g5ZYdIlBRqwzh1O_hdd7O7GGh/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">Oct 2026</div><div class="nc-badge">Networking</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nc-lane nc-lane-hackathon">
+    <div class="nc-strip"></div>
+    <div class="nc-content">
+      <div class="nc-label">Hackathon Recognition</div>
+      <div class="nc-cards">
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">Hackathon 360°</div><div class="nc-title">International Level Hackathon 360° 4.0</div><div class="nc-links"><a href="https://drive.google.com/file/d/1T7TidXonUKolCRhDGm4VLrfy4D8CKH1N/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">Oct 2026</div><div class="nc-badge">Hackathon</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nc-lane nc-lane-achievement">
+    <div class="nc-strip"></div>
+    <div class="nc-content">
+      <div class="nc-label">Achievements &amp; Badges</div>
+      <div class="nc-cards">
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">Space Science Olympiad</div><div class="nc-title">International Space Science Olympiad</div><div class="nc-links"><a href="https://drive.google.com/file/d/1WZdgZQaGaLcArBK1eG2WN8cxbKQj7zLN/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">Aug 2026</div><div class="nc-badge">Olympiad</div></div></div>
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">HackerRank</div><div class="nc-title">Orchestrate October 2026 — Badge</div><div class="nc-links"><a href="https://drive.google.com/file/d/1tt1qykfKYKX-rJ-C52wHb3WRpfmaO0yG/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">Oct 2026</div><div class="nc-badge">Badge</div></div></div>
+        <div class="nc-card"><div class="nc-left"><div class="nc-org">—</div><div class="nc-title">eCertificate</div><div class="nc-links"><a href="https://drive.google.com/file/d/14SpGd5AVYMBsTcArQpIs5OtH6K9PzBSY/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="nc-link">Certificate</a></div></div><div class="nc-right"><div class="nc-date">Sept 2026</div><div class="nc-badge">Achievement</div></div></div>
+      </div>
+    </div>
+  </div>
+
 </div>
 </section>
 <section id="leetcode" class="py-20 border-t border-white/[.03] r">
@@ -424,6 +566,76 @@ body{background:#0e0e14;font-family:'Space Grotesk',sans-serif;color:#fff;overfl
 <a href="https://leetcode.com/u/jasonjose/" target="_blank" rel="noopener noreferrer" class="border border-zinc-700 hover:border-amber-500/50 text-zinc-500 hover:text-amber-500 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest inline-block transition interactive">LeetCode Profile</a>
 </div>
 </div></div></section>
+
+<section id="coding" class="py-24 border-t border-white/[.03] r">
+<div class="section-label r">Coding Profile</div>
+<div class="cp-section">
+  <div class="cp-warn">
+    <span>⚠</span>
+    <span>Placeholder data — update all * values from <a href="https://codolio.com/profile/jasonjose007" target="_blank" style="color:#fb923c;text-decoration:underline">codolio.com/profile/jasonjose007</a></span>
+  </div>
+  <div class="cp-hero">
+    <div class="cp-hero-num">400+<span style="font-size:.35em;opacity:.4">*</span></div>
+    <div class="cp-hero-lbl">problems solved across platforms</div>
+    <div class="cp-hero-note">* placeholder — confirm from your Codolio dashboard</div>
+  </div>
+  <div class="cp-eyebrow">Connected Platforms</div>
+  <div class="cp-platforms">
+    <div class="cp-pcard cp-lc">
+      <div class="cp-pname">LeetCode</div>
+      <div class="cp-pprimary">~400<span style="font-size:.4em;opacity:.45;font-family:monospace">*</span></div>
+      <div class="cp-psublabel">problems solved</div>
+      <div class="cp-pills"><span class="cp-pill cp-pill-easy">Easy 150*</span><span class="cp-pill cp-pill-med">Med 200*</span><span class="cp-pill cp-pill-hard">Hard 50*</span></div>
+      <div class="cp-pmeta">Contest rating: <span>~1500*</span></div>
+      <div class="cp-prog-track"><div class="cp-prog-fill" style="width:70%"></div></div>
+      <a href="https://leetcode.com/u/jasonjose" target="_blank" rel="noopener noreferrer" class="cp-plink">leetcode.com/u/jasonjose →</a>
+    </div>
+    <div class="cp-pcard cp-cc">
+      <div class="cp-pname">CodeChef</div>
+      <div class="cp-pprimary">~1400<span style="font-size:.4em;opacity:.45;font-family:monospace">*</span></div>
+      <div class="cp-psublabel">rating</div>
+      <div class="cp-pills"><span class="cp-pill cp-pill-gen">2★</span><span class="cp-pill cp-pill-gen">10+ contests*</span></div>
+      <div class="cp-pmeta">Division: <span>Div 3*</span></div>
+      <div class="cp-prog-track"><div class="cp-prog-fill" style="width:45%"></div></div>
+      <a href="https://codechef.com/users/jasonjose007" target="_blank" rel="noopener noreferrer" class="cp-plink">codechef.com/users/jasonjose007 →</a>
+    </div>
+    <div class="cp-pcard cp-hr">
+      <div class="cp-pname">HackerRank</div>
+      <div class="cp-pprimary">4★<span style="font-size:.4em;opacity:.45;font-family:monospace">*</span></div>
+      <div class="cp-psublabel">overall rating</div>
+      <div class="cp-pills"><span class="cp-pill" style="background:rgba(0,234,100,.1);color:#00ea64;border:1px solid rgba(0,234,100,.2)">Problem Solving</span><span class="cp-pill" style="background:rgba(0,234,100,.1);color:#00ea64;border:1px solid rgba(0,234,100,.2)">Python</span><span class="cp-pill" style="background:rgba(0,234,100,.1);color:#00ea64;border:1px solid rgba(0,234,100,.2)">SQL</span></div>
+      <div class="cp-pmeta">Badges earned: <span>4+</span></div>
+      <div class="cp-prog-track"><div class="cp-prog-fill" style="width:80%"></div></div>
+      <a href="https://hackerrank.com/profile/jasonjose007" target="_blank" rel="noopener noreferrer" class="cp-plink">hackerrank.com/jasonjose007 →</a>
+    </div>
+  </div>
+  <div class="cp-divider"></div>
+  <div class="cp-barchart">
+    <div class="cp-bc-title">Solved by Platform *</div>
+    <div class="cp-bar-row"><span class="cp-bar-lbl">LeetCode</span><div class="cp-bar-track"><div class="cp-bar-fill" style="width:57%;background:#ffa116"></div></div><span class="cp-bar-val">~400</span></div>
+    <div class="cp-bar-row"><span class="cp-bar-lbl">CodeChef</span><div class="cp-bar-track"><div class="cp-bar-fill" style="width:28%;background:#c8a97e"></div></div><span class="cp-bar-val">~200</span></div>
+    <div class="cp-bar-row"><span class="cp-bar-lbl">HackerRank</span><div class="cp-bar-track"><div class="cp-bar-fill" style="width:14%;background:#00ea64"></div></div><span class="cp-bar-val">~100</span></div>
+  </div>
+  <div class="cp-divider"></div>
+  <div class="cp-block-lbl">Recent Contests *</div>
+  <div class="cp-contest-trail">
+    <div class="cp-contest-item"><div class="cp-c-date">Oct 2026*</div><div><div class="cp-c-name">LeetCode Weekly Contest</div><div class="cp-c-meta"><span class="cp-c-platform cp-lc-tag">LeetCode</span><span class="cp-c-result">Rank: —*</span></div></div></div>
+    <div class="cp-contest-item"><div class="cp-c-date">Sept 2026*</div><div><div class="cp-c-name">CodeChef Starters</div><div class="cp-c-meta"><span class="cp-c-platform cp-cc-tag">CodeChef</span><span class="cp-c-result">Rating Δ: +—*</span></div></div></div>
+    <div class="cp-contest-item"><div class="cp-c-date">Oct 2026</div><div><div class="cp-c-name">HackerRank Orchestrate October</div><div class="cp-c-meta"><span class="cp-c-platform cp-hr-tag">HackerRank</span><span class="cp-c-result">Badge earned ✓</span></div></div></div>
+    <div class="cp-contest-item"><div class="cp-c-date">Aug 2026*</div><div><div class="cp-c-name">LeetCode Biweekly Contest</div><div class="cp-c-meta"><span class="cp-c-platform cp-lc-tag">LeetCode</span><span class="cp-c-result">Rank: —*</span></div></div></div>
+  </div>
+  <div class="cp-divider"></div>
+  <div class="cp-block-lbl">Earned Badges</div>
+  <div class="cp-badge-wall">
+    <div class="cp-badge-chip cp-badge-hr"><div class="cp-badge-icon">🧩</div><div class="cp-badge-name">Problem Solving</div><div class="cp-badge-plat">HackerRank</div></div>
+    <div class="cp-badge-chip cp-badge-hr"><div class="cp-badge-icon">🐍</div><div class="cp-badge-name">Python</div><div class="cp-badge-plat">HackerRank</div></div>
+    <div class="cp-badge-chip cp-badge-hr"><div class="cp-badge-icon">🗄️</div><div class="cp-badge-name">SQL</div><div class="cp-badge-plat">HackerRank</div></div>
+    <div class="cp-badge-chip cp-badge-amber"><div class="cp-badge-icon">🎯</div><div class="cp-badge-name">Orchestrate Oct '26</div><div class="cp-badge-plat">HackerRank</div></div>
+    <div class="cp-badge-chip cp-badge-cc"><div class="cp-badge-icon">⭐</div><div class="cp-badge-name">2★ Rated</div><div class="cp-badge-plat">CodeChef</div></div>
+  </div>
+</div>
+</section>
+
 <section id="resume" class="py-20 border-t border-white/[.03] r">
 <div class="max-w-4xl mx-auto px-6 text-center">
 <div class="border border-white/[.05] bg-white/[.02] rounded-2xl p-8 max-w-2xl mx-auto">
